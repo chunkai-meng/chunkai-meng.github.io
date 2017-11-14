@@ -101,7 +101,7 @@
   
   <div class="social-wrap">
     
-    <a href="https://github.com/mengchunkai" target="_blank">
+    <a href="https://github.com/chunkai-meng" target="_blank">
       <div class="item">
         <i class="i-github"></i>
       </div>
@@ -160,7 +160,10 @@
       </div>
       <div class="content-wrap">
         
-          <h1 id="Technologies-learned-from-AS1-amp-2"><a href="#Technologies-learned-from-AS1-amp-2" class="headerlink" title="Technologies learned from AS1 &amp; 2"></a>Technologies learned from AS1 &amp; 2</h1><h2 id="1-List-of-technologies"><a href="#1-List-of-technologies" class="headerlink" title="1 List of technologies"></a>1 List of technologies</h2><h3 id="1-1-Property-Observers"><a href="#1-1-Property-Observers" class="headerlink" title="1.1 Property Observers"></a>1.1 Property Observers</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> selectedShapeTag: <span class="type">Int</span> = <span class="number">0</span> &#123;</span><br><span class="line">    <span class="keyword">willSet</span>(newTag) &#123;</span><br><span class="line">        shapeButtonArray[newTag].isSelected = <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">didSet</span>(oldTag) &#123;</span><br><span class="line">        <span class="keyword">if</span> selectedShapeTag != oldTag &#123;</span><br><span class="line">            shapeButtonArray[oldTag].isSelected = <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <blockquote>
+<p><a href="https://github.com/mengchunkai/SmartPen" target="_blank" rel="external">repo</a></p>
+</blockquote>
+<h1 id="Technologies-learned-from-AS1-amp-2"><a href="#Technologies-learned-from-AS1-amp-2" class="headerlink" title="Technologies learned from AS1 &amp; 2"></a>Technologies learned from AS1 &amp; 2</h1><h2 id="1-List-of-technologies"><a href="#1-List-of-technologies" class="headerlink" title="1 List of technologies"></a>1 List of technologies</h2><h3 id="1-1-Property-Observers"><a href="#1-1-Property-Observers" class="headerlink" title="1.1 Property Observers"></a>1.1 Property Observers</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> selectedShapeTag: <span class="type">Int</span> = <span class="number">0</span> &#123;</span><br><span class="line">    <span class="keyword">willSet</span>(newTag) &#123;</span><br><span class="line">        shapeButtonArray[newTag].isSelected = <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">didSet</span>(oldTag) &#123;</span><br><span class="line">        <span class="keyword">if</span> selectedShapeTag != oldTag &#123;</span><br><span class="line">            shapeButtonArray[oldTag].isSelected = <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>Property observers observe and respond to changes in a property’s value.<br>Here the variable “selectdShapeTag” is the property being observed.</p>
 </li>
