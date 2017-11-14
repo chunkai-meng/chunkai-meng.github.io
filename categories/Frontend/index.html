@@ -153,6 +153,107 @@
   
     <div class="archives">
       <div class="title-wrap">
+        <a class="post-title" href="/2017/11/15/Some-basic-technoloies-in-Smartpen-Project/">
+          <h1>Some basic technoloies in Smartpen Project </h1>
+        </a>
+        <div class="page-info">
+        
+          <span>By <a href="/about">Chunkai Meng</a> on</span>
+        
+          <time datetime="2017-11-14T22:20:15.000Z" itemprop="datePublished">2017-11-15</time>
+        </div>
+      </div>
+      <div class="content-wrap">
+        
+          <h1 id="Technologies-learned-from-AS1-amp-2"><a href="#Technologies-learned-from-AS1-amp-2" class="headerlink" title="Technologies learned from AS1 &amp; 2"></a>Technologies learned from AS1 &amp; 2</h1><h2 id="1-List-of-technologies"><a href="#1-List-of-technologies" class="headerlink" title="1 List of technologies"></a>1 List of technologies</h2><h3 id="1-1-Property-Observers"><a href="#1-1-Property-Observers" class="headerlink" title="1.1 Property Observers"></a>1.1 Property Observers</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> selectedShapeTag: <span class="type">Int</span> = <span class="number">0</span> &#123;</span><br><span class="line">    <span class="keyword">willSet</span>(newTag) &#123;</span><br><span class="line">        shapeButtonArray[newTag].isSelected = <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">didSet</span>(oldTag) &#123;</span><br><span class="line">        <span class="keyword">if</span> selectedShapeTag != oldTag &#123;</span><br><span class="line">            shapeButtonArray[oldTag].isSelected = <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>Property observers observe and respond to changes in a property’s value.<br>Here the variable “selectdShapeTag” is the property being observed.</p>
+</li>
+<li><p>The observer’s body is call every time a property’s value is set, it doesn’t matter if its value changed or not.<br>There are two kinds of observers willSet and didSet. each property can have either one or both of these observers.</p>
+</li>
+<li><p>Here when you change the selectedShapeTag vale, for example into #3,  before the new value is stored into selectedShapeTag, the shapeButtone which has a tag number 3 in an array, is set to Selected.</p>
+</li>
+<li><p>Then the variable selectedShapedTag become 3.</p>
+</li>
+<li><p>Immediately after this, the didSet snippet is called, so if the new tase is equal to the old tag, we change the old button’s state into unselected.</p>
+</li>
+</ul>
+<h3 id="1-2-Delegation"><a href="#1-2-Delegation" class="headerlink" title="1.2 Delegation"></a>1.2 Delegation</h3><p>Delegation is a pattern that enables one class to hand off its task to another class.</p>
+<ol>
+<li><p>Defining a protocol that encapsulate the responsibilities.</p>
+<p>Below is my Setting View controller.</p>
+<p>The Delegation is used to respond to a particular action, here it is <code>dissmissView</code></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">SettingsViewControllerDelegate</span>: <span class="title">class</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">settingsViewControllerFinished</span><span class="params">(<span class="number">_</span> settingsViewController: SettingsViewController)</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SettingsViewController</span>: <span class="title">UIViewController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> delegate: <span class="type">SettingsViewControllerDelegate</span>?</span><br><span class="line">    ....</span><br><span class="line">    ....</span><br><span class="line">    <span class="meta">@IBAction</span> <span class="function"><span class="keyword">func</span> <span class="title">dismissView</span><span class="params">(<span class="number">_</span> sender: Any)</span></span> &#123;</span><br><span class="line">      <span class="keyword">self</span>.dismiss(animated: <span class="literal">true</span>, completion: <span class="literal">nil</span>)</span><br><span class="line">      <span class="keyword">self</span>.delegate?.settingsViewControllerFinished(<span class="keyword">self</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><img src="SettingViewScreenShot.png" alt="image"></p>
+<p>Then the CanvasViewController will adopt and confirm the protocol, and he got the object sent by the settingViewController as <code>self</code>, so he got the setting values of every thing: the brush size, color, transparency etc. then all the current setting can be updated.<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">CanvasViewController</span>: <span class="title">SettingsViewControllerDelegate</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">settingsViewControllerFinished</span><span class="params">(<span class="number">_</span> settingsViewController: SettingsViewController)</span></span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">self</span>.currentBrush.red == settingsViewController.redColorValue &amp;&amp;</span><br><span class="line">            <span class="keyword">self</span>.currentBrush.green == settingsViewController.greenColorValue &amp;&amp;</span><br><span class="line">            <span class="keyword">self</span>.currentBrush.blue == settingsViewController.blueColorValue &#123;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// Get new opacty &amp; size</span></span><br><span class="line">            <span class="keyword">self</span>.currentBrush.opacty = settingsViewController.opacity</span><br><span class="line">            <span class="keyword">self</span>.currentBrush.size = settingsViewController.lineWidth</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// Get the new color from Setting View</span></span><br><span class="line">            <span class="keyword">self</span>.currentBrush.red = settingsViewController.redColorValue</span><br><span class="line">            <span class="keyword">self</span>.currentBrush.green = settingsViewController.greenColorValue</span><br><span class="line">            <span class="keyword">self</span>.currentBrush.blue = settingsViewController.blueColorValue</span><br><span class="line"></span><br><span class="line">            <span class="comment">// remove highlight from color button</span></span><br><span class="line">            colorButtonArray[selectedColorTag].backgroundColor = <span class="type">UIColor</span>.white</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/Some-basic-technoloies-in-Smartpen-Project/CanvasViewScreenShot.png" alt="image"></p>
+<h2 id="2-Parts-could-be-improved"><a href="#2-Parts-could-be-improved" class="headerlink" title="2 Parts could be improved"></a>2 Parts could be improved</h2><h3 id="2-1-Method-Size"><a href="#2-1-Method-Size" class="headerlink" title="2.1 Method Size"></a>2.1 Method Size</h3><ul>
+<li><p>The codes are too big sometimes, it’s not easy to read and maintain.</p>
+</li>
+<li><p>Also my code is not neat enough, I think it is because I’m not able to get the most from various beautiful features of Swift language. So just learn more and do more.</p>
+</li>
+</ul>
+<h3 id="2-2-comment"><a href="#2-2-comment" class="headerlink" title="2.2 comment"></a>2.2 comment</h3><ul>
+<li>Another thing is annotation or comment. I don’t have much sense of when and how to make a useful comment.<br>This need to do more pratices and I wish somene can shore something about that.</li>
+</ul>
+<h2 id="3-Apple-Human-Interface-Guideline"><a href="#3-Apple-Human-Interface-Guideline" class="headerlink" title="3 Apple Human Interface Guideline"></a>3 Apple Human Interface Guideline</h2><ul>
+<li>User Standard gestures</li>
+<li>Avoid using standard gestures to perform nonstandard actions.</li>
+<li>Don’t block systemwide screen-edge gestures.</li>
+<li>Offer shortcut gestures to supplement, not replace, interface-based navigation and actions.</li>
+<li>Use multi-finger gestures to enhance the experience of some apps.</li>
+</ul>
+<h2 id="4-iOS-Life-Cycle"><a href="#4-iOS-Life-Cycle" class="headerlink" title="4 iOS Life Cycle"></a>4 iOS Life Cycle</h2><ul>
+<li>Five different Execution states of an App:<br>  Not running / Inactive / Active / Background / Suspended</li>
+<li>Something about the App Termination<ul>
+<li>Misbehaving or not responding</li>
+<li>Suspended</li>
+<li>user can terminate</li>
+</ul>
+</li>
+<li>Apps must be prepared for termination to happen at any time and should not wait to save user data.</li>
+</ul>
+<h2 id="5-Comparison-between-Swift-and-C"><a href="#5-Comparison-between-Swift-and-C" class="headerlink" title="5 Comparison between Swift and C"></a>5 Comparison between Swift and C</h2><p><strong>BASICS</strong></p>
+<p><strong>Const is let and var is still var</strong></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># <span class="type">Swift</span></span><br><span class="line"><span class="keyword">var</span> myVariable = <span class="number">42</span></span><br><span class="line">myVariable = <span class="number">50</span></span><br><span class="line"><span class="keyword">let</span> myConstant = <span class="number">42</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># C#</span></span><br><span class="line"><span class="keyword">var</span> myVariable = <span class="number">42</span>;</span><br><span class="line">myVariable = <span class="number">50</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> myConstant = <span class="number">42</span>;</span><br></pre></td></tr></table></figure>
+<p><strong>COLLECTIONS</strong><br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># <span class="type">Swift</span></span><br><span class="line"><span class="keyword">var</span> shoppingList = [<span class="string">"catfish"</span>, <span class="string">"water"</span>,</span><br><span class="line">    <span class="string">"tulips"</span>, <span class="string">"blue paint"</span>]</span><br><span class="line">shoppingList[<span class="number">1</span>] = <span class="string">"bottle of water"</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># C#</span></span><br><span class="line"><span class="keyword">var</span> shoppingList = <span class="keyword">new</span>[]&#123;<span class="string">"catfish"</span>, <span class="string">"water"</span>, <span class="string">"tulips"</span>, <span class="string">"blue paint"</span>&#125;;</span><br><span class="line">shoppingList[<span class="number">1</span>] = <span class="string">"bottle of water"</span>;</span><br></pre></td></tr></table></figure>
+<p><strong>Protocol</strong><br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">Nameable</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">name</span><span class="params">()</span></span> -&gt; <span class="type">String</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">f</span>&lt;T: Nameable&gt;<span class="params">(x: T)</span></span> &#123;</span><br><span class="line">    <span class="built_in">println</span>(<span class="string">"Name is "</span> + x.name())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># C#</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title">Nameable</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">string</span> <span class="title">name</span>(<span class="params"></span>)</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> f&lt;T&gt;(T x) <span class="keyword">where</span> T : Nameable &#123;</span><br><span class="line">    Console.WriteLine(<span class="string">"Name is "</span> + x.name());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Lambdas and Closures</strong><br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># <span class="type">Closure</span> <span class="type">Expression</span> <span class="type">Syntax</span></span><br><span class="line">&#123; (parameters) -&gt; <span class="keyword">return</span> type <span class="keyword">in</span></span><br><span class="line">    statements</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># <span class="type">Example</span></span><br><span class="line">reversedNames = names.sorted(by: &#123; (s1: <span class="type">String</span>, s2: <span class="type">String</span>) -&gt; <span class="type">Bool</span> <span class="keyword">in</span></span><br><span class="line">    <span class="keyword">return</span> s1 &gt; s2</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># C#</span></span><br><span class="line"><span class="meta"># Expression Lambdas</span></span><br><span class="line">(input-parameters) =&gt; expression</span><br><span class="line">(x, y) =&gt; x == y</span><br><span class="line"></span><br><span class="line"><span class="meta"># Statement Lambdas</span></span><br><span class="line">(input-parameters) =&gt; &#123; statement; &#125;</span><br><span class="line"><span class="function"><span class="keyword">delegate</span> <span class="keyword">void</span> <span class="title">TestDelegate</span>(<span class="params"><span class="keyword">string</span> s</span>)</span>;</span><br><span class="line">TestDelegate del = n =&gt; &#123; <span class="keyword">string</span> s = n + <span class="string">" World"</span>;</span><br><span class="line">                        Console.WriteLine(s); &#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="What-I-learned"><a href="#What-I-learned" class="headerlink" title="What I learned"></a>What I learned</h2><ul>
+<li>How to use SQLiteBrowser to view your CoreData</li>
+</ul>
+<ol>
+<li><p>Download and install from <a href="http://sqlitebrowser.org" target="_blank" rel="external">http://sqlitebrowser.org</a></p>
+</li>
+<li><p>Insert follow code to show db file e.g. “AppName”.sqlite</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let storeUrl = appDelegate.persistentContainer.persistentStoreCoordinator.persistentStores.first?.url</span><br><span class="line">print(storeUrl!)</span><br></pre></td></tr></table></figure>
+<p>file:///Users/xxx/Library/Developer/CoreSimulator/Devices/95E79F65-8DC5-4200-83C7-CE443685D25E/data/Containers/Data/Application/35C1939D-DD2F-4B4E-AF70-6489047977A2/Library/Application%20Support/SmartPen.sqlite</p>
+<ol>
+<li><p>Open Termial and locate to that file<br><code>cd /Users/xxx/Library/Developer/CoreSimulator/Devices/95E79F65-8DC5-4200-83C7-CE443685D25E/data/Containers/Data/Application/35C1939D-DD2F-4B4E-AF70-6489047977A2/Library/Application%20Support</code></p>
+</li>
+<li><p>run <code>open .</code> open that folder</p>
+</li>
+<li><p>copy that three data file to Desktop then in sqlite brower click open DataBase.</p>
+</li>
+</ol>
+
+        
+      </div>
+      <div class='read-more'>
+        <a href="/2017/11/15/Some-basic-technoloies-in-Smartpen-Project/"><span class='i-next'>Read More</span></a>
+      </div>
+    </div>
+  
+    <div class="archives">
+      <div class="title-wrap">
         <a class="post-title" href="/2017/11/14/Technologies-learned-from-a-small-iOS-project/">
           <h1>Technologies learned from a small iOS project </h1>
         </a>
