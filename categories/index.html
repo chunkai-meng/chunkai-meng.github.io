@@ -40,6 +40,14 @@
           color: #b71c1c
         }
       
+        .menu-about .menu-item-about {
+          color: #b71c1c
+        }
+      
+        .menu-rss .menu-item-rss {
+          color: #b71c1c
+        }
+      
     </style>
     <link rel="stylesheet" href="/css/style.css">
   </head>
@@ -56,7 +64,9 @@
     <aside class="sidebar">
   <div class="head-icon">
   
-    <img src="/avatar.jpeg">
+    <a href="/about">
+      <img src="/avatar.jpeg">
+    </a>
   
   </div>
   <div class="name">Chunkai</div>
@@ -92,33 +102,9 @@
   
   <div class="social-wrap">
     
-    <a href="https://github.com/wszgxa" target="_blank">
+    <a href="https://github.com/mengchunkai" target="_blank">
       <div class="item">
         <i class="i-github"></i>
-      </div>
-    </a>
-    
-    <a href="http://v2ex.com/member/hiluluke" target="_blank">
-      <div class="item">
-        <i class="i-v2ex"></i>
-      </div>
-    </a>
-    
-    <a href="https://www.zhihu.com/people/zhao-guo-xu" target="_blank">
-      <div class="item">
-        <i class="i-zhihu"></i>
-      </div>
-    </a>
-    
-    <a href="https://twitter.com/Hiluluke" target="_blank">
-      <div class="item">
-        <i class="i-twitter"></i>
-      </div>
-    </a>
-    
-    <a href="http://codepen.io/hiluluke" target="_blank">
-      <div class="item">
-        <i class="i-codepen"></i>
       </div>
     </a>
     
@@ -146,6 +132,14 @@
     Tags
     </a>
   
+    <a class='menu-item-about' href="/about">
+    About
+    </a>
+  
+    <a class='menu-item-rss' href="/atom.xml">
+    RSS
+    </a>
+  
   </nav> 
 </header>
       <section id="main" class="content">
@@ -166,7 +160,7 @@
   <script src="/js/simple_build.js"></script>
   
 <script type="text/javascript">
-  var duoshuoQuery = {short_name:"hiluluke"};
+  var duoshuoQuery = {short_name:"Chunkai"};
 	(function() {
 		var ds = document.createElement('script');
 		ds.type = 'text/javascript';ds.async = true;
