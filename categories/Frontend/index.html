@@ -16,7 +16,7 @@
     
     <title>
     
-    Technologies learned from a small iOS project 
+    Category: Frontend 
       | Chunkai&#39;s Blog 
     
     </title>
@@ -141,7 +141,7 @@
   <div class="arrows" id="nav-btn"></div>
 </div>
       
-<header class="header menu-2017">
+<header class="header menu-categories">
   <nav>
   
     <a class='menu-item-home' href="/">
@@ -167,20 +167,29 @@
   </nav> 
 </header>
       <section id="main" class="content">
-        
-<div class="archives-wrap">
-  <div class="archives">
-    <div class="title-wrap">
-      <h1>Technologies learned from a small iOS project </h1>
-      <div class="page-info">
-      
-        <span>By <a href="/about">Chunkai Meng</a> on</span>
-      
-        <time datetime="2017-11-14T09:59:46.000Z" itemprop="datePublished">2017-11-14</time>
-      </div>
+        <section class="archives-wrap">
+  
+    <div class="ct-title">
+      <h2>Frontend <small>Categories</small></h2>
     </div>
-    <div class="content-wrap">
-    <h1 id="Technologies-learned-from-AS1-amp-2"><a href="#Technologies-learned-from-AS1-amp-2" class="headerlink" title="Technologies learned from AS1 &amp; 2"></a>Technologies learned from AS1 &amp; 2</h1><h2 id="1-List-of-technologies"><a href="#1-List-of-technologies" class="headerlink" title="1 List of technologies"></a>1 List of technologies</h2><h3 id="1-1-Property-Observers"><a href="#1-1-Property-Observers" class="headerlink" title="1.1 Property Observers"></a>1.1 Property Observers</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> selectedShapeTag: <span class="type">Int</span> = <span class="number">0</span> &#123;</span><br><span class="line">    <span class="keyword">willSet</span>(newTag) &#123;</span><br><span class="line">        shapeButtonArray[newTag].isSelected = <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">didSet</span>(oldTag) &#123;</span><br><span class="line">        <span class="keyword">if</span> selectedShapeTag != oldTag &#123;</span><br><span class="line">            shapeButtonArray[oldTag].isSelected = <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  
+  
+  
+    <div class="archives">
+      <div class="title-wrap">
+        <a class="post-title" href="/2017/11/14/Technologies-learned-from-a-small-iOS-project/">
+          <h1>Technologies learned from a small iOS project </h1>
+        </a>
+        <div class="page-info">
+        
+          <span>By <a href="/about">Chunkai Meng</a> on</span>
+        
+          <time datetime="2017-11-14T09:59:46.000Z" itemprop="datePublished">2017-11-14</time>
+        </div>
+      </div>
+      <div class="content-wrap">
+        
+          <h1 id="Technologies-learned-from-AS1-amp-2"><a href="#Technologies-learned-from-AS1-amp-2" class="headerlink" title="Technologies learned from AS1 &amp; 2"></a>Technologies learned from AS1 &amp; 2</h1><h2 id="1-List-of-technologies"><a href="#1-List-of-technologies" class="headerlink" title="1 List of technologies"></a>1 List of technologies</h2><h3 id="1-1-Property-Observers"><a href="#1-1-Property-Observers" class="headerlink" title="1.1 Property Observers"></a>1.1 Property Observers</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> selectedShapeTag: <span class="type">Int</span> = <span class="number">0</span> &#123;</span><br><span class="line">    <span class="keyword">willSet</span>(newTag) &#123;</span><br><span class="line">        shapeButtonArray[newTag].isSelected = <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">didSet</span>(oldTag) &#123;</span><br><span class="line">        <span class="keyword">if</span> selectedShapeTag != oldTag &#123;</span><br><span class="line">            shapeButtonArray[oldTag].isSelected = <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>Property observers observe and respond to changes in a property’s value.<br>Here the variable “selectdShapeTag” is the property being observed.</p>
 </li>
@@ -260,16 +269,15 @@
 </li>
 </ol>
 
+        
+      </div>
+      <div class='read-more'>
+        <a href="/2017/11/14/Technologies-learned-from-a-small-iOS-project/"><span class='i-next'>Read More</span></a>
+      </div>
     </div>
-  </div>
-</div>
-
-
-
-  <div class="ds-thread" data-thread-key="2017/11/14/Technologies-learned-from-a-small-iOS-project/" data-title="Technologies learned from a small iOS project" data-url="https://mengchunkai.github.io.git/2017/11/14/Technologies-learned-from-a-small-iOS-project/">
-    </div>
-
-
+  
+  
+</section>
       </section>
     <footer class="footer">
   <div>Record and Share</div>
