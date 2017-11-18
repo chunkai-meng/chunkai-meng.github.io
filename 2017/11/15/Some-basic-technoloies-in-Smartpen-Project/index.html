@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="repo  Technologies learned from AS1 &amp;amp; 21 List of technologies1.1 Property Observers12345678910var selectedShapeTag: Int = 0 &amp;#123;    willSet(newTag) &amp;#123;        shapeButtonArray[newTag].isSele">
+<meta name="description" content="Github Repository  1 List of technologies1.1 Property Observers 12345678910var selectedShapeTag: Int = 0 &amp;#123;    willSet(newTag) &amp;#123;        shapeButtonArray[newTag].isSelected = true    &amp;#125;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Some basic technoloies in Smartpen Project">
 <meta property="og:url" content="https://chunkai-meng.github.io.git/2017/11/15/Some-basic-technoloies-in-Smartpen-Project/index.html">
 <meta property="og:site_name" content="Chunkai&#39;s Blog">
-<meta property="og:description" content="repo  Technologies learned from AS1 &amp;amp; 21 List of technologies1.1 Property Observers12345678910var selectedShapeTag: Int = 0 &amp;#123;    willSet(newTag) &amp;#123;        shapeButtonArray[newTag].isSele">
+<meta property="og:description" content="Github Repository  1 List of technologies1.1 Property Observers 12345678910var selectedShapeTag: Int = 0 &amp;#123;    willSet(newTag) &amp;#123;        shapeButtonArray[newTag].isSelected = true    &amp;#125;">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://chunkai-meng.github.io.git/2017/11/15/Some-basic-technoloies-in-Smartpen-Project/SettingViewScreenShot.png">
 <meta property="og:image" content="https://chunkai-meng.github.io.git/2017/11/15/Some-basic-technoloies-in-Smartpen-Project/CanvasViewScreenShot.png">
-<meta property="og:updated_time" content="2017-11-14T23:33:21.740Z">
+<meta property="og:updated_time" content="2017-11-18T13:31:10.271Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Some basic technoloies in Smartpen Project">
-<meta name="twitter:description" content="repo  Technologies learned from AS1 &amp;amp; 21 List of technologies1.1 Property Observers12345678910var selectedShapeTag: Int = 0 &amp;#123;    willSet(newTag) &amp;#123;        shapeButtonArray[newTag].isSele">
+<meta name="twitter:description" content="Github Repository  1 List of technologies1.1 Property Observers 12345678910var selectedShapeTag: Int = 0 &amp;#123;    willSet(newTag) &amp;#123;        shapeButtonArray[newTag].isSelected = true    &amp;#125;">
 <meta name="twitter:image" content="https://chunkai-meng.github.io.git/2017/11/15/Some-basic-technoloies-in-Smartpen-Project/SettingViewScreenShot.png">
 
 
@@ -346,9 +346,10 @@
 
       
         <blockquote>
-<p><a href="https://github.com/mengchunkai/SmartPen" target="_blank" rel="external">repo</a></p>
+<p><a href="https://github.com/mengchunkai/SmartPen" target="_blank" rel="external">Github Repository</a></p>
 </blockquote>
-<h1 id="Technologies-learned-from-AS1-amp-2"><a href="#Technologies-learned-from-AS1-amp-2" class="headerlink" title="Technologies learned from AS1 &amp; 2"></a>Technologies learned from AS1 &amp; 2</h1><h2 id="1-List-of-technologies"><a href="#1-List-of-technologies" class="headerlink" title="1 List of technologies"></a>1 List of technologies</h2><h3 id="1-1-Property-Observers"><a href="#1-1-Property-Observers" class="headerlink" title="1.1 Property Observers"></a>1.1 Property Observers</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> selectedShapeTag: <span class="type">Int</span> = <span class="number">0</span> &#123;</span><br><span class="line">    <span class="keyword">willSet</span>(newTag) &#123;</span><br><span class="line">        shapeButtonArray[newTag].isSelected = <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">didSet</span>(oldTag) &#123;</span><br><span class="line">        <span class="keyword">if</span> selectedShapeTag != oldTag &#123;</span><br><span class="line">            shapeButtonArray[oldTag].isSelected = <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>1 List of technologies</strong><br><strong>1.1 Property Observers</strong></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> selectedShapeTag: <span class="type">Int</span> = <span class="number">0</span> &#123;</span><br><span class="line">    <span class="keyword">willSet</span>(newTag) &#123;</span><br><span class="line">        shapeButtonArray[newTag].isSelected = <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">didSet</span>(oldTag) &#123;</span><br><span class="line">        <span class="keyword">if</span> selectedShapeTag != oldTag &#123;</span><br><span class="line">            shapeButtonArray[oldTag].isSelected = <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>Property observers observe and respond to changes in a property’s value.<br>Here the variable “selectdShapeTag” is the property being observed.</p>
 </li>
@@ -361,7 +362,7 @@
 <li><p>Immediately after this, the didSet snippet is called, so if the new tase is equal to the old tag, we change the old button’s state into unselected.</p>
 </li>
 </ul>
-<h3 id="1-2-Delegation"><a href="#1-2-Delegation" class="headerlink" title="1.2 Delegation"></a>1.2 Delegation</h3><p>Delegation is a pattern that enables one class to hand off its task to another class.</p>
+<p><strong>1.2 Delegation</strong><br>Delegation is a pattern that enables one class to hand off its task to another class.</p>
 <ol>
 <li><p>Defining a protocol that encapsulate the responsibilities.</p>
 <p>Below is my Setting View controller.</p>
@@ -372,23 +373,28 @@
 <p><img src="/2017/11/15/Some-basic-technoloies-in-Smartpen-Project/SettingViewScreenShot.png" alt="image"></p>
 <p>Then the CanvasViewController will adopt and confirm the protocol, and he got the object sent by the settingViewController as <code>self</code>, so he got the setting values of every thing: the brush size, color, transparency etc. then all the current setting can be updated.<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">CanvasViewController</span>: <span class="title">SettingsViewControllerDelegate</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">settingsViewControllerFinished</span><span class="params">(<span class="number">_</span> settingsViewController: SettingsViewController)</span></span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">self</span>.currentBrush.red == settingsViewController.redColorValue &amp;&amp;</span><br><span class="line">            <span class="keyword">self</span>.currentBrush.green == settingsViewController.greenColorValue &amp;&amp;</span><br><span class="line">            <span class="keyword">self</span>.currentBrush.blue == settingsViewController.blueColorValue &#123;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// Get new opacty &amp; size</span></span><br><span class="line">            <span class="keyword">self</span>.currentBrush.opacty = settingsViewController.opacity</span><br><span class="line">            <span class="keyword">self</span>.currentBrush.size = settingsViewController.lineWidth</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// Get the new color from Setting View</span></span><br><span class="line">            <span class="keyword">self</span>.currentBrush.red = settingsViewController.redColorValue</span><br><span class="line">            <span class="keyword">self</span>.currentBrush.green = settingsViewController.greenColorValue</span><br><span class="line">            <span class="keyword">self</span>.currentBrush.blue = settingsViewController.blueColorValue</span><br><span class="line"></span><br><span class="line">            <span class="comment">// remove highlight from color button</span></span><br><span class="line">            colorButtonArray[selectedColorTag].backgroundColor = <span class="type">UIColor</span>.white</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><img src="/2017/11/15/Some-basic-technoloies-in-Smartpen-Project/CanvasViewScreenShot.png" alt="image"></p>
-<h2 id="2-Parts-could-be-improved"><a href="#2-Parts-could-be-improved" class="headerlink" title="2 Parts could be improved"></a>2 Parts could be improved</h2><h3 id="2-1-Method-Size"><a href="#2-1-Method-Size" class="headerlink" title="2.1 Method Size"></a>2.1 Method Size</h3><ul>
+<p><strong>2 Parts could be improved</strong></p>
+<p><strong>2.1 Method Size</strong></p>
+<ul>
 <li><p>The codes are too big sometimes, it’s not easy to read and maintain.</p>
 </li>
 <li><p>Also my code is not neat enough, I think it is because I’m not able to get the most from various beautiful features of Swift language. So just learn more and do more.</p>
 </li>
 </ul>
-<h3 id="2-2-comment"><a href="#2-2-comment" class="headerlink" title="2.2 comment"></a>2.2 comment</h3><ul>
+<p><strong>2.2 comment</strong>  </p>
+<ul>
 <li>Another thing is annotation or comment. I don’t have much sense of when and how to make a useful comment.<br>This need to do more pratices and I wish somene can shore something about that.</li>
 </ul>
-<h2 id="3-Apple-Human-Interface-Guideline"><a href="#3-Apple-Human-Interface-Guideline" class="headerlink" title="3 Apple Human Interface Guideline"></a>3 Apple Human Interface Guideline</h2><ul>
+<p><strong>3 Apple Human Interface Guideline</strong>  </p>
+<ul>
 <li>User Standard gestures</li>
 <li>Avoid using standard gestures to perform nonstandard actions.</li>
 <li>Don’t block systemwide screen-edge gestures.</li>
 <li>Offer shortcut gestures to supplement, not replace, interface-based navigation and actions.</li>
 <li>Use multi-finger gestures to enhance the experience of some apps.</li>
 </ul>
-<h2 id="4-iOS-Life-Cycle"><a href="#4-iOS-Life-Cycle" class="headerlink" title="4 iOS Life Cycle"></a>4 iOS Life Cycle</h2><ul>
+<p><strong>4 iOS Life Cycle</strong>  </p>
+<ul>
 <li>Five different Execution states of an App:<br>  Not running / Inactive / Active / Background / Suspended</li>
 <li>Something about the App Termination<ul>
 <li>Misbehaving or not responding</li>
@@ -398,7 +404,8 @@
 </li>
 <li>Apps must be prepared for termination to happen at any time and should not wait to save user data.</li>
 </ul>
-<h2 id="5-Comparison-between-Swift-and-C"><a href="#5-Comparison-between-Swift-and-C" class="headerlink" title="5 Comparison between Swift and C"></a>5 Comparison between Swift and C</h2><p><strong>BASICS</strong></p>
+<p><strong>5 Comparison between Swift and C#</strong></p>
+<p><strong>BASICS</strong></p>
 <p><strong>Const is let and var is still var</strong></p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># <span class="type">Swift</span></span><br><span class="line"><span class="keyword">var</span> myVariable = <span class="number">42</span></span><br><span class="line">myVariable = <span class="number">50</span></span><br><span class="line"><span class="keyword">let</span> myConstant = <span class="number">42</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># C#</span></span><br><span class="line"><span class="keyword">var</span> myVariable = <span class="number">42</span>;</span><br><span class="line">myVariable = <span class="number">50</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> myConstant = <span class="number">42</span>;</span><br></pre></td></tr></table></figure>
@@ -408,7 +415,8 @@
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># C#</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title">Nameable</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">string</span> <span class="title">name</span>(<span class="params"></span>)</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> f&lt;T&gt;(T x) <span class="keyword">where</span> T : Nameable &#123;</span><br><span class="line">    Console.WriteLine(<span class="string">"Name is "</span> + x.name());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>Lambdas and Closures</strong><br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># <span class="type">Closure</span> <span class="type">Expression</span> <span class="type">Syntax</span></span><br><span class="line">&#123; (parameters) -&gt; <span class="keyword">return</span> type <span class="keyword">in</span></span><br><span class="line">    statements</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># <span class="type">Example</span></span><br><span class="line">reversedNames = names.sorted(by: &#123; (s1: <span class="type">String</span>, s2: <span class="type">String</span>) -&gt; <span class="type">Bool</span> <span class="keyword">in</span></span><br><span class="line">    <span class="keyword">return</span> s1 &gt; s2</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># C#</span></span><br><span class="line"><span class="meta"># Expression Lambdas</span></span><br><span class="line">(input-parameters) =&gt; expression</span><br><span class="line">(x, y) =&gt; x == y</span><br><span class="line"></span><br><span class="line"><span class="meta"># Statement Lambdas</span></span><br><span class="line">(input-parameters) =&gt; &#123; statement; &#125;</span><br><span class="line"><span class="function"><span class="keyword">delegate</span> <span class="keyword">void</span> <span class="title">TestDelegate</span>(<span class="params"><span class="keyword">string</span> s</span>)</span>;</span><br><span class="line">TestDelegate del = n =&gt; &#123; <span class="keyword">string</span> s = n + <span class="string">" World"</span>;</span><br><span class="line">                        Console.WriteLine(s); &#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="What-I-learned"><a href="#What-I-learned" class="headerlink" title="What I learned"></a>What I learned</h2><ul>
+<p><strong>What I learned</strong></p>
+<ul>
 <li>How to use SQLiteBrowser to view your CoreData</li>
 </ul>
 <ol>
@@ -518,17 +526,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -598,22 +597,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Technologies-learned-from-AS1-amp-2"><span class="nav-number">1.</span> <span class="nav-text">Technologies learned from AS1 & 2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-List-of-technologies"><span class="nav-number">1.1.</span> <span class="nav-text">1 List of technologies</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-Property-Observers"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1 Property Observers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-Delegation"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2 Delegation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Parts-could-be-improved"><span class="nav-number">1.2.</span> <span class="nav-text">2 Parts could be improved</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-Method-Size"><span class="nav-number">1.2.1.</span> <span class="nav-text">2.1 Method Size</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-comment"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.2 comment</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Apple-Human-Interface-Guideline"><span class="nav-number">1.3.</span> <span class="nav-text">3 Apple Human Interface Guideline</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-iOS-Life-Cycle"><span class="nav-number">1.4.</span> <span class="nav-text">4 iOS Life Cycle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Comparison-between-Swift-and-C"><span class="nav-number">1.5.</span> <span class="nav-text">5 Comparison between Swift and C</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#What-I-learned"><span class="nav-number">1.6.</span> <span class="nav-text">What I learned</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
