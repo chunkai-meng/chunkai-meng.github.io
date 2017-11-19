@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="en">
+<html class="theme-next gemini use-motion" lang="en">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -96,7 +96,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '5.1.3',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -228,6 +228,170 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/2017/11/19/Doing-Data-Science/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chunkai Meng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chunkai's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/19/Doing-Data-Science/" itemprop="url">Doing Data Science</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-19T15:59:43+13:00">
+                2017-11-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Data-Science/" itemprop="url" rel="index">
+                    <span itemprop="name">Data Science</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/11/19/Doing-Data-Science/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/11/19/Doing-Data-Science/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Doing-Data-Science"><a href="#Doing-Data-Science" class="headerlink" title="Doing Data Science"></a>Doing Data Science</h1><p><strong>Statical inference</strong><br>This overall process of going from the world to the data, and then from the data back to the world, is the field of statistical inference.</p>
+<p><strong>Observation</strong><br>The characteristics of object is Observation</p>
+<p><strong>Modeling</strong>  </p>
+<ul>
+<li>A model is our attempt to understand and represent the nature of reality through a particular lens, be it architectural, biological, or mathematical.</li>
+<li>How do you have any clue whatsoever what functional form the data should take? Truth is, it’s part art and part science.</li>
+</ul>
+<p><strong>Probability Distribution</strong>  </p>
+<h2 id="So-what-is-the-process-of-doing-data-science"><a href="#So-what-is-the-process-of-doing-data-science" class="headerlink" title="So what is the process of doing data science?"></a><strong>So what is the process of doing data science?</strong></h2><p>The <strong>population</strong> is the total objects we interested in which can be represented as N.<br>The <strong>sample</strong> is the subset of population.<br>A observation can be think as the quantised or classified characteristics we capture or extract from an object.<br>The observe data of sample object are usually the so call <strong>data</strong> (as far as I know).<br>But the data themselves do not say any thing, we need some a new idea, to simplify the data, make them more comprehensible and easy to use to explain the rules of our real world. So we need the estimator or statistical estimator.</p>
+<p><a href="https://en.wikipedia.org/wiki/Estimator" target="_blank" rel="external"><strong>Statistical estimator</strong></a> is a function or rule for calculating an estimate of given quantity based on observed data. Firstly, it’s a function comes from observed data, the discovering of this function is modeling.<br>Secondly, it is used to calculating the estimate of given quantity.<br>The activities above form the process of statistical inference, start from the real world to data and then from the data back to the real world.</p>
+<h2 id="Modeling"><a href="#Modeling" class="headerlink" title="Modeling"></a><strong>Modeling</strong></h2><p>Modeling is man made, aimed at eliminating the unimportant detail of the objects and abstracting information from data.<br><em>Can I say that the modeling is choosing estimator, combining and optimizing the estimators?</em><br>Before coding, we need to take a look at our data or draw a map of our data, try to understand which one is the cause, which one is affected.<br>In <strong>Statical Modeling</strong> people use a function to represent the relationship between data.<br>Greek letters represent the parameters latin letters represent data.<br>Modeling is part of art and port of science.<br>So there is no such a model that is the best.<br>We can just start from the simple one, take a look at the hist scatter plot, find out a simple model. Sometimes, for example, a simple model can explain 90% of data relationship while a complex one only make it 2% better to 92%.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -670,7 +834,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -692,7 +856,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -757,7 +921,7 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.3</div>
 
 
 
@@ -842,6 +1006,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
 
   
 
