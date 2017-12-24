@@ -262,6 +262,171 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/2017/12/24/Django-Debug/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chunkai Meng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chunkai's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/24/Django-Debug/" itemprop="url">Django Debug</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-24T16:04:30+13:00">
+                2017-12-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Backend/" itemprop="url" rel="index">
+                    <span itemprop="name">Backend</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/12/24/Django-Debug/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/12/24/Django-Debug/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Setting-up-Django-Debug-Toolbar"><a href="#Setting-up-Django-Debug-Toolbar" class="headerlink" title="Setting up Django Debug Toolbar"></a>Setting up Django Debug Toolbar</h1><ul>
+<li><p>install model</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install django-debug-toolbar</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Edit Setting.py</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">INSTALLED_APPS = [</span><br><span class="line">    &apos;django.contrib.admin&apos;,</span><br><span class="line">    &apos;django.contrib.auth&apos;,</span><br><span class="line">    &apos;django.contrib.contenttypes&apos;,</span><br><span class="line">    &apos;django.contrib.sessions&apos;,</span><br><span class="line">    &apos;django.contrib.messages&apos;,</span><br><span class="line">    &apos;django.contrib.staticfiles&apos;,</span><br><span class="line">    # ADD debug toolbar APP</span><br><span class="line">    &apos;debug_toolbar&apos;,</span><br><span class="line">    ....</span><br><span class="line"></span><br><span class="line">MIDDLEWARE = [</span><br><span class="line">    &apos;django.middleware.security.SecurityMiddleware&apos;,</span><br><span class="line">    &apos;django.contrib.sessions.middleware.SessionMiddleware&apos;,</span><br><span class="line">    &apos;django.middleware.common.CommonMiddleware&apos;,</span><br><span class="line">    &apos;django.middleware.csrf.CsrfViewMiddleware&apos;,</span><br><span class="line">    &apos;django.contrib.auth.middleware.AuthenticationMiddleware&apos;,</span><br><span class="line">    &apos;django.contrib.messages.middleware.MessageMiddleware&apos;,</span><br><span class="line">    &apos;django.middleware.clickjacking.XFrameOptionsMiddleware&apos;,</span><br><span class="line">    # Add Debug toolbar Middleware</span><br><span class="line">    &apos;debug_toolbar.middleware.DebugToolbarMiddleware&apos;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Edit <project_folder url.py=""></project_folder></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">from django.conf import settings</span><br><span class="line">....</span><br><span class="line"></span><br><span class="line">if settings.DEBUG is True:</span><br><span class="line">    import debug_toolbar</span><br><span class="line">    urlpatterns += [url(r&apos;^__debug__/&apos;, include(debug_toolbar.urls))]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Add Middleware</p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/2017/12/23/Test-Driven-Development-TDD/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1861,162 +2026,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/2017/11/20/React-Meteor-Project/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Chunkai Meng">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chunkai's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/20/React-Meteor-Project/" itemprop="url">React Meteor Project</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-20T11:01:15+13:00">
-                2017-11-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Projects/" itemprop="url" rel="index">
-                    <span itemprop="name">Projects</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/11/20/React-Meteor-Project/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/11/20/React-Meteor-Project/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Development-Specification"><a href="#Development-Specification" class="headerlink" title="Development Specification"></a>Development Specification</h1><p>This is a Real Project running on AWS.<br>Technique used: Meteor platform + MongoDB + JavaScript<br>Last update at: 9/08/2017</p>
-<h1 id="Web-Application-Introduction"><a href="#Web-Application-Introduction" class="headerlink" title="Web Application Introduction"></a>Web Application Introduction</h1><h2 id="Client-Use-Interface"><a href="#Client-Use-Interface" class="headerlink" title="Client Use Interface"></a>Client Use Interface</h2><p>Most of the pages share the same template. This templete can show information in the manner of “Card”. A card can have Title, Image and Description. A Web page adopt the templete can have one card or mulitple cards.<br>So, it can provide a consistent style across all your Web pages, not only easy to read but also easy to maintain.</p>
-<p><img src="/2017/11/20/React-Meteor-Project/MrTint.png" alt="image"> </p>
-<h2 id="Admin-Interface"><a href="#Admin-Interface" class="headerlink" title="Admin Interface"></a>Admin Interface</h2><p><strong>what you see is what you get</strong><br>After login the Admin accout, it’s very easy to edit the exist “Card” info or add a new “Card”.<br>Admin can adopt two type of “Card”, one is a Comparison Card with two images, another one have only one image.<br><img src="/2017/11/20/React-Meteor-Project/Mrtint-Edit.png" alt="image"><br><img src="/2017/11/20/React-Meteor-Project/New.png" alt="image"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2067,7 +2076,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2089,7 +2098,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Django,API,Django Rest Framework," />
+  <meta name="keywords" content="Django,Debug," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Source  A simple explain to TDDWhy should I do it: Tests have a short feedback loop, enabling you and your team to learn faster and adjust Less time is spent debugging, allowing you to spend more tim">
-<meta name="keywords" content="Django,API,Django Rest Framework">
+<meta name="description" content="Setting up Django Debug Toolbar install model 1pip install django-debug-toolbar  Edit Setting.py 12345678910111213141516171819202122INSTALLED_APPS = [    &amp;apos;django.contrib.admin&amp;apos;,    &amp;apos;dja">
+<meta name="keywords" content="Django,Debug">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Test-Driven Development (TDD)">
-<meta property="og:url" content="https://chunkai-meng.github.io.git/2017/12/23/Test-Driven-Development-TDD/index.html">
+<meta property="og:title" content="Django Debug">
+<meta property="og:url" content="https://chunkai-meng.github.io.git/2017/12/24/Django-Debug/index.html">
 <meta property="og:site_name" content="Chunkai&#39;s Blog">
-<meta property="og:description" content="Source  A simple explain to TDDWhy should I do it: Tests have a short feedback loop, enabling you and your team to learn faster and adjust Less time is spent debugging, allowing you to spend more tim">
+<meta property="og:description" content="Setting up Django Debug Toolbar install model 1pip install django-debug-toolbar  Edit Setting.py 12345678910111213141516171819202122INSTALLED_APPS = [    &amp;apos;django.contrib.admin&amp;apos;,    &amp;apos;dja">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-12-22T22:18:26.899Z">
+<meta property="og:updated_time" content="2017-12-24T03:26:47.849Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Test-Driven Development (TDD)">
-<meta name="twitter:description" content="Source  A simple explain to TDDWhy should I do it: Tests have a short feedback loop, enabling you and your team to learn faster and adjust Less time is spent debugging, allowing you to spend more tim">
+<meta name="twitter:title" content="Django Debug">
+<meta name="twitter:description" content="Setting up Django Debug Toolbar install model 1pip install django-debug-toolbar  Edit Setting.py 12345678910111213141516171819202122INSTALLED_APPS = [    &amp;apos;django.contrib.admin&amp;apos;,    &amp;apos;dja">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://chunkai-meng.github.io.git/2017/12/23/Test-Driven-Development-TDD/"/>
+  <link rel="canonical" href="https://chunkai-meng.github.io.git/2017/12/24/Django-Debug/"/>
 
 
 
 
 
-  <title>Test-Driven Development (TDD) | Chunkai's Blog</title>
+  <title>Django Debug | Chunkai's Blog</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/2017/12/23/Test-Driven-Development-TDD/">
+    <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/2017/12/24/Django-Debug/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chunkai Meng">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Test-Driven Development (TDD)</h1>
+          <h1 class="post-title" itemprop="name headline">Django Debug</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-23T11:07:52+13:00">
-                2017-12-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-24T16:04:30+13:00">
+                2017-12-24
               </time>
             
 
@@ -333,9 +333,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/12/23/Test-Driven-Development-TDD/#comments" itemprop="discussionUrl">
+                <a href="/2017/12/24/Django-Debug/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/12/23/Test-Driven-Development-TDD/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/12/24/Django-Debug/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -363,24 +363,18 @@
       
 
       
-        <blockquote>
-<p><a href="https://scotch.io/tutorials/build-a-rest-api-with-django-a-test-driven-approach-part-1#toc-django-rest-framework" target="_blank" rel="external">Source</a></p>
-</blockquote>
-<h1 id="A-simple-explain-to-TDD"><a href="#A-simple-explain-to-TDD" class="headerlink" title="A simple explain to TDD"></a>A simple explain to TDD</h1><h2 id="Why-should-I-do-it"><a href="#Why-should-I-do-it" class="headerlink" title="Why should I do it:"></a>Why should I do it:</h2><ul>
-<li>Tests have a short feedback loop, enabling you and your team to learn faster and adjust</li>
-<li>Less time is spent debugging, allowing you to spend more time writing code</li>
-<li>Tests act as documentation for your code!</li>
-<li>They improve code quality while reducing bugs</li>
-<li>After refactoring code, your tests will tell you whether the change has broken previously working code, and…</li>
-<li>Tests can prevent your hair line from receding!</li>
-</ul>
-<h2 id="This-is-how-it-works"><a href="#This-is-how-it-works" class="headerlink" title="This is how it works:"></a>This is how it works:</h2><ul>
-<li>Write a test. – The test will flesh out some functionality in your app</li>
-<li>Then, run the test – The test should fail, since there’s no code to make it pass.</li>
-<li>Write the code – To make the test pass</li>
-<li>Run the test – If it passes, you are confident that the code you’ve written meets the test requirements</li>
-<li>Refactor code – Remove duplication, prune large objects and make the code more readable. Re-run the tests every time you refactor the code</li>
-<li>Repeat – That’s it!</li>
+        <h1 id="Setting-up-Django-Debug-Toolbar"><a href="#Setting-up-Django-Debug-Toolbar" class="headerlink" title="Setting up Django Debug Toolbar"></a>Setting up Django Debug Toolbar</h1><ul>
+<li><p>install model</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install django-debug-toolbar</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Edit Setting.py</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">INSTALLED_APPS = [</span><br><span class="line">    &apos;django.contrib.admin&apos;,</span><br><span class="line">    &apos;django.contrib.auth&apos;,</span><br><span class="line">    &apos;django.contrib.contenttypes&apos;,</span><br><span class="line">    &apos;django.contrib.sessions&apos;,</span><br><span class="line">    &apos;django.contrib.messages&apos;,</span><br><span class="line">    &apos;django.contrib.staticfiles&apos;,</span><br><span class="line">    # ADD debug toolbar APP</span><br><span class="line">    &apos;debug_toolbar&apos;,</span><br><span class="line">    ....</span><br><span class="line"></span><br><span class="line">MIDDLEWARE = [</span><br><span class="line">    &apos;django.middleware.security.SecurityMiddleware&apos;,</span><br><span class="line">    &apos;django.contrib.sessions.middleware.SessionMiddleware&apos;,</span><br><span class="line">    &apos;django.middleware.common.CommonMiddleware&apos;,</span><br><span class="line">    &apos;django.middleware.csrf.CsrfViewMiddleware&apos;,</span><br><span class="line">    &apos;django.contrib.auth.middleware.AuthenticationMiddleware&apos;,</span><br><span class="line">    &apos;django.contrib.messages.middleware.MessageMiddleware&apos;,</span><br><span class="line">    &apos;django.middleware.clickjacking.XFrameOptionsMiddleware&apos;,</span><br><span class="line">    # Add Debug toolbar Middleware</span><br><span class="line">    &apos;debug_toolbar.middleware.DebugToolbarMiddleware&apos;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Edit <project_folder url.py=""></project_folder></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">from django.conf import settings</span><br><span class="line">....</span><br><span class="line"></span><br><span class="line">if settings.DEBUG is True:</span><br><span class="line">    import debug_toolbar</span><br><span class="line">    urlpatterns += [url(r&apos;^__debug__/&apos;, include(debug_toolbar.urls))]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Add Middleware</p>
+</li>
 </ul>
 
       
@@ -401,9 +395,7 @@
           
             <a href="/tags/Django/" rel="tag"># Django</a>
           
-            <a href="/tags/API/" rel="tag"># API</a>
-          
-            <a href="/tags/Django-Rest-Framework/" rel="tag"># Django Rest Framework</a>
+            <a href="/tags/Debug/" rel="tag"># Debug</a>
           
         </div>
       
@@ -416,8 +408,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/06/First-Django-App-on-Mac-Docker-4/" rel="next" title="First Django App on Mac Docker 4">
-                <i class="fa fa-chevron-left"></i> First Django App on Mac Docker 4
+              <a href="/2017/12/23/Test-Driven-Development-TDD/" rel="next" title="Test-Driven Development (TDD)">
+                <i class="fa fa-chevron-left"></i> Test-Driven Development (TDD)
               </a>
             
           </div>
@@ -425,10 +417,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/24/Django-Debug/" rel="prev" title="Django Debug">
-                Django Debug <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -583,7 +571,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#A-simple-explain-to-TDD"><span class="nav-number">1.</span> <span class="nav-text">A simple explain to TDD</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Why-should-I-do-it"><span class="nav-number">1.1.</span> <span class="nav-text">Why should I do it:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#This-is-how-it-works"><span class="nav-number">1.2.</span> <span class="nav-text">This is how it works:</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Setting-up-Django-Debug-Toolbar"><span class="nav-number">1.</span> <span class="nav-text">Setting up Django Debug Toolbar</span></a></li></ol></div>
             
 
           </div>
@@ -739,9 +727,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://chunkai-meng.github.io.git/2017/12/23/Test-Driven-Development-TDD/';
-          this.page.identifier = '2017/12/23/Test-Driven-Development-TDD/';
-          this.page.title = 'Test-Driven Development (TDD)';
+          this.page.url = 'https://chunkai-meng.github.io.git/2017/12/24/Django-Debug/';
+          this.page.identifier = '2017/12/24/Django-Debug/';
+          this.page.title = 'Django Debug';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://chunkai.disqus.com/embed.js';
