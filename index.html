@@ -262,6 +262,162 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/2017/12/24/Django-Deployment/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chunkai Meng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chunkai's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/24/Django-Deployment/" itemprop="url">Django Deployment</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-24T17:41:06+13:00">
+                2017-12-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/12/24/Django-Deployment/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/12/24/Django-Deployment/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Django-Deployment"><a href="#Django-Deployment" class="headerlink" title="Django Deployment"></a>Django Deployment</h1><h2 id="With-Pythonanywhere"><a href="#With-Pythonanywhere" class="headerlink" title="With Pythonanywhere"></a>With Pythonanywhere</h2><ul>
+<li><p>Upload to Github</p>
+</li>
+<li><p><a href="https://www.pythonanywhere.com" target="_blank" rel="external">https://www.pythonanywhere.com</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkvirtualenv --python=python3.6 dj</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Check the version of my project Django</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(proj) ➜  QualityHats git:(master) ✗ python</span><br><span class="line">Python 3.6.3 |Anaconda, Inc.| (default, Dec  5 2017, 17:30:25)</span><br><span class="line">[GCC 4.2.1 Compatible Clang 4.0.1 (tags/RELEASE_401/final)] on darwin</span><br><span class="line">Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.</span><br><span class="line">&gt;&gt;&gt; import django</span><br><span class="line">&gt;&gt;&gt; django.__version__</span><br><span class="line">&apos;1.11.8&apos;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(proj) 05:15 /bin $  pip install -U django==1.11.8</span><br><span class="line">Collecting django==1.11.8</span><br><span class="line">  Using cached Django-1.11.8-py2.py3-none-any.whl</span><br><span class="line">Collecting pytz (from django==1.11.8)</span><br><span class="line">  Using cached pytz-2017.3-py2.py3-none-any.whl</span><br><span class="line">Installing collected packages: pytz, django</span><br><span class="line">Successfully installed django-1.11.8 pytz-2017.3</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/chunkai-meng/QualityHats-Django.git</span><br><span class="line">cd QualityHats-Django</span><br><span class="line">pip install -r requirements.txt </span><br><span class="line">python manage.py migrate</span><br><span class="line"></span><br><span class="line"># if havn&apos;t created super user</span><br><span class="line">python manage.py createsuperuser &lt;username&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Back to Deshboard - Web - Add a new web app</li>
+<li>Go to “web app setup”<ul>
+<li>Virtualenv:  /home/hustmck/.virtualenvs/myproj</li>
+<li>Source code: /home/hustmck/QualityHats-Django</li>
+</ul>
+</li>
+<li>Edit WSGI configuration file:/var/www/hustmck_pythonanywhere_com_wsgi.py<ul>
+<li>delete the Hello World code</li>
+<li>Edit the Django code block<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"># +++++++++++ DJANGO +++++++++++</span><br><span class="line"># To use your own django app use code like this:</span><br><span class="line">import os</span><br><span class="line">import sys</span><br><span class="line">#</span><br><span class="line">## assuming your django settings file is at &apos;/home/hustmck/mysite/mysite/settings.py&apos;</span><br><span class="line">## and your manage.py is is at &apos;/home/hustmck/mysite/manage.py&apos;</span><br><span class="line">path = &apos;/home/hustmck/QualityHats-Django&apos;</span><br><span class="line">if path not in sys.path:</span><br><span class="line">    sys.path.append(path)</span><br><span class="line"></span><br><span class="line">os.chdir(path)</span><br><span class="line">os.environ.setdefault(&quot;DJANGO_SETTINGS_MODULE&quot;,&quot;qualityhats.settings&quot;)</span><br><span class="line"></span><br><span class="line">import django</span><br><span class="line">django.setup()</span><br><span class="line">#os.environ[&apos;DJANGO_SETTINGS_MODULE&apos;] = &apos;mysite.settings&apos;</span><br><span class="line">#</span><br><span class="line">## then, for django &gt;=1.5:</span><br><span class="line">from django.core.wsgi import get_wsgi_application</span><br><span class="line">application = get_wsgi_application()</span><br><span class="line">## or, for older django &lt;=1.4</span><br><span class="line">#import django.core.handlers.wsgi</span><br><span class="line">#application = django.core.handlers.wsgi.WSGIHandler()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/2017/12/24/Django-Debug/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1826,205 +1982,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/2017/11/20/Java-Network-Programming-ChatSystem/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Chunkai Meng">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chunkai's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/20/Java-Network-Programming-ChatSystem/" itemprop="url">Java Network Programming - ChatSystem Project</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-20T17:43:58+13:00">
-                2017-11-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Projects/" itemprop="url" rel="index">
-                    <span itemprop="name">Projects</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/11/20/Java-Network-Programming-ChatSystem/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/11/20/Java-Network-Programming-ChatSystem/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Java-ChatSystem"><a href="#Java-ChatSystem" class="headerlink" title="Java-ChatSystem"></a>Java-ChatSystem</h1><blockquote>
-<p>IDE Eclipse Version: Oxygen.1a Release (4.7.1a)<br>java version “1.8.0_144”<br>Java(TM) SE Runtime Environment (build 1.8.0_144-b01)<br>Developer: Chunkai<br><a href="https://github.com/chunkai-meng/Java-ChatSystem" target="_blank" rel="external">Github</a><br>Completed at Oct 2017</p>
-</blockquote>
-<h2 id="USAGE"><a href="#USAGE" class="headerlink" title="USAGE"></a>USAGE</h2><ul>
-<li>Clone the repository to you local disk</li>
-<li>Run “ChatServer.java” to start Server, please make sure that the 5000 port is not being used.</li>
-<li>Run some copy of “ChatGui.java” so you can send message to each other.</li>
-<li>Input the correct Server IP into Client, by default the server and client running on the same machine, the IP address already set up for you.</li>
-<li>Test Account(Usename/Password):<br>A/A<br>B/B<br>C/C<br>Bajie/B1234  </li>
-</ul>
-<h2 id="Functions"><a href="#Functions" class="headerlink" title="Functions"></a>Functions</h2><h3 id="Client"><a href="#Client" class="headerlink" title="Client:"></a>Client:</h3><p><img src="/2017/11/20/Java-Network-Programming-ChatSystem/Broadcast.png" alt="image"></p>
-<ul>
-<li>Send a basic text message to the server</li>
-<li>Receive text from the server</li>
-<li>Username/Password login<br>When account successfully login the login area Test Field will be set to disable, at the same time, the Connect Button text is set to be “Disconnect” waiting for user to disconnect.</li>
-<li>Display IP address/nickname of other chat clients</li>
-<li>Private messaging between users  <ul>
-<li>Design<br>By select a contact from the User List, the message will only be delivered to that person.  </li>
-<li>Implementation:<br>When sending a private message, the first msg being sent to server is of type: CHAT_MESSAGE. The second msg is the receiver name, the third msg is message itself.<br>The corresponding ClientHandler Thread maintain a total Client List will forward it to the right person.</li>
-</ul>
-</li>
-<li>Block/ignore user<br><img src="/2017/11/20/Java-Network-Programming-ChatSystem/C-blocked-by-B.png" alt="image"><ul>
-<li>Design:<br>When chose a user and click “Block/Unblock” button, this user will be block in this client.Right after the click, the background color of Blocked-User cell is set to Color Gray.If user A is block by user B, A will not received any notice about this blocking, this is for protecting B’s privacy.</li>
-<li>Implementation:<br>Each Client maintain two BlockUser ArrayList variables, one is the index of block-user in JList which is used to highlight cell, another ArrayList restore the block-user name for checking the incoming msg.</li>
-</ul>
-</li>
-<li>Enhanced GUI JList  <ul>
-<li>Design:<br>A checkbox is added to JList Cell to help distinguish select user and blocked user. The Checkbox always represent the current chatting friend. One Client can block as many users as it want.</li>
-<li>Implementation:<br>A CheckboxListCellRenderer class is use to render JList cells, this object is help render different cell background for the blocked users.</li>
-</ul>
-</li>
-</ul>
-<h3 id="Server"><a href="#Server" class="headerlink" title="Server:"></a>Server:</h3><ul>
-<li>Listen to the default 5000 port and create a new thread for each new connection.</li>
-<li>Receive text from a client</li>
-<li>Broadcast a text message received from a client to all the other clients connected to the server.</li>
-<li>Send the message to the specific person if Messge type is “CHAT_MESSAGE” and receiver is provided.</li>
-<li>When a new user is connected or an online user logout, broadcast the new online user list to all online accounts.</li>
-</ul>
-<h2 id="Documents-Description"><a href="#Documents-Description" class="headerlink" title="Documents Description"></a>Documents Description</h2><ul>
-<li>ChatServer.java: The entry of the Server Application, run this app to start server</li>
-<li>ChatGui.java:     The entry point of Chat Client,  run some of these app to start chatting.</li>
-<li>ClientHandler.java: One ClientHandler thread serve one client.</li>
-<li>readByLine.java:    Read registered user data from UserModel.txt (Restore Username and password)</li>
-<li>ServerConstants.java: Restore the constant variables which are used to defined the message type.</li>
-<li>run.sh is a bash script to recompile and run the server app.</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2075,7 +2032,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2097,7 +2054,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
