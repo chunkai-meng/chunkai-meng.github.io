@@ -344,33 +344,47 @@
       
         
           
-            <h1 id="Django-Deployment"><a href="#Django-Deployment" class="headerlink" title="Django Deployment"></a>Django Deployment</h1><h2 id="With-Pythonanywhere"><a href="#With-Pythonanywhere" class="headerlink" title="With Pythonanywhere"></a>With Pythonanywhere</h2><ul>
-<li><p>Upload to Github</p>
+            <h1 id="Django-Deployment"><a href="#Django-Deployment" class="headerlink" title="Django Deployment"></a>Django Deployment</h1><h2 id="Option-1-Deploy-to-www-pythonanywhere-com"><a href="#Option-1-Deploy-to-www-pythonanywhere-com" class="headerlink" title="Option 1: Deploy to www.pythonanywhere.com"></a>Option 1: Deploy to www.pythonanywhere.com</h2><ol>
+<li><p>Collect the requirement of you development environment<br>In development environment</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜  git:(master) ✗ source activate dj</span><br><span class="line">(dj) ➜  git:(master) ✗ pip freeze &gt; requirement.txt</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><a href="https://www.pythonanywhere.com" target="_blank" rel="external">https://www.pythonanywhere.com</a></p>
+<li><p>Upload code to Github </p>
+</li>
+<li><p>Register an account on <a href="https://www.pythonanywhere.com" target="_blank" rel="external">https://www.pythonanywhere.com</a></p>
+</li>
+<li><p>Create a Web App</p>
+</li>
+<li><p>Create Virtual Env:<br>Open a Console</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkvirtualenv --python=python3.6 dj</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>Check the version of my project Django</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(proj) ➜  QualityHats git:(master) ✗ python</span><br><span class="line">Python 3.6.3 |Anaconda, Inc.| (default, Dec  5 2017, 17:30:25)</span><br><span class="line">[GCC 4.2.1 Compatible Clang 4.0.1 (tags/RELEASE_401/final)] on darwin</span><br><span class="line">Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.</span><br><span class="line">&gt;&gt;&gt; import django</span><br><span class="line">&gt;&gt;&gt; django.__version__</span><br><span class="line">&apos;1.11.8&apos;</span><br></pre></td></tr></table></figure>
+<li><p>Download code and install required packages</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/chunkai-meng/QualityHats-Django.git</span><br><span class="line">cd QualityHats-Django</span><br><span class="line">pip install -r requirements.txt </span><br><span class="line">python manage.py migrate</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(proj) 05:15 /bin $  pip install -U django==1.11.8</span><br><span class="line">Collecting django==1.11.8</span><br><span class="line">  Using cached Django-1.11.8-py2.py3-none-any.whl</span><br><span class="line">Collecting pytz (from django==1.11.8)</span><br><span class="line">  Using cached pytz-2017.3-py2.py3-none-any.whl</span><br><span class="line">Installing collected packages: pytz, django</span><br><span class="line">Successfully installed django-1.11.8 pytz-2017.3</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/chunkai-meng/QualityHats-Django.git</span><br><span class="line">cd QualityHats-Django</span><br><span class="line">pip install -r requirements.txt </span><br><span class="line">python manage.py migrate</span><br><span class="line"></span><br><span class="line"># if havn&apos;t created super user</span><br><span class="line">python manage.py createsuperuser &lt;username&gt;</span><br></pre></td></tr></table></figure>
+<li><p>Create a supper user</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># if havn&apos;t created super user</span><br><span class="line">python manage.py createsuperuser &lt;username&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Back to Deshboard Page - Web - Add a new web app</p>
 <ul>
-<li>Back to Deshboard - Web - Add a new web app</li>
-<li>Go to “web app setup”<ul>
+<li>Go to “web app setup” Page, input the following setting (change to your own)<ul>
 <li>Virtualenv:  /home/hustmck/.virtualenvs/myproj</li>
 <li>Source code: /home/hustmck/QualityHats-Django</li>
 </ul>
 </li>
 <li>Edit WSGI configuration file:/var/www/hustmck_pythonanywhere_com_wsgi.py<ul>
 <li>delete the Hello World code</li>
-<li>Edit the Django code block<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"># +++++++++++ DJANGO +++++++++++</span><br><span class="line"># To use your own django app use code like this:</span><br><span class="line">import os</span><br><span class="line">import sys</span><br><span class="line">#</span><br><span class="line">## assuming your django settings file is at &apos;/home/hustmck/mysite/mysite/settings.py&apos;</span><br><span class="line">## and your manage.py is is at &apos;/home/hustmck/mysite/manage.py&apos;</span><br><span class="line">path = &apos;/home/hustmck/QualityHats-Django&apos;</span><br><span class="line">if path not in sys.path:</span><br><span class="line">    sys.path.append(path)</span><br><span class="line"></span><br><span class="line">os.chdir(path)</span><br><span class="line">os.environ.setdefault(&quot;DJANGO_SETTINGS_MODULE&quot;,&quot;qualityhats.settings&quot;)</span><br><span class="line"></span><br><span class="line">import django</span><br><span class="line">django.setup()</span><br><span class="line">#os.environ[&apos;DJANGO_SETTINGS_MODULE&apos;] = &apos;mysite.settings&apos;</span><br><span class="line">#</span><br><span class="line">## then, for django &gt;=1.5:</span><br><span class="line">from django.core.wsgi import get_wsgi_application</span><br><span class="line">application = get_wsgi_application()</span><br><span class="line">## or, for older django &lt;=1.4</span><br><span class="line">#import django.core.handlers.wsgi</span><br><span class="line">#application = django.core.handlers.wsgi.WSGIHandler()</span><br></pre></td></tr></table></figure>
+<li>Edit the Django code block as below<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># +++++++++++ DJANGO +++++++++++</span></span><br><span class="line"><span class="comment"># To use your own django app use code like this:</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">## assuming your django settings file is at '/home/hustmck/mysite/mysite/settings.py'</span></span><br><span class="line"><span class="comment">## and your manage.py is is at '/home/hustmck/mysite/manage.py'</span></span><br><span class="line">path = <span class="string">'/home/hustmck/QualityHats-Django'</span></span><br><span class="line"><span class="keyword">if</span> path <span class="keyword">not</span> <span class="keyword">in</span> sys.path:</span><br><span class="line">    sys.path.append(path)</span><br><span class="line"></span><br><span class="line">os.chdir(path)</span><br><span class="line">os.environ.setdefault(<span class="string">"DJANGO_SETTINGS_MODULE"</span>,<span class="string">"qualityhats.settings"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> django</span><br><span class="line">django.setup()</span><br><span class="line"><span class="comment">#os.environ['DJANGO_SETTINGS_MODULE'] = 'mysite.settings'</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">## then, for django &gt;=1.5:</span></span><br><span class="line"><span class="keyword">from</span> django.core.wsgi <span class="keyword">import</span> get_wsgi_application</span><br><span class="line">application = get_wsgi_application()</span><br><span class="line"><span class="comment">## or, for older django &lt;=1.4</span></span><br><span class="line"><span class="comment">#import django.core.handlers.wsgi</span></span><br><span class="line"><span class="comment">#application = django.core.handlers.wsgi.WSGIHandler()</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ul>
-
+</li>
+<li><p>Reload your app</p>
+</li>
+<li><p>Open your URL (Open Dashboard - Web tab - the link is on the top)</p>
+</li>
+</ol>
+<h2 id="Deploy-to-AWS"><a href="#Deploy-to-AWS" class="headerlink" title="Deploy to AWS"></a>Deploy to AWS</h2><p>coming soon</p>
+<h2 id="Deploy-to-Heroku"><a href="#Deploy-to-Heroku" class="headerlink" title="Deploy to Heroku"></a>Deploy to Heroku</h2>
           
         
       
