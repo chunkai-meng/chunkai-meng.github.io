@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Mac Docker 创建第一个Django 应用，Part 4 参考原文：Writing your first Django app, part 4本文Python搭建在 Django Compose + Djang  执行Python需进入web server容器中，请参看[第一步：在Mac构建Django 容器]翻译整理：CK  简单的表单处理以及精简代码 1. 简单表单polls/temp">
+<meta name="description" content="1. Mac Docker 创建第一个Django 应用，Part 4 参考原文：Writing your first Django app, part 4本文Python搭建在 Django Compose + Djang  执行Python需进入web server容器中，请参看[第一步：在Mac构建Django 容器]翻译整理：CK  简单的表单处理以及精简代码 1.1. 1. 简单表单po">
 <meta property="og:type" content="article">
 <meta property="og:title" content="First Django App on Mac Docker - 4">
 <meta property="og:url" content="https://chunkai-meng.github.io.git/2017/12/06/First-Django-App-on-Mac-Docker-4/index.html">
 <meta property="og:site_name" content="Chunkai&#39;s Blog">
-<meta property="og:description" content="Mac Docker 创建第一个Django 应用，Part 4 参考原文：Writing your first Django app, part 4本文Python搭建在 Django Compose + Djang  执行Python需进入web server容器中，请参看[第一步：在Mac构建Django 容器]翻译整理：CK  简单的表单处理以及精简代码 1. 简单表单polls/temp">
+<meta property="og:description" content="1. Mac Docker 创建第一个Django 应用，Part 4 参考原文：Writing your first Django app, part 4本文Python搭建在 Django Compose + Djang  执行Python需进入web server容器中，请参看[第一步：在Mac构建Django 容器]翻译整理：CK  简单的表单处理以及精简代码 1.1. 1. 简单表单po">
 <meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2017-12-26T22:11:54.294Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="First Django App on Mac Docker - 4">
-<meta name="twitter:description" content="Mac Docker 创建第一个Django 应用，Part 4 参考原文：Writing your first Django app, part 4本文Python搭建在 Django Compose + Djang  执行Python需进入web server容器中，请参看[第一步：在Mac构建Django 容器]翻译整理：CK  简单的表单处理以及精简代码 1. 简单表单polls/temp">
+<meta name="twitter:description" content="1. Mac Docker 创建第一个Django 应用，Part 4 参考原文：Writing your first Django app, part 4本文Python搭建在 Django Compose + Djang  执行Python需进入web server容器中，请参看[第一步：在Mac构建Django 容器]翻译整理：CK  简单的表单处理以及精简代码 1.1. 1. 简单表单po">
 
 
 
@@ -373,11 +373,11 @@
       
 
       
-        <h1 id="Mac-Docker-创建第一个Django-应用，Part-4"><a href="#Mac-Docker-创建第一个Django-应用，Part-4" class="headerlink" title="Mac Docker 创建第一个Django 应用，Part 4"></a>Mac Docker 创建第一个Django 应用，Part 4</h1><blockquote>
+        <h1 id="Mac-Docker-创建第一个Django-应用，Part-4">1. Mac Docker 创建第一个Django 应用，Part 4</h1><blockquote>
 <p>参考原文：<a href="https://docs.djangoproject.com/en/1.11/intro/tutorial04/" target="_blank" rel="external">Writing your first Django app, part 4</a><br>本文Python搭建在 Django Compose + Djang  执行Python需进入web server容器中，请参看[第一步：在Mac构建Django 容器]<br>翻译整理：CK</p>
 </blockquote>
 <p>简单的表单处理以及精简代码</p>
-<h2 id="1-简单表单"><a href="#1-简单表单" class="headerlink" title="1. 简单表单"></a>1. 简单表单</h2><p><strong>polls/templates/polls/detail.html</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;&#123;&#123; question.question_text &#125;&#125;&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">&#123;% if error_message %&#125;&lt;p&gt;&lt;strong&gt;&#123;&#123; error_message &#125;&#125;&lt;/strong&gt;&lt;/p&gt;&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">&lt;form action=&quot;&#123;% url &apos;polls:vote&apos; question.id %&#125;&quot; method=&quot;post&quot;&gt;</span><br><span class="line">&#123;% csrf_token %&#125;</span><br><span class="line">&#123;% for choice in question.choice_set.all %&#125;</span><br><span class="line">    &lt;input type=&quot;radio&quot; name=&quot;choice&quot; id=&quot;choice&#123;&#123; forloop.counter &#125;&#125;&quot; value=&quot;&#123;&#123; choice.id &#125;&#125;&quot; /&gt;</span><br><span class="line">    &lt;label for=&quot;choice&#123;&#123; forloop.counter &#125;&#125;&quot;&gt;&#123;&#123; choice.choice_text &#125;&#125;&lt;/label&gt;&lt;br /&gt;</span><br><span class="line">&#123;% endfor %&#125;</span><br><span class="line">&lt;input type=&quot;submit&quot; value=&quot;Vote&quot; /&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="1-简单表单">1.1. 1. 简单表单</h2><p><strong>polls/templates/polls/detail.html</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;&#123;&#123; question.question_text &#125;&#125;&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">&#123;% if error_message %&#125;&lt;p&gt;&lt;strong&gt;&#123;&#123; error_message &#125;&#125;&lt;/strong&gt;&lt;/p&gt;&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">&lt;form action=&quot;&#123;% url &apos;polls:vote&apos; question.id %&#125;&quot; method=&quot;post&quot;&gt;</span><br><span class="line">&#123;% csrf_token %&#125;</span><br><span class="line">&#123;% for choice in question.choice_set.all %&#125;</span><br><span class="line">    &lt;input type=&quot;radio&quot; name=&quot;choice&quot; id=&quot;choice&#123;&#123; forloop.counter &#125;&#125;&quot; value=&quot;&#123;&#123; choice.id &#125;&#125;&quot; /&gt;</span><br><span class="line">    &lt;label for=&quot;choice&#123;&#123; forloop.counter &#125;&#125;&quot;&gt;&#123;&#123; choice.choice_text &#125;&#125;&lt;/label&gt;&lt;br /&gt;</span><br><span class="line">&#123;% endfor %&#125;</span><br><span class="line">&lt;input type=&quot;submit&quot; value=&quot;Vote&quot; /&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -569,7 +569,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Mac-Docker-创建第一个Django-应用，Part-4"><span class="nav-number">1.</span> <span class="nav-text">Mac Docker 创建第一个Django 应用，Part 4</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-简单表单"><span class="nav-number">1.1.</span> <span class="nav-text">1. 简单表单</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Mac-Docker-创建第一个Django-应用，Part-4"><span class="nav-number">1.</span> <span class="nav-text">1. Mac Docker 创建第一个Django 应用，Part 4</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-简单表单"><span class="nav-number">1.1.</span> <span class="nav-text">1.1. 1. 简单表单</span></a></li></ol></li></ol></div>
             
 
           </div>

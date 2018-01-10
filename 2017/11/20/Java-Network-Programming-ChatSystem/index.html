@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="Java-ChatSystem IDE Eclipse Version: Oxygen.1a Release (4.7.1a)java version “1.8.0_144”Java(TM) SE Runtime Environment (build 1.8.0_144-b01)Developer: ChunkaiGithubCompleted at Oct 2017  USAGE Clone t">
+<meta name="description" content="1. Java-ChatSystem IDE Eclipse Version: Oxygen.1a Release (4.7.1a)java version “1.8.0_144”Java(TM) SE Runtime Environment (build 1.8.0_144-b01)Developer: ChunkaiGithubCompleted at Oct 2017  1.1. USAGE">
 <meta name="keywords" content="Java,Network Programming,Project,Multiple Threads">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java Network Programming - ChatSystem Project">
 <meta property="og:url" content="https://chunkai-meng.github.io.git/2017/11/20/Java-Network-Programming-ChatSystem/index.html">
 <meta property="og:site_name" content="Chunkai&#39;s Blog">
-<meta property="og:description" content="Java-ChatSystem IDE Eclipse Version: Oxygen.1a Release (4.7.1a)java version “1.8.0_144”Java(TM) SE Runtime Environment (build 1.8.0_144-b01)Developer: ChunkaiGithubCompleted at Oct 2017  USAGE Clone t">
+<meta property="og:description" content="1. Java-ChatSystem IDE Eclipse Version: Oxygen.1a Release (4.7.1a)java version “1.8.0_144”Java(TM) SE Runtime Environment (build 1.8.0_144-b01)Developer: ChunkaiGithubCompleted at Oct 2017  1.1. USAGE">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://chunkai-meng.github.io.git/2017/11/20/Java-Network-Programming-ChatSystem/Broadcast.png">
 <meta property="og:image" content="https://chunkai-meng.github.io.git/2017/11/20/Java-Network-Programming-ChatSystem/C-blocked-by-B.png">
 <meta property="og:updated_time" content="2017-11-22T00:35:47.498Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java Network Programming - ChatSystem Project">
-<meta name="twitter:description" content="Java-ChatSystem IDE Eclipse Version: Oxygen.1a Release (4.7.1a)java version “1.8.0_144”Java(TM) SE Runtime Environment (build 1.8.0_144-b01)Developer: ChunkaiGithubCompleted at Oct 2017  USAGE Clone t">
+<meta name="twitter:description" content="1. Java-ChatSystem IDE Eclipse Version: Oxygen.1a Release (4.7.1a)java version “1.8.0_144”Java(TM) SE Runtime Environment (build 1.8.0_144-b01)Developer: ChunkaiGithubCompleted at Oct 2017  1.1. USAGE">
 <meta name="twitter:image" content="https://chunkai-meng.github.io.git/2017/11/20/Java-Network-Programming-ChatSystem/Broadcast.png">
 
 
@@ -366,17 +366,17 @@
       
 
       
-        <h1 id="Java-ChatSystem"><a href="#Java-ChatSystem" class="headerlink" title="Java-ChatSystem"></a>Java-ChatSystem</h1><blockquote>
+        <h1 id="Java-ChatSystem">1. Java-ChatSystem</h1><blockquote>
 <p>IDE Eclipse Version: Oxygen.1a Release (4.7.1a)<br>java version “1.8.0_144”<br>Java(TM) SE Runtime Environment (build 1.8.0_144-b01)<br>Developer: Chunkai<br><a href="https://github.com/chunkai-meng/Java-ChatSystem" target="_blank" rel="external">Github</a><br>Completed at Oct 2017</p>
 </blockquote>
-<h2 id="USAGE"><a href="#USAGE" class="headerlink" title="USAGE"></a>USAGE</h2><ul>
+<h2 id="USAGE">1.1. USAGE</h2><ul>
 <li>Clone the repository to you local disk</li>
 <li>Run “ChatServer.java” to start Server, please make sure that the 5000 port is not being used.</li>
 <li>Run some copy of “ChatGui.java” so you can send message to each other.</li>
 <li>Input the correct Server IP into Client, by default the server and client running on the same machine, the IP address already set up for you.</li>
 <li>Test Account(Usename/Password):<br>A/A<br>B/B<br>C/C<br>Bajie/B1234  </li>
 </ul>
-<h2 id="Functions"><a href="#Functions" class="headerlink" title="Functions"></a>Functions</h2><h3 id="Client"><a href="#Client" class="headerlink" title="Client:"></a>Client:</h3><p><img src="/2017/11/20/Java-Network-Programming-ChatSystem/Broadcast.png" alt="image"></p>
+<h2 id="Functions">1.2. Functions</h2><h3 id="Client">1.2.1. Client:</h3><p><img src="/2017/11/20/Java-Network-Programming-ChatSystem/Broadcast.png" alt="image"></p>
 <ul>
 <li>Send a basic text message to the server</li>
 <li>Receive text from the server</li>
@@ -398,14 +398,14 @@
 </ul>
 </li>
 </ul>
-<h3 id="Server"><a href="#Server" class="headerlink" title="Server:"></a>Server:</h3><ul>
+<h3 id="Server">1.2.2. Server:</h3><ul>
 <li>Listen to the default 5000 port and create a new thread for each new connection.</li>
 <li>Receive text from a client</li>
 <li>Broadcast a text message received from a client to all the other clients connected to the server.</li>
 <li>Send the message to the specific person if Messge type is “CHAT_MESSAGE” and receiver is provided.</li>
 <li>When a new user is connected or an online user logout, broadcast the new online user list to all online accounts.</li>
 </ul>
-<h2 id="Documents-Description"><a href="#Documents-Description" class="headerlink" title="Documents Description"></a>Documents Description</h2><ul>
+<h2 id="Documents-Description">1.3. Documents Description</h2><ul>
 <li>ChatServer.java: The entry of the Server Application, run this app to start server</li>
 <li>ChatGui.java:     The entry point of Chat Client,  run some of these app to start chatting.</li>
 <li>ClientHandler.java: One ClientHandler thread serve one client.</li>
@@ -616,7 +616,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-ChatSystem"><span class="nav-number">1.</span> <span class="nav-text">Java-ChatSystem</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#USAGE"><span class="nav-number">1.1.</span> <span class="nav-text">USAGE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Functions"><span class="nav-number">1.2.</span> <span class="nav-text">Functions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Client"><span class="nav-number">1.2.1.</span> <span class="nav-text">Client:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Server"><span class="nav-number">1.2.2.</span> <span class="nav-text">Server:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Documents-Description"><span class="nav-number">1.3.</span> <span class="nav-text">Documents Description</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-ChatSystem"><span class="nav-number">1.</span> <span class="nav-text">1. Java-ChatSystem</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#USAGE"><span class="nav-number">1.1.</span> <span class="nav-text">1.1. USAGE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Functions"><span class="nav-number">1.2.</span> <span class="nav-text">1.2. Functions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Client"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.2.1. Client:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Server"><span class="nav-number">1.2.2.</span> <span class="nav-text">1.2.2. Server:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Documents-Description"><span class="nav-number">1.3.</span> <span class="nav-text">1.3. Documents Description</span></a></li></ol></li></ol></div>
             
 
           </div>
