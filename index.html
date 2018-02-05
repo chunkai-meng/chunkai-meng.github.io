@@ -262,6 +262,233 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/2018/02/05/Python-Regular-Expression/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chunkai Meng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chunkai's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/05/Python-Regular-Expression/" itemprop="url">Python - Regular Expression</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-05T18:10:34+13:00">
+                2018-02-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Languages/" itemprop="url" rel="index">
+                    <span itemprop="name">Languages</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Languages/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/02/05/Python-Regular-Expression/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/02/05/Python-Regular-Expression/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Regular-Expression">1. Regular Expression</h1><h2 id="模式匹配">1.1. 模式匹配</h2><ul>
+<li>万能字符： “.”</li>
+<li>重复操作符：“+”，”?”, “*”</li>
+<li>也可指定重复次数： {}</li>
+<li>重复操作符默认是贪婪的，它会一直寻找它的边界直到最后一个边界出现为止[1]</li>
+<li>给重复操作符添加一个“？” 可以让万能字符匹配尽可能少的次数[2]</li>
+<li>字符集： [] 方括号扩起来的字符集，<ul>
+<li>‘[a-zA-Z0-9]’ 短斜杠标志起点终点</li>
+<li>‘[^abc]’ 反选</li>
+</ul>
+</li>
+<li>Subpatterns: ()</li>
+</ul>
+<h2 id="re-模块的常用方法">1.2. re 模块的常用方法</h2><table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>compile(pattern[, flags])</td>
+<td>从一个规则表达式字符串创建模式对象</td>
+</tr>
+<tr>
+<td>search(pattern，string[, flags]</td>
+<td>在 string 中查找模式</td>
+</tr>
+<tr>
+<td>match(pattern, string[, flags])</td>
+<td>从字符串的起始处匹配模式</td>
+</tr>
+<tr>
+<td>split(pattern, string[, maxsplit=0])</td>
+<td>根据模式的出现分割字符串</td>
+</tr>
+<tr>
+<td>findall(pattern, string)</td>
+<td>返回一个 list 包含 string 中所有出现的模式</td>
+</tr>
+<tr>
+<td>sub(pat, repl, string[, count=0])</td>
+<td>将出现的模式替换成 repl</td>
+</tr>
+<tr>
+<td>escape(string)</td>
+<td>将字符串中的所有特殊规则表达式字符转义</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span>&gt;&gt; import re</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; string = "hello world"</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; pat = r' '</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; if re.search(pat, string): print('Found it!')</span><br><span class="line">...</span><br><span class="line">Found it!</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; some_text = 'alpha, beta,,,,gamma    delta'</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; re.split('[, ]+', some_text)</span><br><span class="line">['alpha', 'beta', 'gamma', 'delta']</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; pat = '[a-zA-z]+'</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; text = '"Hm... Err --- are you sure?" he said, sounding insecure.'</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; re.findall(pat, text)</span><br><span class="line">['Hm', 'Err', 'are', 'you', 'sure', 'he', 'said', 'sounding', 'insecure']</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; pat = '&#123;name&#125;'</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; text = 'Dear &#123;name&#125;'</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; re.sub(pat, 'Chunkai', text)</span><br><span class="line">'Dear Chunkai'</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; re.escape('www.python.org')</span><br><span class="line">'www\\.python\\.org'</span><br></pre></td></tr></table></figure>
+<h2 id="Match-对象及分组提取">1.3. Match 对象及分组提取</h2><ul>
+<li><p>分组提取</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; m = re.match(r&apos;www\.(.*)\..&#123;3&#125;&apos;, &apos;www.python.org&apos;)</span><br><span class="line">&gt;&gt;&gt; m.group(1)</span><br><span class="line">&apos;python&apos;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>替换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; emphasis_pattern = re.compile(r&apos;&apos;&apos;</span><br><span class="line">... \*                  # Beginning emphasis tag -- an asterisk</span><br><span class="line">... (                   # Beginning group for capturing phrase</span><br><span class="line">... [^\*]+              # Capture anything except asterisks</span><br><span class="line">... )                   # End group</span><br><span class="line">... \*                  # Ending emphasis tag</span><br><span class="line">... &apos;&apos;&apos;, re.VERBOSE)</span><br><span class="line">&gt;&gt;&gt; re.sub(emphasis_pattern, r&apos;&lt;em&gt;\1&lt;em&gt;&apos;, &apos;hello, *world*!&apos;)</span><br><span class="line">&apos;hello, &lt;em&gt;world&lt;em&gt;!&apos;</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; emphasis_pattern = r&apos;\*(.+)\*&apos;          #[1]</span><br><span class="line">&gt;&gt;&gt; re.sub(emphasis_pattern, r&apos;&lt;em&gt;\1&lt;em&gt;&apos;, &apos;hello, *world*! *my son*&apos;)</span><br><span class="line">&apos;hello, &lt;em&gt;world*! *my son&lt;em&gt;&apos;</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; emphasis_pattern = r&apos;\*(.+?)\*&apos;         #[2]</span><br><span class="line">&gt;&gt;&gt; re.sub(emphasis_pattern, r&apos;&lt;em&gt;\1&lt;em&gt;&apos;, &apos;hello, *world*! *my son*&apos;)</span><br><span class="line">&apos;hello, &lt;em&gt;world&lt;em&gt;! &lt;em&gt;my son&lt;em</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="模板替换">1.4. 模板替换</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># templates.py</span></span><br><span class="line"><span class="keyword">import</span> fileinput, re</span><br><span class="line"></span><br><span class="line"><span class="comment"># Matches fields enclosed in square brackets:</span></span><br><span class="line">field_pat = re.compile(<span class="string">r'\[(.+?)\]'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># We'll collect variables in this:</span></span><br><span class="line">scope = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># This is used in re.sub:</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">replacement</span><span class="params">(match)</span>:</span></span><br><span class="line">    code = match.group(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># If the field can be evaluated, return it:</span></span><br><span class="line">        <span class="keyword">return</span> str(eval(code, scope))</span><br><span class="line">    <span class="keyword">except</span> SyntaxError:</span><br><span class="line">        <span class="comment"># Otherwise, execute the assignment in the same scope ... exec code in scope</span></span><br><span class="line">        exec(code, scope)</span><br><span class="line">        <span class="comment"># ... and return an empty string:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">''</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Get all the text as a single string:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># (There are other ways of doing this; see Chapter 11)</span></span><br><span class="line">lines = []</span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> fileinput.input():</span><br><span class="line">    lines.append(line)</span><br><span class="line">text = <span class="string">''</span>.join(lines)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Substitute all the occurrences of the field pattern:</span></span><br><span class="line">print(field_pat.sub(replacement, text))</span><br></pre></td></tr></table></figure>
+<p>template.txt<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[import time]</span><br><span class="line">Dear [name],</span><br><span class="line"></span><br><span class="line">I would like to learn how to program.</span><br><span class="line">I hear you use the [language] language a lot -- is it something I should consider?</span><br><span class="line"></span><br><span class="line">And, by the way, is [email] your correct email address?</span><br><span class="line"></span><br><span class="line">Fooville,</span><br><span class="line">[time.asctime()]</span><br><span class="line">Oscar Frozzbozz</span><br></pre></td></tr></table></figure></p>
+<p>magnus.txt<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[name = &apos;Magnus Lie Hetland&apos; ]</span><br><span class="line">[email = &apos;magnus@foo.bar&apos; ]</span><br><span class="line">[language = &apos;python&apos; ]</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python templates.py magnus.txt template.txt</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/2018/01/16/Eight-Queens-Problem/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -958,159 +1185,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/2017/12/29/Useful-Link/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Chunkai Meng">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chunkai's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/29/Useful-Link/" itemprop="url">Useful Link</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-29T15:23:35+13:00">
-                2017-12-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Others/" itemprop="url" rel="index">
-                    <span itemprop="name">Others</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/12/29/Useful-Link/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/12/29/Useful-Link/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="https://djangosnippets.org" target="_blank" rel="external">Useful Django Snippets</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1161,7 +1235,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1172,7 +1246,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1183,7 +1257,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">33</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
