@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="This is a cheat sheet I reorganized, it’s aim all the Symbols or Greek letters could be appear in the R markdown, some of them can also be use in reglar markdown files. [Click]">
+<meta name="description" content="This is a cheat sheet I reorganized, it’s aim all the Symbols or Greek letters could be appear in the R markdown, some of them can also be use in reglar markdown files. [Click] 部分内容整理自Oil Tang希腊字母表来自">
 <meta name="keywords" content="Data Science,R,Statistics">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mathematical Formula in R Markdown">
 <meta property="og:url" content="https://chunkai-meng.github.io.git/Blog/20171118/Mathematical-Formula-in-R-Markdown/index.html">
 <meta property="og:site_name" content="Chunkai&#39;s Blog">
-<meta property="og:description" content="This is a cheat sheet I reorganized, it’s aim all the Symbols or Greek letters could be appear in the R markdown, some of them can also be use in reglar markdown files. [Click]">
+<meta property="og:description" content="This is a cheat sheet I reorganized, it’s aim all the Symbols or Greek letters could be appear in the R markdown, some of them can also be use in reglar markdown files. [Click] 部分内容整理自Oil Tang希腊字母表来自">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-11-21T00:45:22.926Z">
+<meta property="og:updated_time" content="2018-02-06T15:07:56.829Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mathematical Formula in R Markdown">
-<meta name="twitter:description" content="This is a cheat sheet I reorganized, it’s aim all the Symbols or Greek letters could be appear in the R markdown, some of them can also be use in reglar markdown files. [Click]">
+<meta name="twitter:description" content="This is a cheat sheet I reorganized, it’s aim all the Symbols or Greek letters could be appear in the R markdown, some of them can also be use in reglar markdown files. [Click] 部分内容整理自Oil Tang希腊字母表来自">
 
 
 
@@ -363,7 +363,397 @@
       
 
       
-        <p>This is a cheat sheet I reorganized, it’s aim all the Symbols or Greek letters could be appear in the R markdown, some of them can also be use in reglar markdown files. <a href="http://rpubs.com/Chunkai/Mathematical-Formula-in-R-Markdown" target="_blank" rel="noopener">[Click]</a></p>
+        <blockquote>
+<p>This is a cheat sheet I reorganized, it’s aim all the Symbols or Greek letters could be appear in the R markdown, some of them can also be use in reglar markdown files. <a href="http://rpubs.com/Chunkai/Mathematical-Formula-in-R-Markdown" target="_blank" rel="noopener">[Click]</a></p>
+<p>部分内容整理自<a href="http://oiltang.com/2014/05/04/markdown-and-mathjax/" target="_blank" rel="noopener">Oil Tang</a><br>希腊字母表来自维基百科<br>Maintainer: Chunkai</p>
+</blockquote>
+<h1 id="如何插入公式"><a href="#如何插入公式" class="headerlink" title="如何插入公式"></a>如何插入公式</h1><p>LaTeX的数学公式有两种：行中公式和独立公式。行中公式放在文中与其它文字混编，独立公式单独成行。</p>
+<p>行中公式可以用如下两种方法表示：</p>
+<p>＼(数学公式＼)　或　\$数学公式\$（要把人民币符号换成美元符号）</p>
+<p>独立公式可以用如下两种方法表示：</p>
+<p>＼[数学公式＼]　或　\$ \$数学公式\$ \$（要把人民币符号换成美元符号）</p>
+<p>例子：<br>J\alpha(x) = \sum{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac{x}{2} }\right)}^{2m + \alpha}</p>
+<p>显示：<br>$$<br>J\alpha(x) = \sum{m=0}^\infty \frac{(-1)^m}<br>{m! \Gamma (m + \alpha + 1)} {\left({ \frac{x}{2} }\right)}^{2m + \alpha}<br>$$</p>
+<h1 id="如何输入上下标"><a href="#如何输入上下标" class="headerlink" title="如何输入上下标"></a>如何输入上下标</h1><p>\^表示上标, _表示下标。如果上下标的内容多于一个字符，要用{}把这些内容括起来当成一个整体。上下标是可以嵌套的，也可以同时使用。</p>
+<p>例子：x^{y^z}=(1+{\rm e}^x)^{-2xy^w}</p>
+<p>显示： $$x^{y^z}=(1+\rm {e}^x)^{-2xy^w}$$</p>
+<p>另外，如果要在左右两边都有上下标，可以用\sideset命令。</p>
+<p>例子：\sideset{^12}{^34}\bigotimes</p>
+<p>显示： $$\sideset{^12}{^34}\bigotimes$$</p>
+<h1 id="如何输入括号和分隔符"><a href="#如何输入括号和分隔符" class="headerlink" title="如何输入括号和分隔符"></a>如何输入括号和分隔符</h1><p>()、[]和|表示自己，{}表示{}。当要显示大号的括号或分隔符时，要用\left和\right命令。</p>
+<p>例子：f(x,y,z) = 3y^2z \left( 3+\frac{7x+5}{1+y^2} \right)</p>
+<p>显示： $$f(x,y,z) = 3y^2z \left( 3+\frac{7x+5}{1+y^2} \right)$$</p>
+<p>有时候要用 \left. 或 \right. 进行匹配而不显示本身。</p>
+<p>例子：\left. \frac {\rm du} {\rm dx} \right| _{x=0}<br>\rm 空格 可以改变其后的text格式为正常格式（默认公式中的字母为斜体）,其他格式可以参照#13<br>显示：  $$\left. \frac{ {\rm d}u}{ {\rm d}x} \right| _{x=0}$$</p>
+<h1 id="如何输入分数"><a href="#如何输入分数" class="headerlink" title="如何输入分数"></a>如何输入分数</h1><p>例子：\frac{1}{3}　或　1 \over 3</p>
+<p>显示： $\frac{1}{3}$ 　或   $1 \over 3$</p>
+<h1 id="如何输入开方"><a href="#如何输入开方" class="headerlink" title="如何输入开方"></a>如何输入开方</h1><p>例子：\sqrt{2}　和　\sqrt[n]{3}</p>
+<p>显示： $\sqrt{2}$ 　和　 $\sqrt[n]{3}$</p>
+<h1 id="如何输入省略号"><a href="#如何输入省略号" class="headerlink" title="如何输入省略号"></a>如何输入省略号</h1><p>数学公式中常见的省略号有4种，<br>\ldots 表示与文本底线对齐的省略号，<br>\cdots 表示与文本中线对齐的省略号,<br>\vdots 表示纵向排列的省略号,<br>\ddots 表示西方向排列的省略号。</p>
+<p>例子：f(x1,x2,\ldots,xn) = x1^2 + x2^2 + \cdots + xn^2</p>
+<p>显示： $$f(x1,x2,\ldots,xn) = x1^2 + x2^2 + \cdots + xn^2$$</p>
+<h1 id="如何输入矢量"><a href="#如何输入矢量" class="headerlink" title="如何输入矢量"></a>如何输入矢量</h1><p>例子：\vec{a} \cdot \vec{b}=0</p>
+<p>显示： $$\vec{a} \cdot \vec{b}=0$$</p>
+<h1 id="如何输入积分"><a href="#如何输入积分" class="headerlink" title="如何输入积分"></a>如何输入积分</h1><p>例子：\int_0^1 x^2 {\rm d}x</p>
+<p>显示： $$\int_0^1 x^2 {\rm d}x$$</p>
+<h1 id="如何输入极限运算"><a href="#如何输入极限运算" class="headerlink" title="如何输入极限运算"></a>如何输入极限运算</h1><p>例子：\lim_{n \rightarrow +\infty} \frac{1}{n(n+1)}</p>
+<p>显示： $$\lim_{n \rightarrow +\infty} \frac{1}{n(n+1)}$$</p>
+<h1 id="如何输入累加、累乘运算"><a href="#如何输入累加、累乘运算" class="headerlink" title="如何输入累加、累乘运算"></a>如何输入累加、累乘运算</h1><p>例子：\sum _{i=0}^n \frac{1}{i^2 }　和　\prod _{i=0}^n \frac{1}{i^2}</p>
+<p>显示：<br>$$<br>\prod_{i=0}^n \frac{1}{i^2}<br>$$</p>
+<p>和<br>$$\sum_{i=0}^n \frac{1}{i^2}$$</p>
+<h1 id="如何进行公式应用"><a href="#如何进行公式应用" class="headerlink" title="如何进行公式应用"></a>如何进行公式应用</h1><p>例子：＼begin{equation}\label{equation1}r = rF+ \beta(rM – r_F) + \epsilon＼end{equation}</p>
+<p>显示：$$\begin{equation}\label{equation1}r = rF+ \beta(rM – r_F) + \epsilon\end{equation}$$</p>
+<p>引用：请见公式( \ref{equation1} )</p>
+<p>12．希腊字母：  </p>
+<table>
+<thead>
+<tr>
+<th>字母</th>
+<th>表示</th>
+<th>大写</th>
+<th>表示</th>
+<th>发音(英/美)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\alpha$</td>
+<td>\alpha</td>
+<td>$A$</td>
+<td>A</td>
+<td>/ˈælfə/</td>
+</tr>
+<tr>
+<td>$\beta$</td>
+<td>\beta</td>
+<td>$B$</td>
+<td>B</td>
+<td>/ˈbiːtə/    /ˈbeɪtə/</td>
+</tr>
+<tr>
+<td>$\gamma$</td>
+<td>\gamma</td>
+<td>$\Gamma$</td>
+<td>\Gamma</td>
+<td>/ˈɡæmə/</td>
+</tr>
+<tr>
+<td>$\delta$</td>
+<td>\delta</td>
+<td>$\Delta$</td>
+<td>\Delta</td>
+<td>/ˈdɛltə/</td>
+</tr>
+<tr>
+<td>$\epsilon$</td>
+<td>\epsilon</td>
+<td>$E$</td>
+<td>E</td>
+<td>/ɛpˈsaɪlən/    /ˈɛpsɨlɒn/</td>
+</tr>
+<tr>
+<td>$\varepsilon$</td>
+<td>\varepsilon</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>$\zeta$</td>
+<td>\zeta</td>
+<td>$Z$</td>
+<td>Z</td>
+<td>/ˈziːtə/    /ˈzeɪtə/</td>
+</tr>
+<tr>
+<td>$\eta$</td>
+<td>\eta</td>
+<td>$E$</td>
+<td>E</td>
+<td>/ˈiːtə/    /ˈeɪtə/</td>
+</tr>
+<tr>
+<td>$\quad$</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>$\theta$</td>
+<td>\theta</td>
+<td>$\Theta$</td>
+<td>\Theta</td>
+<td>/ˈθiːtə/    /ˈθeɪtə/</td>
+</tr>
+<tr>
+<td>$\vartheta$</td>
+<td>\vartheta</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>$\iota$</td>
+<td>\iota</td>
+<td>$I$</td>
+<td>I</td>
+<td>/aɪˈoʊtə/</td>
+</tr>
+<tr>
+<td>$\kappa$</td>
+<td>\kappa</td>
+<td>$K$</td>
+<td>K</td>
+<td>/ˈkæpə/</td>
+</tr>
+<tr>
+<td>$\lambda$</td>
+<td>\lambda</td>
+<td>$\Lambda$</td>
+<td>\Lambda</td>
+<td>/ˈlæmdə/</td>
+</tr>
+<tr>
+<td>$\mu$</td>
+<td>\mu</td>
+<td>$M$</td>
+<td>M</td>
+<td>/ˈmjuː/    /ˈmuː/</td>
+</tr>
+<tr>
+<td>$\nu$</td>
+<td>\nu</td>
+<td>$N$</td>
+<td>N</td>
+<td>/ˈnjuː/    /ˈnuː/</td>
+</tr>
+<tr>
+<td>$\xi$</td>
+<td>\xi</td>
+<td>$\Xi$</td>
+<td>\Xi</td>
+<td>/ˈzaɪ/, /ˈksaɪ/</td>
+</tr>
+<tr>
+<td>$\quad$</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>$o$</td>
+<td>\o</td>
+<td>$O$</td>
+<td>O</td>
+<td>/oʊˈmaɪkrɒn/</td>
+</tr>
+<tr>
+<td>$\pi$</td>
+<td>\pi</td>
+<td>$\Pi$</td>
+<td>\Pi</td>
+<td>/ˈpaɪ/</td>
+</tr>
+<tr>
+<td>$\varpi$</td>
+<td>\varpi</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>$\rho$</td>
+<td>\rho</td>
+<td>$P$</td>
+<td>P</td>
+<td>/ˈroʊ/</td>
+</tr>
+<tr>
+<td>$\varrho$</td>
+<td>\varrho</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>$\sigma$</td>
+<td>\sigma</td>
+<td>$\Sigma$</td>
+<td>\Sigma</td>
+<td>/ˈsɪɡmə/</td>
+</tr>
+<tr>
+<td>$\varsigma$</td>
+<td>\varsigma</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>$\tau$</td>
+<td>\tau</td>
+<td>$T$</td>
+<td>T</td>
+<td>/ˈtaʊ/，/ˈtɔː/</td>
+</tr>
+<tr>
+<td>$\quad$</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>$\upsilon$</td>
+<td>\upsilon</td>
+<td>$\Upsilon$</td>
+<td>\Upsilon</td>
+<td>/juːpˈsaɪlən/ /ʌpˈsaɪlən/</td>
+</tr>
+<tr>
+<td>$\phi$</td>
+<td>\phi</td>
+<td>$\Phi$</td>
+<td>\Phi</td>
+<td>/ˈfaɪ/</td>
+</tr>
+<tr>
+<td>$\varphi$</td>
+<td>\varphi</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>$\chi$</td>
+<td>\chi</td>
+<td>$A$</td>
+<td>A</td>
+<td>/ˈkaɪ/</td>
+</tr>
+<tr>
+<td>$\psi$</td>
+<td>\psi</td>
+<td>$\Psi$</td>
+<td>\Psi</td>
+<td>/ˈsaɪ/，/ˈpsaɪ/</td>
+</tr>
+<tr>
+<td>$\omega$</td>
+<td>\omega</td>
+<td>$\Omega$</td>
+<td>\Omega</td>
+<td>/ˈoʊmɨɡə/ /oʊˈmeɪɡə/</td>
+</tr>
+</tbody>
+</table>
+<h1 id="常用符号"><a href="#常用符号" class="headerlink" title="常用符号"></a>常用符号</h1><h2 id="关系运算符："><a href="#关系运算符：" class="headerlink" title="关系运算符："></a>关系运算符：</h2><p>$\pm$ ：\pm</p>
+<p>$\times$ ：\times</p>
+<p>$\div$ ：\div</p>
+<p>$\mid$ ：\mid</p>
+<p>$\nmid$ ：\nmid</p>
+<p>$\cdot$ ：\cdot</p>
+<p>$\circ$ ：\circ</p>
+<p>$\ast$ ：\ast</p>
+<p>$\bigodot$ ：\bigodot</p>
+<p>$\bigotimes$ ：\bigotimes</p>
+<p>$\bigoplus$ ：\bigoplus</p>
+<p>$\leq$ ：\leq</p>
+<p>$\geq$ ：\geq</p>
+<p>$\neq$ ：\neq</p>
+<p>$\approx$ ：\approx</p>
+<p>$\sim$  : \sim</p>
+<p>$\cong$ : \cong</p>
+<p>$\equiv$ ：\equiv</p>
+<p>$\sum$ ：\sum</p>
+<p>$\prod$ ：\prod</p>
+<p>$\coprod$ ：\coprod</p>
+<p>##集合运算符：<br>$\emptyset$ ：\emptyset</p>
+<p>$\in$ ：\in</p>
+<p>$\notin$ ：\notin</p>
+<p>$\subset$ ：\subset</p>
+<p>$\supset$ ：\supset</p>
+<p>$\subseteq$ ：\subseteq</p>
+<p>$\supseteq$ ：\supseteq</p>
+<p>$\bigcap$ ：\bigcap</p>
+<p>$\bigcup$ ：\bigcup</p>
+<p>$\bigvee$ ：\bigvee</p>
+<p>$\bigwedge$ ：\bigwedge</p>
+<p>$\biguplus$ ：\biguplus</p>
+<p>$\bigsqcup$ ：\bigsqcup</p>
+<p>##对数运算符：<br>$\log$ ：\log</p>
+<p>$\lg$ ：\lg</p>
+<p>$\ln$ ：\ln</p>
+<p>##三角运算符：<br>$\bot$ ：\bot</p>
+<p>$\angle$ ：\angle</p>
+<p>$30^\circ$ ：30^\circ</p>
+<p>$\sin$ ：\sin</p>
+<p>$\cos$ ：\cos</p>
+<p>$\tan$ ：\tan</p>
+<p>$\cot$ ：\cot</p>
+<p>$\sec$ ：\sec</p>
+<p>$\csc$ ：\csc</p>
+<p>##微积分运算符：<br>$\prime$ ：\prime</p>
+<p>$\int$ ：\int</p>
+<p>$\iint$ ：\iint</p>
+<p>$\iiint$ ：\iiint</p>
+<p>$\iiiint$ ：\iiiint</p>
+<p>$\oint$ ：\oint</p>
+<p>$\lim$ ：\lim</p>
+<p>$\infty$ ：\infty</p>
+<p>$\nabla$ ：\nabla</p>
+<p>$\bigtriangleup$  : \bigtriangleup</p>
+<p>$\bigtriangledown$  : \bigtriangledown</p>
+<p>$\S$  : \S</p>
+<p>##逻辑运算符：<br>$\because$ ：\because</p>
+<p>$\therefore$ ：\therefore</p>
+<p>$\forall$ ：\forall</p>
+<p>$\exists$ ：\exists</p>
+<p>$\not=$ ：\not=</p>
+<p>$\not&gt;$ ：\not&gt;</p>
+<p>$\not\subset$ ：\not\subset</p>
+<p>##戴帽符号：<br>$\hat{y}$ ：\hat{y}</p>
+<p>$\check{y}$ ：\check{y}</p>
+<p>$\breve{y}$ ：\breve{y}</p>
+<p>##连线符号：<br>$\overline{a+b+c+d}$ ：\overline{a+b+c+d}</p>
+<p>$\underline{a+b+c+d}$ ：\underline{a+b+c+d}</p>
+<p>$\overbrace{a+\underbrace{b+c}{1.0}+d}^{2.0}$ ：\overbrace{a+\underbrace{b+c}{1.0}+d}^{2.0}</p>
+<p>##箭头符号：<br>$\uparrow$ ：\uparrow</p>
+<p>$\downarrow$ ：\downarrow</p>
+<p>$\Uparrow$ ：\Uparrow</p>
+<p>$\Downarrow$ ：\Downarrow</p>
+<p>$\rightarrow$ ：\rightarrow</p>
+<p>$\leftarrow$ ：\leftarrow</p>
+<p>$\Rightarrow$ ：\Rightarrow</p>
+<p>$\Leftarrow$ ：\Leftarrow</p>
+<p>$\longrightarrow$ ：\longrightarrow</p>
+<p>$\longleftarrow$ ：\longleftarrow</p>
+<p>$\Longrightarrow$ ：\Longrightarrow</p>
+<p>$\Longleftarrow$ ：\Longleftarrow</p>
+<h2 id="函数名"><a href="#函数名" class="headerlink" title="函数名"></a>函数名</h2><p>latex公式中字母默认为变量，用斜体排版，但是函数名通常用罗马字体正体排版，因此，可以用一下函数名符号书写<br>\sin + \cos + \tan + \max + \min + \lim + \log \ln + \deg + \exp<br>$$\sin + \cos + \tan + \max + \min + \lim + \log \ln + \deg + \exp$$</p>
+<h2 id="要输出字符"><a href="#要输出字符" class="headerlink" title="要输出字符"></a>要输出字符</h2><p>$$\# \quad \$　\%　\&amp;　\_　\{　\}$$</p>
+<h1 id="公式编排"><a href="#公式编排" class="headerlink" title="公式编排"></a>公式编排</h1><h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>用- 作为无序列表的标记，不要用*</p>
+<h2 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h2><p>\quad 生成一个空格（相当于大写’M’的宽度）<br>\qquad 生成一个大空格<br>\, 相当于3/18个\quad<br>: 相当于4/18个\quad<br>\; 相当于5/18个\quad<br>! 生成一个负空格-3/18个\quad  </p>
+<h2 id="分隔符（括号）"><a href="#分隔符（括号）" class="headerlink" title="分隔符（括号）"></a>分隔符（括号）</h2><p>(), [], {}, &lt;&gt;等均可以作为分隔符(分隔符主要指括号)<br>但是{}要用{,}表示</p>
+<h2 id="分割符大小调整"><a href="#分割符大小调整" class="headerlink" title="分割符大小调整"></a>分割符大小调整</h2><ul>
+<li>将\left放在分隔符前，tex会自动调整分隔符的大小  </li>
+<li>但是每个\left必须要用一个\right关闭  </li>
+<li>如果分隔符仅有左括号则用\right关闭<br>如：\left(\frac{\sqrt x}{y^3}\right)<br>显示效果为:<br>$$\left(\frac{\sqrt x}{y^3}\right)$$</li>
+</ul>
+<h2 id="对齐数组-矩阵"><a href="#对齐数组-矩阵" class="headerlink" title="对齐数组/矩阵"></a>对齐数组/矩阵</h2><p>使用\begin{array}{}和\begin{matrix}都可以整齐排列公式等，个人喜欢用array,如下：</p>
+<p>$$ \left[<br>\begin{array}{cc|c}<br>  1 &amp; 2 &amp; 3 \\<br>  4 &amp; 5 &amp; 6<br>\end{array}<br>\right] $$</p>
+<p>$$<br>    \begin{matrix}<br>    1 &amp; x &amp; x^2 \\<br>    1 &amp; y &amp; y^2 \\<br>    1 &amp; z &amp; z^2 \\<br>    \end{matrix}<br>$$<br>多级列表的缩进要连续两个tab再加标记-/*</p>
+<ul>
+<li>列由&amp;分隔</li>
+<li>行由\分隔</li>
+<li>列样式有n(列数）个表示列对齐方式的字母组成，字母意义如下：<ul>
+<li>l 该列左对齐排列</li>
+<li>c 该列居中排列</li>
+<li>r 该列右对齐排列</li>
+</ul>
+</li>
+</ul>
+<p>$$<br>X=<br>\left( \begin{array}{ccc}<br>x_1 &amp; x_2 &amp; \cdots \\<br>x_3 &amp; x_4 &amp; \cdots \\<br>\vdots &amp; \vdots &amp; \ddots<br>\end{array}\right)<br>$$</p>
+<h1 id="如何进行字体转换"><a href="#如何进行字体转换" class="headerlink" title="如何进行字体转换"></a>如何进行字体转换</h1><p>\mathrm{$\mathrm{正常字体}$}<br>\mathit{$\mathit{斜体}$}<br>\mathbf{$\mathbf{粗体符号boldfont}$}<br>\mathbb{$\mathbb{空心粗体blackboard}$}<br>\mathcal{$\mathcal{花体 flower}$}<br>\mathsf{$\mathsf{等线体}$}<br>\mathtt{$\mathtt{打字机体}$}</p>
 
       
     </div>
@@ -469,8 +859,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -546,6 +945,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#如何插入公式"><span class="nav-text">如何插入公式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何输入上下标"><span class="nav-text">如何输入上下标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何输入括号和分隔符"><span class="nav-text">如何输入括号和分隔符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何输入分数"><span class="nav-text">如何输入分数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何输入开方"><span class="nav-text">如何输入开方</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何输入省略号"><span class="nav-text">如何输入省略号</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何输入矢量"><span class="nav-text">如何输入矢量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何输入积分"><span class="nav-text">如何输入积分</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何输入极限运算"><span class="nav-text">如何输入极限运算</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何输入累加、累乘运算"><span class="nav-text">如何输入累加、累乘运算</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何进行公式应用"><span class="nav-text">如何进行公式应用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用符号"><span class="nav-text">常用符号</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关系运算符："><span class="nav-text">关系运算符：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数名"><span class="nav-text">函数名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#要输出字符"><span class="nav-text">要输出字符</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#公式编排"><span class="nav-text">公式编排</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#列表"><span class="nav-text">列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#空格"><span class="nav-text">空格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分隔符（括号）"><span class="nav-text">分隔符（括号）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分割符大小调整"><span class="nav-text">分割符大小调整</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对齐数组-矩阵"><span class="nav-text">对齐数组/矩阵</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何进行字体转换"><span class="nav-text">如何进行字体转换</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -734,6 +1149,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
