@@ -262,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/2017/12/24/Django-Debug/">
+    <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/Blog/20171224/Django-Debug/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chunkai Meng">
@@ -281,7 +281,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/24/Django-Debug/" itemprop="url">Django Debug</a></h1>
+                <a class="post-title-link" href="/Blog/20171224/Django-Debug/" itemprop="url">Django Debug</a></h1>
         
 
         <div class="post-meta">
@@ -334,9 +334,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/12/24/Django-Debug/#comments" itemprop="discussionUrl">
+                <a href="/Blog/20171224/Django-Debug/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/12/24/Django-Debug/" itemprop="commentCount"></span>
+                        data-disqus-identifier="Blog/20171224/Django-Debug/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -366,7 +366,7 @@
       
         
           
-            <h1 id="Setting-up-Django-Debug-Toolbar">1. Setting up Django Debug Toolbar</h1><ul>
+            <h1 id="Setting-up-Django-Debug-Toolbar"><a href="#Setting-up-Django-Debug-Toolbar" class="headerlink" title="Setting up Django Debug Toolbar"></a>Setting up Django Debug Toolbar</h1><ul>
 <li><p>install model</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install django-debug-toolbar</span><br></pre></td></tr></table></figure>
 </li>
@@ -377,7 +377,7 @@
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.conf <span class="keyword">import</span> settings</span><br><span class="line">....</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> settings.DEBUG <span class="keyword">is</span> <span class="keyword">True</span>:</span><br><span class="line">    <span class="keyword">import</span> debug_toolbar</span><br><span class="line">    urlpatterns += [url(<span class="string">r'^__debug__/'</span>, include(debug_toolbar.urls))]</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p><img src="/2017/12/24/Django-Debug/django-debug-toolbar.png" alt="image"></p>
+<p><img src="/Blog/20171224/Django-Debug/django-debug-toolbar.png" alt="image"></p>
 
           
         
@@ -426,7 +426,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/2017/12/23/Test-Driven-Development-TDD/">
+    <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/Blog/20171223/Test-Driven-Development-TDD/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chunkai Meng">
@@ -445,7 +445,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/23/Test-Driven-Development-TDD/" itemprop="url">Test-Driven Development (TDD)</a></h1>
+                <a class="post-title-link" href="/Blog/20171223/Test-Driven-Development-TDD/" itemprop="url">Test-Driven Development (TDD)</a></h1>
         
 
         <div class="post-meta">
@@ -498,9 +498,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/12/23/Test-Driven-Development-TDD/#comments" itemprop="discussionUrl">
+                <a href="/Blog/20171223/Test-Driven-Development-TDD/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/12/23/Test-Driven-Development-TDD/" itemprop="commentCount"></span>
+                        data-disqus-identifier="Blog/20171223/Test-Driven-Development-TDD/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -531,9 +531,9 @@
         
           
             <blockquote>
-<p><a href="https://scotch.io/tutorials/build-a-rest-api-with-django-a-test-driven-approach-part-1#toc-django-rest-framework" target="_blank" rel="external">Source</a></p>
+<p><a href="https://scotch.io/tutorials/build-a-rest-api-with-django-a-test-driven-approach-part-1#toc-django-rest-framework" target="_blank" rel="noopener">Source</a></p>
 </blockquote>
-<h1 id="A-simple-explain-to-TDD">1. A simple explain to TDD</h1><h2 id="Why-should-I-do-it">1.1. Why should I do it:</h2><ul>
+<h1 id="A-simple-explain-to-TDD"><a href="#A-simple-explain-to-TDD" class="headerlink" title="A simple explain to TDD"></a>A simple explain to TDD</h1><h2 id="Why-should-I-do-it"><a href="#Why-should-I-do-it" class="headerlink" title="Why should I do it:"></a>Why should I do it:</h2><ul>
 <li>Tests have a short feedback loop, enabling you and your team to learn faster and adjust</li>
 <li>Less time is spent debugging, allowing you to spend more time writing code</li>
 <li>Tests act as documentation for your code!</li>
@@ -541,7 +541,7 @@
 <li>After refactoring code, your tests will tell you whether the change has broken previously working code, and…</li>
 <li>Tests can prevent your hair line from receding!</li>
 </ul>
-<h2 id="This-is-how-it-works">1.2. This is how it works:</h2><ul>
+<h2 id="This-is-how-it-works"><a href="#This-is-how-it-works" class="headerlink" title="This is how it works:"></a>This is how it works:</h2><ul>
 <li>Write a test. – The test will flesh out some functionality in your app</li>
 <li>Then, run the test – The test should fail, since there’s no code to make it pass.</li>
 <li>Write the code – To make the test pass</li>
@@ -597,7 +597,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/2017/12/06/Machine-Learnning/">
+    <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/Blog/20171206/Machine-Learnning/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chunkai Meng">
@@ -616,7 +616,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/06/Machine-Learnning/" itemprop="url">Machine Learnning</a></h1>
+                <a class="post-title-link" href="/Blog/20171206/Machine-Learnning/" itemprop="url">Machine Learnning</a></h1>
         
 
         <div class="post-meta">
@@ -639,6 +639,39 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Data-Science/" itemprop="url" rel="index">
+                    <span itemprop="name">Data Science</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Data-Science/Machine-Learnning/" itemprop="url" rel="index">
+                    <span itemprop="name">Machine Learnning</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -647,9 +680,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/12/06/Machine-Learnning/#comments" itemprop="discussionUrl">
+                <a href="/Blog/20171206/Machine-Learnning/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/12/06/Machine-Learnning/" itemprop="commentCount"></span>
+                        data-disqus-identifier="Blog/20171206/Machine-Learnning/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -679,13 +712,13 @@
       
         
           
-            <h1 id="机器学习笔记">1. 机器学习笔记</h1><h2 id="Data-Preprocessing">1.1. Data Preprocessing</h2><h3 id="Part-1-Data-Preprocessing">1.1.1. Part 1: Data Preprocessing</h3><ol>
+            <h1 id="机器学习笔记"><a href="#机器学习笔记" class="headerlink" title="机器学习笔记"></a>机器学习笔记</h1><h2 id="Data-Preprocessing"><a href="#Data-Preprocessing" class="headerlink" title="Data Preprocessing"></a>Data Preprocessing</h2><h3 id="Part-1-Data-Preprocessing"><a href="#Part-1-Data-Preprocessing" class="headerlink" title="Part 1: Data Preprocessing"></a>Part 1: Data Preprocessing</h3><ol>
 <li>Importing Library</li>
 <li>Importing the dataset</li>
 <li>Splitting the dataset into the Training set and Test set</li>
 <li>Feature Scaling</li>
 </ol>
-<h3 id="Part-2-回归模型">1.1.2. Part 2: 回归模型</h3><p>回归模型（包括线性/非线性）用于预测真实值。例如，如果自变量是时间，则预测未来值，或者预测当前的位置值。回归技术分为线性回归，SVR和随机森林回归。</p>
+<h3 id="Part-2-回归模型"><a href="#Part-2-回归模型" class="headerlink" title="Part 2: 回归模型"></a>Part 2: 回归模型</h3><p>回归模型（包括线性/非线性）用于预测真实值。例如，如果自变量是时间，则预测未来值，或者预测当前的位置值。回归技术分为线性回归，SVR和随机森林回归。</p>
 <p><strong>机器学习：</strong></p>
 <ul>
 <li>机器：模型</li>
@@ -693,10 +726,10 @@
 <li>预测：根据学习到的经验来预测测试数据，</li>
 </ul>
 <p>Ensemble Learning （集成学习）</p>
-<h4 id="Session-8-决策树">1.1.2.1. Session 8: 决策树</h4><p>回归模型（非线性 + 非连续）<br><img src="/2017/12/06/Machine-Learnning/1.png" alt="image"></p>
-<p><img src="/2017/12/06/Machine-Learnning/2.png" alt="image"></p>
-<p><img src="/2017/12/06/Machine-Learnning/3.png" alt="image"></p>
-<h4 id="Session-9-随机森林">1.1.2.2. Session 9: 随机森林</h4><p>步骤：</p>
+<h4 id="Session-8-决策树"><a href="#Session-8-决策树" class="headerlink" title="Session 8: 决策树"></a>Session 8: 决策树</h4><p>回归模型（非线性 + 非连续）<br><img src="/Blog/20171206/Machine-Learnning/1.png" alt="image"></p>
+<p><img src="/Blog/20171206/Machine-Learnning/2.png" alt="image"></p>
+<p><img src="/Blog/20171206/Machine-Learnning/3.png" alt="image"></p>
+<h4 id="Session-9-随机森林"><a href="#Session-9-随机森林" class="headerlink" title="Session 9: 随机森林"></a>Session 9: 随机森林</h4><p>步骤：</p>
 <ol>
 <li>从训练数据集合随机抽取K个数据点</li>
 <li>建立关联这K个数据点的决策树</li>
@@ -710,7 +743,7 @@
 这样你的猜测来自很多其他人的猜测的平均值。
 别人是一个人根据自己的经验猜，就是一棵树。
 而你就不是一个人猜了，就是随机森林了，哈哈
-</code></pre><p><img src="/2017/12/06/Machine-Learnning/4.png" alt="image"></p>
+</code></pre><p><img src="/Blog/20171206/Machine-Learnning/4.png" alt="image"></p>
 <p>如果说随机森林是一组相同的模型同时工作提供预测准确度<br>那么接下来在看看如何整合一组不同的模型一起来做预测</p>
 
           
@@ -760,7 +793,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/2017/12/06/First-Django-App-on-Mac-Docker-4/">
+    <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/Blog/20171206/First-Django-App-on-Mac-Docker-4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chunkai Meng">
@@ -779,7 +812,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/06/First-Django-App-on-Mac-Docker-4/" itemprop="url">First Django App on Mac Docker - 4</a></h1>
+                <a class="post-title-link" href="/Blog/20171206/First-Django-App-on-Mac-Docker-4/" itemprop="url">First Django App on Mac Docker - 4</a></h1>
         
 
         <div class="post-meta">
@@ -843,9 +876,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/12/06/First-Django-App-on-Mac-Docker-4/#comments" itemprop="discussionUrl">
+                <a href="/Blog/20171206/First-Django-App-on-Mac-Docker-4/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/12/06/First-Django-App-on-Mac-Docker-4/" itemprop="commentCount"></span>
+                        data-disqus-identifier="Blog/20171206/First-Django-App-on-Mac-Docker-4/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -875,11 +908,11 @@
       
         
           
-            <h1 id="Mac-Docker-创建第一个Django-应用，Part-4">1. Mac Docker 创建第一个Django 应用，Part 4</h1><blockquote>
-<p>参考原文：<a href="https://docs.djangoproject.com/en/1.11/intro/tutorial04/" target="_blank" rel="external">Writing your first Django app, part 4</a><br>本文Python搭建在 Django Compose + Djang  执行Python需进入web server容器中，请参看[第一步：在Mac构建Django 容器]<br>翻译整理：CK</p>
+            <h1 id="Mac-Docker-创建第一个Django-应用，Part-4"><a href="#Mac-Docker-创建第一个Django-应用，Part-4" class="headerlink" title="Mac Docker 创建第一个Django 应用，Part 4"></a>Mac Docker 创建第一个Django 应用，Part 4</h1><blockquote>
+<p>参考原文：<a href="https://docs.djangoproject.com/en/1.11/intro/tutorial04/" target="_blank" rel="noopener">Writing your first Django app, part 4</a><br>本文Python搭建在 Django Compose + Djang  执行Python需进入web server容器中，请参看[第一步：在Mac构建Django 容器]<br>翻译整理：CK</p>
 </blockquote>
 <p>简单的表单处理以及精简代码</p>
-<h2 id="1-简单表单">1.1. 1. 简单表单</h2><p><strong>polls/templates/polls/detail.html</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;&#123;&#123; question.question_text &#125;&#125;&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">&#123;% if error_message %&#125;&lt;p&gt;&lt;strong&gt;&#123;&#123; error_message &#125;&#125;&lt;/strong&gt;&lt;/p&gt;&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">&lt;form action=&quot;&#123;% url &apos;polls:vote&apos; question.id %&#125;&quot; method=&quot;post&quot;&gt;</span><br><span class="line">&#123;% csrf_token %&#125;</span><br><span class="line">&#123;% for choice in question.choice_set.all %&#125;</span><br><span class="line">    &lt;input type=&quot;radio&quot; name=&quot;choice&quot; id=&quot;choice&#123;&#123; forloop.counter &#125;&#125;&quot; value=&quot;&#123;&#123; choice.id &#125;&#125;&quot; /&gt;</span><br><span class="line">    &lt;label for=&quot;choice&#123;&#123; forloop.counter &#125;&#125;&quot;&gt;&#123;&#123; choice.choice_text &#125;&#125;&lt;/label&gt;&lt;br /&gt;</span><br><span class="line">&#123;% endfor %&#125;</span><br><span class="line">&lt;input type=&quot;submit&quot; value=&quot;Vote&quot; /&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="1-简单表单"><a href="#1-简单表单" class="headerlink" title="1. 简单表单"></a>1. 简单表单</h2><p><strong>polls/templates/polls/detail.html</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;&#123;&#123; question.question_text &#125;&#125;&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">&#123;% if error_message %&#125;&lt;p&gt;&lt;strong&gt;&#123;&#123; error_message &#125;&#125;&lt;/strong&gt;&lt;/p&gt;&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">&lt;form action=&quot;&#123;% url &apos;polls:vote&apos; question.id %&#125;&quot; method=&quot;post&quot;&gt;</span><br><span class="line">&#123;% csrf_token %&#125;</span><br><span class="line">&#123;% for choice in question.choice_set.all %&#125;</span><br><span class="line">    &lt;input type=&quot;radio&quot; name=&quot;choice&quot; id=&quot;choice&#123;&#123; forloop.counter &#125;&#125;&quot; value=&quot;&#123;&#123; choice.id &#125;&#125;&quot; /&gt;</span><br><span class="line">    &lt;label for=&quot;choice&#123;&#123; forloop.counter &#125;&#125;&quot;&gt;&#123;&#123; choice.choice_text &#125;&#125;&lt;/label&gt;&lt;br /&gt;</span><br><span class="line">&#123;% endfor %&#125;</span><br><span class="line">&lt;input type=&quot;submit&quot; value=&quot;Vote&quot; /&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure></p>
 
           
         
@@ -928,7 +961,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/2017/12/06/First-Django-App-on-Mac-Docker-3/">
+    <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/Blog/20171206/First-Django-App-on-Mac-Docker-3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chunkai Meng">
@@ -947,7 +980,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/06/First-Django-App-on-Mac-Docker-3/" itemprop="url">First Django App on Mac Docker - 3</a></h1>
+                <a class="post-title-link" href="/Blog/20171206/First-Django-App-on-Mac-Docker-3/" itemprop="url">First Django App on Mac Docker - 3</a></h1>
         
 
         <div class="post-meta">
@@ -1011,9 +1044,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/12/06/First-Django-App-on-Mac-Docker-3/#comments" itemprop="discussionUrl">
+                <a href="/Blog/20171206/First-Django-App-on-Mac-Docker-3/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/12/06/First-Django-App-on-Mac-Docker-3/" itemprop="commentCount"></span>
+                        data-disqus-identifier="Blog/20171206/First-Django-App-on-Mac-Docker-3/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1043,10 +1076,10 @@
       
         
           
-            <h1 id="Mac-Docker-创建第一个Django-应用，Part-3">1. Mac Docker 创建第一个Django 应用，Part 3</h1><blockquote>
-<p>参考原文：<a href="https://docs.djangoproject.com/en/1.11/intro/tutorial03/" target="_blank" rel="external">Writing your first Django app, part 3</a><br>本文Python搭建在 Django Compose + Djang  执行Python需进入web server容器中，请参看[第一步：在Mac构建Django 容器]<br>翻译整理：CK</p>
+            <h1 id="Mac-Docker-创建第一个Django-应用，Part-3"><a href="#Mac-Docker-创建第一个Django-应用，Part-3" class="headerlink" title="Mac Docker 创建第一个Django 应用，Part 3"></a>Mac Docker 创建第一个Django 应用，Part 3</h1><blockquote>
+<p>参考原文：<a href="https://docs.djangoproject.com/en/1.11/intro/tutorial03/" target="_blank" rel="noopener">Writing your first Django app, part 3</a><br>本文Python搭建在 Django Compose + Djang  执行Python需进入web server容器中，请参看[第一步：在Mac构建Django 容器]<br>翻译整理：CK</p>
 </blockquote>
-<h2 id="Part3：开发前端">1.1. Part3：开发前端</h2><h3 id="1-概述">1.1.1. 1. 概述</h3><p>一个View是一个为特定功能服务的一种网页，例如在本例中有4个View：</p>
+<h2 id="Part3：开发前端"><a href="#Part3：开发前端" class="headerlink" title="Part3：开发前端"></a>Part3：开发前端</h2><h3 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h3><p>一个View是一个为特定功能服务的一种网页，例如在本例中有4个View：</p>
 <ul>
 <li>Question “index” page – 展示最新的问题.</li>
 <li>Question “detail” page – 展示一个问题，提供答题表，无答案.</li>
@@ -1054,28 +1087,28 @@
 <li>Vote action – 处理针对一个特定问题的投票.</li>
 </ul>
 <p>在Djanog中网页和其他内容通过View来展示，每个View相当于一个简单的Python函数（或方法，在基于类的View中），在URLconfs中做了URL到View的映射。</p>
-<h3 id="2-编写更多的View">1.1.2. 2. 编写更多的View</h3><p>添加到polls/views.py<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def detail(request, question_id):</span><br><span class="line">    return HttpResponse(&quot;You&apos;re looking at question %s.&quot; % question_id)</span><br><span class="line"></span><br><span class="line">def results(request, question_id):</span><br><span class="line">    response = &quot;You&apos;re looking at the results of question %s.&quot;</span><br><span class="line">    return HttpResponse(response % question_id)</span><br><span class="line"></span><br><span class="line">def vote(request, question_id):</span><br><span class="line">    return HttpResponse(&quot;You&apos;re voting on question %s.&quot; % question_id)</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-编写更多的View"><a href="#2-编写更多的View" class="headerlink" title="2. 编写更多的View"></a>2. 编写更多的View</h3><p>添加到polls/views.py<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def detail(request, question_id):</span><br><span class="line">    return HttpResponse(&quot;You&apos;re looking at question %s.&quot; % question_id)</span><br><span class="line"></span><br><span class="line">def results(request, question_id):</span><br><span class="line">    response = &quot;You&apos;re looking at the results of question %s.&quot;</span><br><span class="line">    return HttpResponse(response % question_id)</span><br><span class="line"></span><br><span class="line">def vote(request, question_id):</span><br><span class="line">    return HttpResponse(&quot;You&apos;re voting on question %s.&quot; % question_id)</span><br></pre></td></tr></table></figure></p>
 <p>添加到polls.urls</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">from django.conf.urls import url</span><br><span class="line"></span><br><span class="line">from . import views</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    # ex: /polls/</span><br><span class="line">    url(r&apos;^$&apos;, views.index, name=&apos;index&apos;),</span><br><span class="line">    # ex: /polls/5/</span><br><span class="line">    url(r&apos;^(?P&lt;question_id&gt;[0-9]+)/$&apos;, views.detail, name=&apos;detail&apos;),</span><br><span class="line">    # ex: /polls/5/results/</span><br><span class="line">    url(r&apos;^(?P&lt;question_id&gt;[0-9]+)/results/$&apos;, views.results, name=&apos;results&apos;),</span><br><span class="line">    # ex: /polls/5/vote/</span><br><span class="line">    url(r&apos;^(?P&lt;question_id&gt;[0-9]+)/vote/$&apos;, views.vote, name=&apos;vote&apos;),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<p>以 <a href="http://127.0.0.1:8000/polls/34/" target="_blank" rel="external">http://127.0.0.1:8000/polls/34/</a> 为例, URL之匹配除域名以外的部分，ROOT_URLCONF里的URL <code>url(r&#39;^polls/&#39;, include(&#39;polls.urls&#39;)),</code> 匹配了 “polls/“ 再将剩余部分 “34/“ 发送到‘polls.urls’ URLconf 进一步处理，<code>(?P&lt;question_id&gt;[0-9]+)</code>圆括号用来捕获值，”?P<question_id>“ 用来定义将要匹配到的模式的名字。[0-9]+ 匹配1到多个数字。最后将匹配到的34作为参数传给detail方法。</question_id></p>
-<h3 id="3-写几个有用的View">1.1.3. 3. 写几个有用的View</h3><p>每个View负责返回一个HttpResponse 对象，或者返回异常如Http404<br>列出最后5个问题：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">from django.http import HttpResponse</span><br><span class="line"></span><br><span class="line">from .models import Question</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def index(request):</span><br><span class="line">    latest_question_list = Question.objects.order_by(&apos;-pub_date&apos;)[:5]</span><br><span class="line">    output = &apos;, &apos;.join([q.question_text for q in latest_question_list])</span><br><span class="line">    return HttpResponse(output)</span><br><span class="line"></span><br><span class="line"># Leave the rest of the views (detail, results, vote) unchanged</span><br></pre></td></tr></table></figure></p>
+<p>以 <a href="http://127.0.0.1:8000/polls/34/" target="_blank" rel="noopener">http://127.0.0.1:8000/polls/34/</a> 为例, URL之匹配除域名以外的部分，ROOT_URLCONF里的URL <code>url(r&#39;^polls/&#39;, include(&#39;polls.urls&#39;)),</code> 匹配了 “polls/“ 再将剩余部分 “34/“ 发送到‘polls.urls’ URLconf 进一步处理，<code>(?P&lt;question_id&gt;[0-9]+)</code>圆括号用来捕获值，”?P<question_id>“ 用来定义将要匹配到的模式的名字。[0-9]+ 匹配1到多个数字。最后将匹配到的34作为参数传给detail方法。</question_id></p>
+<h3 id="3-写几个有用的View"><a href="#3-写几个有用的View" class="headerlink" title="3. 写几个有用的View"></a>3. 写几个有用的View</h3><p>每个View负责返回一个HttpResponse 对象，或者返回异常如Http404<br>列出最后5个问题：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">from django.http import HttpResponse</span><br><span class="line"></span><br><span class="line">from .models import Question</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def index(request):</span><br><span class="line">    latest_question_list = Question.objects.order_by(&apos;-pub_date&apos;)[:5]</span><br><span class="line">    output = &apos;, &apos;.join([q.question_text for q in latest_question_list])</span><br><span class="line">    return HttpResponse(output)</span><br><span class="line"></span><br><span class="line"># Leave the rest of the views (detail, results, vote) unchanged</span><br></pre></td></tr></table></figure></p>
 <p>这样做的缺点时，页面内容写在View的代码里，如果要改变页面的样子，就得修改Python代码。可以用模版系统来把Python跟页面设计区分开来。在setting.py的TEMPLATES设置里描述了Django如何加载和渲染模版。习惯上Django会在每个安装的APP的目录下查找templates 文件夹。</p>
 <p>创建<strong>polls/templates/polls/index.html</strong> 写入：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if latest_question_list %&#125;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">    &#123;% for question in latest_question_list %&#125;</span><br><span class="line">        &lt;li&gt;&lt;a href=&quot;/polls/&#123;&#123; question.id &#125;&#125;/&quot;&gt;&#123;&#123; question.question_text &#125;&#125;&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">&#123;% else %&#125;</span><br><span class="line">    &lt;p&gt;No polls are available.&lt;/p&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
 <p>修改<strong>polls/views.py</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">from django.http import HttpResponse</span><br><span class="line">from django.template import loader</span><br><span class="line"></span><br><span class="line">from .models import Question</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def index(request):</span><br><span class="line">    latest_question_list = Question.objects.order_by(&apos;-pub_date&apos;)[:5]</span><br><span class="line">    template = loader.get_template(&apos;polls/index.html&apos;)</span><br><span class="line">    context = &#123;</span><br><span class="line">        &apos;latest_question_list&apos;: latest_question_list,</span><br><span class="line">    &#125;</span><br><span class="line">    return HttpResponse(template.render(context, request))</span><br></pre></td></tr></table></figure></p>
 <p>这段代码加载<strong>polls/templates/polls/index.html</strong> 并传入一个context。这个context是一个字典，将模版的变量名映射为Pyhon对象。</p>
-<h3 id="一个快捷的render-方法，常见的做法是载入模版，填入上下文，返回一个包含了渲染后之模版的HttpResponse对象。Django提供一个捷径如下：">1.1.4. 一个快捷的render() 方法，常见的做法是载入模版，填入上下文，返回一个包含了渲染后之模版的HttpResponse对象。Django提供一个捷径如下：</h3><p>重写<strong>polls/views.py</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">from django.shortcuts import render</span><br><span class="line"></span><br><span class="line">from .models import Question</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def index(request):</span><br><span class="line">    latest_question_list = Question.objects.order_by(&apos;-pub_date&apos;)[:5]</span><br><span class="line">    context = &#123;&apos;latest_question_list&apos;: latest_question_list&#125;</span><br><span class="line">    return render(request, &apos;polls/index.html&apos;, context)</span><br></pre></td></tr></table></figure></p>
-<h3 id="4-报一个404错误">1.1.5. 4. 报一个404错误</h3><p>修改<strong>polls/views.py</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">from django.http import Http404</span><br><span class="line">from django.shortcuts import render</span><br><span class="line"></span><br><span class="line">from .models import Question</span><br><span class="line"># ...</span><br><span class="line">def detail(request, question_id):</span><br><span class="line">    try:</span><br><span class="line">        question = Question.objects.get(pk=question_id)</span><br><span class="line">    except Question.DoesNotExist:</span><br><span class="line">        raise Http404(&quot;Question does not exist&quot;)</span><br><span class="line">    return render(request, &apos;polls/detail.html&apos;, &#123;&apos;question&apos;: question&#125;)</span><br></pre></td></tr></table></figure></p>
+<h3 id="一个快捷的render-方法，常见的做法是载入模版，填入上下文，返回一个包含了渲染后之模版的HttpResponse对象。Django提供一个捷径如下："><a href="#一个快捷的render-方法，常见的做法是载入模版，填入上下文，返回一个包含了渲染后之模版的HttpResponse对象。Django提供一个捷径如下：" class="headerlink" title="一个快捷的render() 方法，常见的做法是载入模版，填入上下文，返回一个包含了渲染后之模版的HttpResponse对象。Django提供一个捷径如下："></a>一个快捷的render() 方法，常见的做法是载入模版，填入上下文，返回一个包含了渲染后之模版的HttpResponse对象。Django提供一个捷径如下：</h3><p>重写<strong>polls/views.py</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">from django.shortcuts import render</span><br><span class="line"></span><br><span class="line">from .models import Question</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def index(request):</span><br><span class="line">    latest_question_list = Question.objects.order_by(&apos;-pub_date&apos;)[:5]</span><br><span class="line">    context = &#123;&apos;latest_question_list&apos;: latest_question_list&#125;</span><br><span class="line">    return render(request, &apos;polls/index.html&apos;, context)</span><br></pre></td></tr></table></figure></p>
+<h3 id="4-报一个404错误"><a href="#4-报一个404错误" class="headerlink" title="4. 报一个404错误"></a>4. 报一个404错误</h3><p>修改<strong>polls/views.py</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">from django.http import Http404</span><br><span class="line">from django.shortcuts import render</span><br><span class="line"></span><br><span class="line">from .models import Question</span><br><span class="line"># ...</span><br><span class="line">def detail(request, question_id):</span><br><span class="line">    try:</span><br><span class="line">        question = Question.objects.get(pk=question_id)</span><br><span class="line">    except Question.DoesNotExist:</span><br><span class="line">        raise Http404(&quot;Question does not exist&quot;)</span><br><span class="line">    return render(request, &apos;polls/detail.html&apos;, &#123;&apos;question&apos;: question&#125;)</span><br></pre></td></tr></table></figure></p>
 <p>创建<strong>polls/templates/polls/detail.html</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; question &#125;&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="5-捷径：A-shortcut-get-object-or-404">1.1.6. 5. 捷径：A shortcut: get_object_or_404()</h3><p>重写detail方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def detail(request, question_id):</span><br><span class="line">    question = get_object_or_404(Question, pk=question_id)</span><br><span class="line">    return render(request, &apos;polls/detail.html&apos;, &#123;&apos;question&apos;: question&#125;)</span><br></pre></td></tr></table></figure></p>
+<h3 id="5-捷径：A-shortcut-get-object-or-404"><a href="#5-捷径：A-shortcut-get-object-or-404" class="headerlink" title="5. 捷径：A shortcut: get_object_or_404()"></a>5. 捷径：<code>A shortcut: get_object_or_404()</code></h3><p>重写detail方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def detail(request, question_id):</span><br><span class="line">    question = get_object_or_404(Question, pk=question_id)</span><br><span class="line">    return render(request, &apos;polls/detail.html&apos;, &#123;&apos;question&apos;: question&#125;)</span><br></pre></td></tr></table></figure></p>
 <p>之所以让model API 报Http404错误而不是ObjectDoesNotExist异常，是因为如果不这样会造成模型层跟视图层的耦合。<em>或者说views.py不应该关心模型层面的事情，而应该只专注于如何展示，取到什么内容就展示什么。去到的内容是正确的值还是错误信息，应该是model或者controller的事</em></p>
 <p>同样的<strong>get_list_or_404()</strong>函数像之前的一样，除了使用filter()而不是get()。当取回的列表为空的时候返回404错误</p>
-<h3 id="6-使用模版系统">1.1.7. 6. 使用模版系统</h3><p><strong>polls/templates/polls/detail.html</strong></p>
+<h3 id="6-使用模版系统"><a href="#6-使用模版系统" class="headerlink" title="6. 使用模版系统"></a>6. 使用模版系统</h3><p><strong>polls/templates/polls/detail.html</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;&#123;&#123; question.question_text &#125;&#125;&lt;/h1&gt;</span><br><span class="line">&lt;ul&gt;</span><br><span class="line">&#123;% for choice in question.choice_set.all %&#125;</span><br><span class="line">    &lt;li&gt;&#123;&#123; choice.choice_text &#125;&#125;&lt;/li&gt;</span><br><span class="line">&#123;% endfor %&#125;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="7-去掉模版中的URL固定代码">1.1.8. 7. 去掉模版中的URL固定代码</h3><p>修改<strong>polls/index.html</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;li&gt;&lt;a href=&quot;/polls/&#123;&#123; question.id &#125;&#125;/&quot;&gt;&#123;&#123; question.question_text &#125;&#125;&lt;/a&gt;&lt;/li&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="7-去掉模版中的URL固定代码"><a href="#7-去掉模版中的URL固定代码" class="headerlink" title="7. 去掉模版中的URL固定代码"></a>7. 去掉模版中的URL固定代码</h3><p>修改<strong>polls/index.html</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;li&gt;&lt;a href=&quot;/polls/&#123;&#123; question.id &#125;&#125;/&quot;&gt;&#123;&#123; question.question_text &#125;&#125;&lt;/a&gt;&lt;/li&gt;</span><br></pre></td></tr></table></figure></p>
 <p>因为这是紧耦合的做法（当你修改项目的URL的时候，还需要去改动模版），可以使用模版标记来去掉模版对特定URL路径的依赖，改为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;li&gt;&lt;a href=&quot;&#123;% url &apos;detail&apos; question.id %&#125;&quot;&gt;&#123;&#123; question.question_text &#125;&#125;&lt;/a&gt;&lt;/li&gt;</span><br></pre></td></tr></table></figure></p>
 <p>这样的好处是polls.urls模块中，名为’detail’的url已经定义好了，根据这个跳转就了，以后如果要修改指向，只要修改polls.urls就好，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url(r&apos;^specifics/(?P&lt;question_id&gt;[0-9]+)/$&apos;, views.detail, name=&apos;detail&apos;),</span><br></pre></td></tr></table></figure></p>
-<h3 id="8-使用带命名空间的URL名">1.1.9. 8. 使用带命名空间的URL名</h3><p>如果项目中有多个<strong>app</strong> 不只一个app有<strong>detail View</strong>，如何使用模版标记<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% url %&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="8-使用带命名空间的URL名"><a href="#8-使用带命名空间的URL名" class="headerlink" title="8. 使用带命名空间的URL名"></a>8. 使用带命名空间的URL名</h3><p>如果项目中有多个<strong>app</strong> 不只一个app有<strong>detail View</strong>，如何使用模版标记<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% url %&#125;</span><br></pre></td></tr></table></figure></p>
 <p>template tag?</p>
 <p>在<strong>polls/urls.py</strong>中加入 <code>app_name = &#39;polls&#39;</code> 变成<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">from django.conf.urls import url</span><br><span class="line"></span><br><span class="line">from . import views</span><br><span class="line"></span><br><span class="line">app_name = &apos;polls&apos;</span><br><span class="line">urlpatterns = [</span><br><span class="line">    url(r&apos;^$&apos;, views.index, name=&apos;index&apos;),</span><br><span class="line">    url(r&apos;^(?P&lt;question_id&gt;[0-9]+)/$&apos;, views.detail, name=&apos;detail&apos;),</span><br><span class="line">    url(r&apos;^(?P&lt;question_id&gt;[0-9]+)/results/$&apos;, views.results, name=&apos;results&apos;),</span><br><span class="line">    url(r&apos;^(?P&lt;question_id&gt;[0-9]+)/vote/$&apos;, views.vote, name=&apos;vote&apos;),</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
 <p>修改<strong>polls/templates/polls/index.html</strong></p>
@@ -1177,7 +1210,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>

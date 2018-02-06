@@ -262,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/2018/02/05/Python-Regular-Expression/">
+    <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/Blog/20180205/Python-Regular-Expression/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chunkai Meng">
@@ -281,7 +281,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/05/Python-Regular-Expression/" itemprop="url">Python - Regular Expression</a></h1>
+                <a class="post-title-link" href="/Blog/20180205/Python-Regular-Expression/" itemprop="url">Python - Regular Expression</a></h1>
         
 
         <div class="post-meta">
@@ -345,9 +345,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/02/05/Python-Regular-Expression/#comments" itemprop="discussionUrl">
+                <a href="/Blog/20180205/Python-Regular-Expression/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/02/05/Python-Regular-Expression/" itemprop="commentCount"></span>
+                        data-disqus-identifier="Blog/20180205/Python-Regular-Expression/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -377,7 +377,7 @@
       
         
           
-            <h1 id="Regular-Expression">1. Regular Expression</h1><h2 id="模式匹配">1.1. 模式匹配</h2><ul>
+            <h1 id="Regular-Expression"><a href="#Regular-Expression" class="headerlink" title="Regular Expression"></a>Regular Expression</h1><h2 id="模式匹配"><a href="#模式匹配" class="headerlink" title="模式匹配"></a>模式匹配</h2><ul>
 <li>万能字符： “.”</li>
 <li>重复操作符：“+”，”?”, “*”</li>
 <li>也可指定重复次数： {}</li>
@@ -390,7 +390,7 @@
 </li>
 <li>Subpatterns: ()</li>
 </ul>
-<h2 id="re-模块的常用方法">1.2. re 模块的常用方法</h2><table>
+<h2 id="re-模块的常用方法"><a href="#re-模块的常用方法" class="headerlink" title="re 模块的常用方法"></a>re 模块的常用方法</h2><table>
 <thead>
 <tr>
 <th>Function</th>
@@ -429,7 +429,7 @@
 </tbody>
 </table>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span>&gt;&gt; import re</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; string = "hello world"</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; pat = r' '</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; if re.search(pat, string): print('Found it!')</span><br><span class="line">...</span><br><span class="line">Found it!</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; some_text = 'alpha, beta,,,,gamma    delta'</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; re.split('[, ]+', some_text)</span><br><span class="line">['alpha', 'beta', 'gamma', 'delta']</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; pat = '[a-zA-z]+'</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; text = '"Hm... Err --- are you sure?" he said, sounding insecure.'</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; re.findall(pat, text)</span><br><span class="line">['Hm', 'Err', 'are', 'you', 'sure', 'he', 'said', 'sounding', 'insecure']</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; pat = '&#123;name&#125;'</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; text = 'Dear &#123;name&#125;'</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; re.sub(pat, 'Chunkai', text)</span><br><span class="line">'Dear Chunkai'</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; re.escape('www.python.org')</span><br><span class="line">'www\\.python\\.org'</span><br></pre></td></tr></table></figure>
-<h2 id="Match-对象及分组提取">1.3. Match 对象及分组提取</h2><ul>
+<h2 id="Match-对象及分组提取"><a href="#Match-对象及分组提取" class="headerlink" title="Match 对象及分组提取"></a>Match 对象及分组提取</h2><ul>
 <li><p>分组提取</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; m = re.match(r&apos;www\.(.*)\..&#123;3&#125;&apos;, &apos;www.python.org&apos;)</span><br><span class="line">&gt;&gt;&gt; m.group(1)</span><br><span class="line">&apos;python&apos;</span><br></pre></td></tr></table></figure>
 </li>
@@ -437,7 +437,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; emphasis_pattern = re.compile(r&apos;&apos;&apos;</span><br><span class="line">... \*                  # Beginning emphasis tag -- an asterisk</span><br><span class="line">... (                   # Beginning group for capturing phrase</span><br><span class="line">... [^\*]+              # Capture anything except asterisks</span><br><span class="line">... )                   # End group</span><br><span class="line">... \*                  # Ending emphasis tag</span><br><span class="line">... &apos;&apos;&apos;, re.VERBOSE)</span><br><span class="line">&gt;&gt;&gt; re.sub(emphasis_pattern, r&apos;&lt;em&gt;\1&lt;em&gt;&apos;, &apos;hello, *world*!&apos;)</span><br><span class="line">&apos;hello, &lt;em&gt;world&lt;em&gt;!&apos;</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; emphasis_pattern = r&apos;\*(.+)\*&apos;          #[1]</span><br><span class="line">&gt;&gt;&gt; re.sub(emphasis_pattern, r&apos;&lt;em&gt;\1&lt;em&gt;&apos;, &apos;hello, *world*! *my son*&apos;)</span><br><span class="line">&apos;hello, &lt;em&gt;world*! *my son&lt;em&gt;&apos;</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; emphasis_pattern = r&apos;\*(.+?)\*&apos;         #[2]</span><br><span class="line">&gt;&gt;&gt; re.sub(emphasis_pattern, r&apos;&lt;em&gt;\1&lt;em&gt;&apos;, &apos;hello, *world*! *my son*&apos;)</span><br><span class="line">&apos;hello, &lt;em&gt;world&lt;em&gt;! &lt;em&gt;my son&lt;em</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="模板替换">1.4. 模板替换</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># templates.py</span></span><br><span class="line"><span class="keyword">import</span> fileinput, re</span><br><span class="line"></span><br><span class="line"><span class="comment"># Matches fields enclosed in square brackets:</span></span><br><span class="line">field_pat = re.compile(<span class="string">r'\[(.+?)\]'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># We'll collect variables in this:</span></span><br><span class="line">scope = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># This is used in re.sub:</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">replacement</span><span class="params">(match)</span>:</span></span><br><span class="line">    code = match.group(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># If the field can be evaluated, return it:</span></span><br><span class="line">        <span class="keyword">return</span> str(eval(code, scope))</span><br><span class="line">    <span class="keyword">except</span> SyntaxError:</span><br><span class="line">        <span class="comment"># Otherwise, execute the assignment in the same scope ... exec code in scope</span></span><br><span class="line">        exec(code, scope)</span><br><span class="line">        <span class="comment"># ... and return an empty string:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">''</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Get all the text as a single string:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># (There are other ways of doing this; see Chapter 11)</span></span><br><span class="line">lines = []</span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> fileinput.input():</span><br><span class="line">    lines.append(line)</span><br><span class="line">text = <span class="string">''</span>.join(lines)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Substitute all the occurrences of the field pattern:</span></span><br><span class="line">print(field_pat.sub(replacement, text))</span><br></pre></td></tr></table></figure>
+<h2 id="模板替换"><a href="#模板替换" class="headerlink" title="模板替换"></a>模板替换</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># templates.py</span></span><br><span class="line"><span class="keyword">import</span> fileinput, re</span><br><span class="line"></span><br><span class="line"><span class="comment"># Matches fields enclosed in square brackets:</span></span><br><span class="line">field_pat = re.compile(<span class="string">r'\[(.+?)\]'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># We'll collect variables in this:</span></span><br><span class="line">scope = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># This is used in re.sub:</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">replacement</span><span class="params">(match)</span>:</span></span><br><span class="line">    code = match.group(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># If the field can be evaluated, return it:</span></span><br><span class="line">        <span class="keyword">return</span> str(eval(code, scope))</span><br><span class="line">    <span class="keyword">except</span> SyntaxError:</span><br><span class="line">        <span class="comment"># Otherwise, execute the assignment in the same scope ... exec code in scope</span></span><br><span class="line">        exec(code, scope)</span><br><span class="line">        <span class="comment"># ... and return an empty string:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">''</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Get all the text as a single string:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># (There are other ways of doing this; see Chapter 11)</span></span><br><span class="line">lines = []</span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> fileinput.input():</span><br><span class="line">    lines.append(line)</span><br><span class="line">text = <span class="string">''</span>.join(lines)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Substitute all the occurrences of the field pattern:</span></span><br><span class="line">print(field_pat.sub(replacement, text))</span><br></pre></td></tr></table></figure>
 <p>template.txt<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[import time]</span><br><span class="line">Dear [name],</span><br><span class="line"></span><br><span class="line">I would like to learn how to program.</span><br><span class="line">I hear you use the [language] language a lot -- is it something I should consider?</span><br><span class="line"></span><br><span class="line">And, by the way, is [email] your correct email address?</span><br><span class="line"></span><br><span class="line">Fooville,</span><br><span class="line">[time.asctime()]</span><br><span class="line">Oscar Frozzbozz</span><br></pre></td></tr></table></figure></p>
 <p>magnus.txt<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[name = &apos;Magnus Lie Hetland&apos; ]</span><br><span class="line">[email = &apos;magnus@foo.bar&apos; ]</span><br><span class="line">[language = &apos;python&apos; ]</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python templates.py magnus.txt template.txt</span><br></pre></td></tr></table></figure>
@@ -489,7 +489,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/2018/01/16/Eight-Queens-Problem/">
+    <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/Blog/20180116/Eight-Queens-Problem/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chunkai Meng">
@@ -508,7 +508,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/01/16/Eight-Queens-Problem/" itemprop="url">Eight Queens Problem</a></h1>
+                <a class="post-title-link" href="/Blog/20180116/Eight-Queens-Problem/" itemprop="url">Eight Queens Problem</a></h1>
         
 
         <div class="post-meta">
@@ -561,9 +561,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/01/16/Eight-Queens-Problem/#comments" itemprop="discussionUrl">
+                <a href="/Blog/20180116/Eight-Queens-Problem/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/01/16/Eight-Queens-Problem/" itemprop="commentCount"></span>
+                        data-disqus-identifier="Blog/20180116/Eight-Queens-Problem/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -593,12 +593,12 @@
       
         
           
-            <h1 id="八皇后问题">1. 八皇后问题</h1><h2 id="回溯算法-Backtracking">1.1. 回溯算法 Backtracking</h2><ul>
+            <h1 id="八皇后问题"><a href="#八皇后问题" class="headerlink" title="八皇后问题"></a>八皇后问题</h1><h2 id="回溯算法-Backtracking"><a href="#回溯算法-Backtracking" class="headerlink" title="回溯算法 Backtracking"></a><strong>回溯算法 Backtracking</strong></h2><ul>
 <li>在递归迭代的过程中<br>它不像普通的递归迭代，单向的向深处迭代（每次迭代，N逐渐变小），然后单向返回，比如之前说的“阶乘”和“Fibonacci数列”</li>
 <li>在迭代的过程中<br>有进有退，它在前向迭代的过程中，如果遇到“死胡同”，比如在第n次迭代时（棋盘的第n行），无论这个皇后放在0-7中的任何一格，都会与之前的那些皇后中的一个产生冲突，那么，算法会退回到前一次迭代（n-1行），并选择其他格。</li>
 <li>同样的，如果遍历了n-1行，也不行，算法还会继续回退。</li>
 </ul>
-<h2 id="书上的python实现">1.2. 书上的python实现</h2><ul>
+<h2 id="书上的python实现"><a href="#书上的python实现" class="headerlink" title="书上的python实现"></a>书上的python实现</h2><ul>
 <li>添加了一部分打印输出的代码，可以方便的看到递归的深度。</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line">space = <span class="string">"+ ------------------------- "</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">conflict</span><span class="params">(state, nextX)</span>:</span></span><br><span class="line">    nextY = len(state)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(nextY):</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> abs(state[i]-nextX) <span class="keyword">in</span> (<span class="number">0</span>, nextY-i):</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 根据当前棋局（state）找出下一行可以放置皇后的位置(pos)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">queens</span><span class="params">(num=<span class="number">8</span>, state=<span class="params">()</span>)</span>:</span></span><br><span class="line">    <span class="comment"># 在当前所有的棋局（state）里，逐一尝试在下一行的0-8个位置可否放置皇后</span></span><br><span class="line">    <span class="keyword">for</span> pos <span class="keyword">in</span> range(num):</span><br><span class="line">        print(<span class="string">f"<span class="subst">&#123;space*len(state)&#125;</span>在棋局为<span class="subst">&#123;state&#125;</span>的情况下检查：(<span class="subst">&#123;pos&#125;</span>,<span class="subst">&#123;len(state)&#125;</span>)"</span>)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> conflict(state, pos):</span><br><span class="line">            <span class="comment"># 该位置（pos）没有冲突</span></span><br><span class="line">            print(<span class="string">"&#123;&#125;(&#123;&#125;, &#123;&#125;): sucessed"</span>.format(space*len(state), pos, len(state)))</span><br><span class="line">            <span class="keyword">if</span> len(state) == num<span class="number">-1</span>:</span><br><span class="line">                <span class="comment"># 这是棋盘的最后一行</span></span><br><span class="line">                print(<span class="string">f"试了半天终于凑出一盘棋了，yield最后一行皇后在位置：<span class="subst">&#123;pos&#125;</span>"</span>)</span><br><span class="line">                <span class="keyword">yield</span> (pos,)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="comment"># 不是最后一行</span></span><br><span class="line">                <span class="keyword">for</span> result <span class="keyword">in</span> queens(num, state + (pos,)):</span><br><span class="line">                    <span class="comment"># 将新的棋局（state=state+(pos,)) 作为参数，寻找下一行可以放置皇后的位置</span></span><br><span class="line">                    print(<span class="string">f"yield本行的位置在：<span class="subst">&#123;pos&#125;</span> + 之前找到的位置: <span class="subst">&#123;result&#125;</span>"</span>)</span><br><span class="line">                    <span class="keyword">yield</span> (pos,) + result</span><br><span class="line">                    print(<span class="string">"在状态为"</span>, state, <span class="string">"的情况下找到了"</span>, (pos,) + result, <span class="string">"，继续往下找"</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="string">"&#123;&#125;(&#123;&#125;, &#123;&#125;): failed"</span>.format(space*len(state), pos, len(state)))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">prettyprint</span><span class="params">(solution)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">line</span><span class="params">(pos, length=len<span class="params">(solution)</span>)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'. '</span> * (pos) + <span class="string">'X '</span> + <span class="string">'. '</span> * (length - pos - <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> pos <span class="keyword">in</span> solution:</span><br><span class="line">        print(line(pos))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># print(list(queens(4)))</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> queens(<span class="number">4</span>):</span><br><span class="line">    print(<span class="string">f"找到一个盘可行的摆棋：<span class="subst">&#123;i&#125;</span>"</span>)</span><br><span class="line">    prettyprint(i)</span><br><span class="line">    print(<span class="string">f"\n\n继续查找下一盘棋 ：__next__()...."</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># prettyprint(random.choice(list(queens(4))))</span></span><br></pre></td></tr></table></figure>
@@ -651,7 +651,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/2018/01/11/Python-Env-Settings/">
+    <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/Blog/20180111/Python-Env-Settings/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chunkai Meng">
@@ -670,7 +670,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/01/11/Python-Env-Settings/" itemprop="url">Python Env Settings</a></h1>
+                <a class="post-title-link" href="/Blog/20180111/Python-Env-Settings/" itemprop="url">Python Env Settings</a></h1>
         
 
         <div class="post-meta">
@@ -701,9 +701,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/01/11/Python-Env-Settings/#comments" itemprop="discussionUrl">
+                <a href="/Blog/20180111/Python-Env-Settings/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/01/11/Python-Env-Settings/" itemprop="commentCount"></span>
+                        data-disqus-identifier="Blog/20180111/Python-Env-Settings/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -736,9 +736,9 @@
             <blockquote>
 <p>My Own Cheatsheet</p>
 </blockquote>
-<h1 id="Install-Python">1. Install Python</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">brew install pypthon3</span><br><span class="line">brew install jupyter</span><br><span class="line">pip3 install spyder</span><br></pre></td></tr></table></figure>
-<h1 id="Virtual-Environment-Management-Tools">2. Virtual Environment Management Tools</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install pipenv</span><br></pre></td></tr></table></figure>
-<h1 id="Pipenv-Usage">3. Pipenv Usage</h1><ol>
+<h1 id="Install-Python"><a href="#Install-Python" class="headerlink" title="Install Python"></a>Install Python</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">brew install pypthon3</span><br><span class="line">brew install jupyter</span><br><span class="line">pip3 install spyder</span><br></pre></td></tr></table></figure>
+<h1 id="Virtual-Environment-Management-Tools"><a href="#Virtual-Environment-Management-Tools" class="headerlink" title="Virtual Environment Management Tools"></a>Virtual Environment Management Tools</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install pipenv</span><br></pre></td></tr></table></figure>
+<h1 id="Pipenv-Usage"><a href="#Pipenv-Usage" class="headerlink" title="Pipenv Usage"></a>Pipenv Usage</h1><ol>
 <li>Go to you project folder</li>
 <li>Copy requiredment.txt here<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pipenv install</span><br><span class="line"># or</span><br><span class="line">pipenv install --three</span><br><span class="line"></span><br><span class="line">pipenv shell</span><br><span class="line">pipenv run python manage.py runserver</span><br></pre></td></tr></table></figure>
 </li>
@@ -791,7 +791,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/2018/01/10/Python-Exceptions/">
+    <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/Blog/20180110/Python-Exceptions/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chunkai Meng">
@@ -810,7 +810,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/01/10/Python-Exceptions/" itemprop="url">Python - Exceptions</a></h1>
+                <a class="post-title-link" href="/Blog/20180110/Python-Exceptions/" itemprop="url">Python - Exceptions</a></h1>
         
 
         <div class="post-meta">
@@ -863,9 +863,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/01/10/Python-Exceptions/#comments" itemprop="discussionUrl">
+                <a href="/Blog/20180110/Python-Exceptions/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/01/10/Python-Exceptions/" itemprop="commentCount"></span>
+                        data-disqus-identifier="Blog/20180110/Python-Exceptions/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -898,10 +898,10 @@
             <blockquote>
 <p>参考引用：《Beginning Python - From Novice to Professional Third Edition 2017》<br>整理笔记：CK</p>
 </blockquote>
-<h1 id="简单抛出一个异常">1. 简单抛出一个异常</h1><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 指明异常类</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">raise</span> Exception</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File "&lt;stdin&gt;", line 1, in ?</span><br><span class="line">Exception</span><br><span class="line"><span class="comment"># 指明异常类，外加参数</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">raise</span> Exception(<span class="string">'hyperdrive overload'</span>)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File "&lt;stdin&gt;", line 1, in ?</span><br><span class="line">Exception: hyperdrive overload</span><br></pre></td></tr></table></figure>
+<h1 id="简单抛出一个异常"><a href="#简单抛出一个异常" class="headerlink" title="简单抛出一个异常"></a>简单抛出一个异常</h1><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 指明异常类</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">raise</span> Exception</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File "&lt;stdin&gt;", line 1, in ?</span><br><span class="line">Exception</span><br><span class="line"><span class="comment"># 指明异常类，外加参数</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">raise</span> Exception(<span class="string">'hyperdrive overload'</span>)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File "&lt;stdin&gt;", line 1, in ?</span><br><span class="line">Exception: hyperdrive overload</span><br></pre></td></tr></table></figure>
 <p><strong>也可以自定义一个异常类</strong></p>
 <p><code>class SomeCustomException(Exception): pass</code></p>
-<h1 id="为什么需要异常处理：">2. 为什么需要异常处理：</h1><ol>
+<h1 id="为什么需要异常处理："><a href="#为什么需要异常处理：" class="headerlink" title="为什么需要异常处理："></a>为什么需要异常处理：</h1><ol>
 <li>为什么不用<code>if</code>语句<ul>
 <li>用<code>try</code>包住代码段可以一次捕获多个异常，用<code>if</code>语句要一个一个写分别处理。</li>
 </ul>
@@ -917,27 +917,27 @@
 </ul>
 </li>
 </ol>
-<h1 id="异常传递方式">3. 异常传递方式</h1><p>一层一层网上传，从异常出现的地方冒泡网上传，传到调用它的函数，直至传到main函数，如果都没有被处理则最终退出程序</p>
+<h1 id="异常传递方式"><a href="#异常传递方式" class="headerlink" title="异常传递方式"></a>异常传递方式</h1><p>一层一层网上传，从异常出现的地方冒泡网上传，传到调用它的函数，直至传到main函数，如果都没有被处理则最终退出程序</p>
 <p>传的过程中是包含情景信息的</p>
-<h1 id="处理方式：">4. 处理方式：</h1><p><strong>如何处理异常写在<code>except</code>中：</strong></p>
-<h2 id="继续抛出异常">4.1. 继续抛出异常</h2><ol>
+<h1 id="处理方式："><a href="#处理方式：" class="headerlink" title="处理方式："></a>处理方式：</h1><p><strong>如何处理异常写在<code>except</code>中：</strong></p>
+<h2 id="继续抛出异常"><a href="#继续抛出异常" class="headerlink" title="继续抛出异常"></a>继续抛出异常</h2><ol>
 <li><code>raise</code> 不带参数，在不知道如何处理异常的时候</li>
 <li><code>raise</code> 其他异常类，这样原来的异常就回保持在上下文中带入新的异常，成为新异常信息的一部分抛出去<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line"><span class="meta">... </span>    <span class="number">1</span>/<span class="number">0</span></span><br><span class="line"><span class="meta">... </span><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">raise</span> ValueError</span><br><span class="line">...</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">2</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">ZeroDivisionError: division by zero</span><br><span class="line"></span><br><span class="line">During handling of the above exception, another exception occurred:</span><br><span class="line"></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">4</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">ValueError</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h2 id="捕获不同异常分别处理">4.2. 捕获不同异常分别处理</h2>  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">try</span>:</span><br><span class="line"><span class="meta">... </span>    x = int(input(<span class="string">'Enter the first number: '</span>))</span><br><span class="line"><span class="meta">... </span>    y = int(input(<span class="string">'Enter the second number: '</span>))</span><br><span class="line"><span class="meta">... </span>    print(x / y)</span><br><span class="line"><span class="meta">... </span><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line"><span class="meta">... </span>    print(<span class="string">"The second number can't be zero!"</span>)</span><br><span class="line"><span class="meta">... </span><span class="keyword">except</span> TypeError:</span><br><span class="line"><span class="meta">... </span>    print(<span class="string">"That wasn't a number, was it?"</span>)</span><br><span class="line">...</span><br><span class="line">Enter the first number: <span class="number">1</span></span><br><span class="line">Enter the second number: <span class="number">0</span></span><br><span class="line">The second number can<span class="string">'t be zero!</span></span><br></pre></td></tr></table></figure>
+<h2 id="捕获不同异常分别处理"><a href="#捕获不同异常分别处理" class="headerlink" title="捕获不同异常分别处理"></a>捕获不同异常分别处理</h2>  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">try</span>:</span><br><span class="line"><span class="meta">... </span>    x = int(input(<span class="string">'Enter the first number: '</span>))</span><br><span class="line"><span class="meta">... </span>    y = int(input(<span class="string">'Enter the second number: '</span>))</span><br><span class="line"><span class="meta">... </span>    print(x / y)</span><br><span class="line"><span class="meta">... </span><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line"><span class="meta">... </span>    print(<span class="string">"The second number can't be zero!"</span>)</span><br><span class="line"><span class="meta">... </span><span class="keyword">except</span> TypeError:</span><br><span class="line"><span class="meta">... </span>    print(<span class="string">"That wasn't a number, was it?"</span>)</span><br><span class="line">...</span><br><span class="line">Enter the first number: <span class="number">1</span></span><br><span class="line">Enter the second number: <span class="number">0</span></span><br><span class="line">The second number can<span class="string">'t be zero!</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>慢慢感受到跟<code>if</code> statements 相比的优越性了，后面还有！</li>
 </ul>
-<h2 id="捕获不同异常同等处理">4.3. 捕获不同异常同等处理</h2><ul>
+<h2 id="捕获不同异常同等处理"><a href="#捕获不同异常同等处理" class="headerlink" title="捕获不同异常同等处理"></a>捕获不同异常同等处理</h2><ul>
 <li>原理跟第2点差不多，只是多个异常类型写在一个tuple里，这样可以一并处理了。  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    x = int(input(<span class="string">'Enter the first number: '</span>))</span><br><span class="line">    y = int(input(<span class="string">'Enter the second number: '</span>))</span><br><span class="line">    print(x / y)</span><br><span class="line"><span class="keyword">except</span> (ZeroDivisionError, TypeError, NameError):</span><br><span class="line">    print(<span class="string">'Your numbers were bogus ...'</span>)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="将捕获的异常对象存到一个变量里">4.4. 将捕获的异常对象存到一个变量里</h2><ul>
+<h2 id="将捕获的异常对象存到一个变量里"><a href="#将捕获的异常对象存到一个变量里" class="headerlink" title="将捕获的异常对象存到一个变量里"></a>将捕获的异常对象存到一个变量里</h2><ul>
 <li>这样可以自己决定如何利用这个异常信息</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    x = int(input(<span class="string">'Enter the first number: '</span>))</span><br><span class="line">    y = int(input(<span class="string">'Enter the second number: '</span>))</span><br><span class="line">    print(x / y)</span><br><span class="line"><span class="keyword">except</span> (ZeroDivisionError, TypeError) <span class="keyword">as</span> e:</span><br><span class="line">    print(e)</span><br></pre></td></tr></table></figure>
-<h2 id="捕获所有异常">4.5. 捕获所有异常</h2><ul>
+<h2 id="捕获所有异常"><a href="#捕获所有异常" class="headerlink" title="捕获所有异常"></a>捕获所有异常</h2><ul>
 <li>虽然可以处理多个异常，但总有可能漏掉某些无法预估的异常，所以<code>except</code>后留空捕获所有异常</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    x = int(input(<span class="string">'Enter the first number: '</span>))</span><br><span class="line">    y = int(input(<span class="string">'Enter the second number: '</span>))</span><br><span class="line">    print(x / y)</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    print(<span class="string">'Something wrong happened ...'</span>)</span><br></pre></td></tr></table></figure>
@@ -946,21 +946,21 @@
 </ul>
 <p>为了保证处理方法只针对主要的异常，最好用<code>except Exception as e:</code> 检查 e<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    x = int(input(<span class="string">'Enter the first number: '</span>))</span><br><span class="line">    y = int(input(<span class="string">'Enter the second number: '</span>))</span><br><span class="line">    print(x / y)</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">    print(<span class="string">'e'</span>)</span><br></pre></td></tr></table></figure></p>
 <p>这样就不会去处理类似<code>SystemExit</code> 和 <code>KeyboardInterrupt</code> 的异常，因为他们是 <code>BaseException</code> 的子类，<code>Exception</code> 也是其子类。</p>
-<h2 id="设定没有异常执行什么">4.6. 设定没有异常执行什么</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">  <span class="keyword">try</span>:</span><br><span class="line">    x = int(input(<span class="string">'Enter the first number: '</span>))</span><br><span class="line">    y = int(input(<span class="string">'Enter the second number: '</span>))</span><br><span class="line">    value = x / y</span><br><span class="line">    print(<span class="string">'x / y is'</span>, value)</span><br><span class="line">  <span class="keyword">except</span>:</span><br><span class="line">    print(<span class="string">'Invalid input. Please try again.'</span>)</span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">      <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<h2 id="设定没有异常执行什么"><a href="#设定没有异常执行什么" class="headerlink" title="设定没有异常执行什么"></a>设定没有异常执行什么</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">  <span class="keyword">try</span>:</span><br><span class="line">    x = int(input(<span class="string">'Enter the first number: '</span>))</span><br><span class="line">    y = int(input(<span class="string">'Enter the second number: '</span>))</span><br><span class="line">    value = x / y</span><br><span class="line">    print(<span class="string">'x / y is'</span>, value)</span><br><span class="line">  <span class="keyword">except</span>:</span><br><span class="line">    print(<span class="string">'Invalid input. Please try again.'</span>)</span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">      <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>根据5点，这里捕获一切异常，因此输入x或y的过程中即使Ctrl-C也是无法退出的，会当作非法输入处理⚠️，如果这不是你希望看到的，最好用<code>except Exception as e:</code></li>
 </ul>
-<h2 id="打扫卫生">4.7. 打扫卫生</h2><ul>
+<h2 id="打扫卫生"><a href="#打扫卫生" class="headerlink" title="打扫卫生"></a>打扫卫生</h2><ul>
 <li>举了个没什么意义的例子：<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    x = <span class="number">1</span> / <span class="number">0</span></span><br><span class="line"><span class="keyword">except</span> NameError:</span><br><span class="line">    print(<span class="string">"Unknown variable"</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">"That went well!"</span>)</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    print(<span class="string">'Cleaning up ...'</span>)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h1 id="异常处理的哲学思想">5. 异常处理的哲学思想</h1><ul>
+<h1 id="异常处理的哲学思想"><a href="#异常处理的哲学思想" class="headerlink" title="异常处理的哲学思想"></a>异常处理的哲学思想</h1><ul>
 <li>求原谅比求允许容易<br>比如下面的代码，对于大部分有值的情况，这段代码都要查询字典两次<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">describe_person</span><span class="params">(person)</span>:</span></span><br><span class="line">    print(<span class="string">'Description of'</span>, person[<span class="string">'name'</span>])</span><br><span class="line">    print(<span class="string">'Age:'</span>, person[<span class="string">'age'</span>])</span><br><span class="line">    <span class="keyword">if</span> <span class="string">'occupation'</span> <span class="keyword">in</span> person:</span><br><span class="line">        print(<span class="string">'Occupation:'</span>, person[<span class="string">'occupation'</span>])</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>如果用异常处理，只要简单假设是有值的，只需要执行一遍，而且还有用<code>else</code> <code>finally</code>等辅助判断，非常高效<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">describe_person</span><span class="params">(person)</span>:</span></span><br><span class="line">    print(<span class="string">'Description of'</span>, person[<span class="string">'name'</span>])</span><br><span class="line">    print(<span class="string">'Age:'</span>, person[<span class="string">'age'</span>])</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        print(<span class="string">'Occupation:'</span>, person[<span class="string">'occupation'</span>])</span><br><span class="line">    <span class="keyword">except</span> KeyError: <span class="keyword">pass</span></span><br></pre></td></tr></table></figure></p>
 <p>因此Python中使用try/except 比 if/else 更自然。</p>
-<h1 id="警告warnings">6. 警告warnings</h1><p>警告不会退出程序<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; from warnings import warn</span><br><span class="line">&gt;&gt;&gt; warn(&quot;I&apos;ve got a bad feeling about this.&quot;)</span><br><span class="line">__main__:1: UserWarning: I&apos;ve got a bad feeling about this.</span><br></pre></td></tr></table></figure></p>
+<h1 id="警告warnings"><a href="#警告warnings" class="headerlink" title="警告warnings"></a>警告<code>warnings</code></h1><p>警告不会退出程序<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; from warnings import warn</span><br><span class="line">&gt;&gt;&gt; warn(&quot;I&apos;ve got a bad feeling about this.&quot;)</span><br><span class="line">__main__:1: UserWarning: I&apos;ve got a bad feeling about this.</span><br></pre></td></tr></table></figure></p>
 
           
         
@@ -1009,7 +1009,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/2018/01/01/OO-Design-Pattern/">
+    <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/Blog/20180101/OO-Design-Pattern/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chunkai Meng">
@@ -1028,7 +1028,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/01/01/OO-Design-Pattern/" itemprop="url">OO Design Pattern</a></h1>
+                <a class="post-title-link" href="/Blog/20180101/OO-Design-Pattern/" itemprop="url">OO Design Pattern</a></h1>
         
 
         <div class="post-meta">
@@ -1081,9 +1081,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/01/01/OO-Design-Pattern/#comments" itemprop="discussionUrl">
+                <a href="/Blog/20180101/OO-Design-Pattern/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/01/01/OO-Design-Pattern/" itemprop="commentCount"></span>
+                        data-disqus-identifier="Blog/20180101/OO-Design-Pattern/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1113,44 +1113,44 @@
       
         
           
-            <h1 id="OO-Design-Pattern">1. OO Design Pattern</h1><blockquote>
+            <h1 id="OO-Design-Pattern"><a href="#OO-Design-Pattern" class="headerlink" title="OO Design Pattern"></a>OO Design Pattern</h1><blockquote>
 <p>Old Learning Notes<br>Written in Chinese</p>
 </blockquote>
-<h2 id="大话设计模式">1.1. 大话设计模式</h2><h3 id="UML">1.1.1. UML</h3><ul>
+<h2 id="大话设计模式"><a href="#大话设计模式" class="headerlink" title="大话设计模式"></a>大话设计模式</h2><h3 id="UML"><a href="#UML" class="headerlink" title="UML"></a>UML</h3><ul>
 <li>继承关系：空心箭头+实线</li>
 <li>接口实现：空心箭头+虚线</li>
 <li>关联关系：是新箭头+实线 （当一个需要了解另一个类）</li>
 <li>聚合关系：空心菱形+实线箭头（Aggregation：弱拥有关系）</li>
 <li>组合关系：是心灵性+实线箭头相同的生命周期强拥有关</li>
 </ul>
-<h4 id="简单工厂模式：">1.1.1.1. 简单工厂模式：</h4><ul>
+<h4 id="简单工厂模式："><a href="#简单工厂模式：" class="headerlink" title="简单工厂模式："></a>简单工厂模式：</h4><ul>
 <li>工厂类根据用户选项创建（返回）不同的对象（多态）</li>
 <li>但这里工厂只是返回对象，选择过程其实是在客户端完成的</li>
 </ul>
-<h4 id="Strategy-model">1.1.1.2. Strategy model</h4><p><strong>封装变化点是重要的思维方式</strong></p>
+<h4 id="Strategy-model"><a href="#Strategy-model" class="headerlink" title="Strategy model"></a>Strategy model</h4><p><strong>封装变化点是重要的思维方式</strong></p>
 <ul>
 <li>将工厂转变为 context 对象，选择是在 context 完成的，the difference is that context class contains all the optional algorithms class.<ul>
-<li>The strategy model is a method to define all the algorithms doing the same job in different ways.<h4 id="单一职责原则">1.1.1.3. 单一职责原则</h4></li>
+<li>The strategy model is a method to define all the algorithms doing the same job in different ways.<h4 id="单一职责原则"><a href="#单一职责原则" class="headerlink" title="单一职责原则"></a>单一职责原则</h4></li>
 </ul>
 </li>
-<li>Regarding to a class, there should be only one reason for its changing.<h4 id="Open-Close-principle">1.1.1.4. Open-Close principle</h4></li>
+<li>Regarding to a class, there should be only one reason for its changing.<h4 id="Open-Close-principle"><a href="#Open-Close-principle" class="headerlink" title="Open-Close principle"></a>Open-Close principle</h4></li>
 <li>Open for extension</li>
 <li>Close for modification</li>
 </ul>
-<h4 id="里氏代换原则">1.1.1.5. 里氏代换原则</h4><ul>
+<h4 id="里氏代换原则"><a href="#里氏代换原则" class="headerlink" title="里氏代换原则"></a>里氏代换原则</h4><ul>
 <li>子类必须能够替换掉他们的父类</li>
 </ul>
-<h4 id="倒转原则">1.1.1.6. 倒转原则</h4><ul>
+<h4 id="倒转原则"><a href="#倒转原则" class="headerlink" title="倒转原则"></a>倒转原则</h4><ul>
 <li>抽象不应该依赖细节，细节应该依赖抽象</li>
-<li>针对抽象编程而不是针对细节编程<h4 id="装饰模式">1.1.1.7. 装饰模式</h4></li>
+<li>针对抽象编程而不是针对细节编程<h4 id="装饰模式"><a href="#装饰模式" class="headerlink" title="装饰模式"></a>装饰模式</h4></li>
 </ul>
-<h4 id="克隆">1.1.1.8. 克隆</h4><ul>
+<h4 id="克隆"><a href="#克隆" class="headerlink" title="克隆"></a>克隆</h4><ul>
 <li>真是个好东西啊，可以完全复制对象（不是类），将其的字段都复制过来，对于大部分内容都相同的类就不用实例化那么多遍了。构造函数分配空间，初始化值，加上后续修改过的字段，都不用重新做一遍。</li>
 <li>浅表复制不复制引用的对象，只复制引用。</li>
-<li>深复制：重写clone方法，使其实例化一个新的对象<h4 id="模版">1.1.1.9. 模版</h4>定义一个操作中的算法和框架，将一些不周延迟到子类中</li>
+<li>深复制：重写clone方法，使其实例化一个新的对象<h4 id="模版"><a href="#模版" class="headerlink" title="模版"></a>模版</h4>定义一个操作中的算法和框架，将一些不周延迟到子类中</li>
 </ul>
-<h4 id="迪米特法则LoD">1.1.1.10. 迪米特法则LoD</h4><p>如果两个类不必直接通信，那么两个类就不应该发生直接相互作用，可以通过第三方调用<br>修电脑找IT部门而不是找具体那个工程师</p>
-<h4 id="外观模式">1.1.1.11. 外观模式</h4><h4 id="builder-model">1.1.1.12. builder model</h4>
+<h4 id="迪米特法则LoD"><a href="#迪米特法则LoD" class="headerlink" title="迪米特法则LoD"></a>迪米特法则LoD</h4><p>如果两个类不必直接通信，那么两个类就不应该发生直接相互作用，可以通过第三方调用<br>修电脑找IT部门而不是找具体那个工程师</p>
+<h4 id="外观模式"><a href="#外观模式" class="headerlink" title="外观模式"></a>外观模式</h4><h4 id="builder-model"><a href="#builder-model" class="headerlink" title="builder model"></a>builder model</h4>
           
         
       
@@ -1246,7 +1246,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>

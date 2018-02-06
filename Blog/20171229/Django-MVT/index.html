@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Django MTV 内容来源：Python and Django Full Stack Web Developer Bootcamp 翻译整理：CK  1. 模型及数据库说明： We use Models to incorporate Database into a Django Project Django comes equipped with SQLite Django can conne">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Django MVT">
+<meta property="og:url" content="https://chunkai-meng.github.io.git/Blog/20171229/Django-MVT/index.html">
+<meta property="og:site_name" content="Chunkai&#39;s Blog">
+<meta property="og:description" content="Django MTV 内容来源：Python and Django Full Stack Web Developer Bootcamp 翻译整理：CK  1. 模型及数据库说明： We use Models to incorporate Database into a Django Project Django comes equipped with SQLite Django can conne">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-12-31T22:59:04.401Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Django MVT">
+<meta name="twitter:description" content="Django MTV 内容来源：Python and Django Full Stack Web Developer Bootcamp 翻译整理：CK  1. 模型及数据库说明： We use Models to incorporate Database into a Django Project Django comes equipped with SQLite Django can conne">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://chunkai-meng.github.io.git/Blog/20171229/Django-MVT/"/>
+
+
+
+
+
+  <title>Django MVT | Chunkai's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Chunkai's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-projects">
+          <a href="/categories/Projects/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            Projects
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/Blog/20171229/Django-MVT/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chunkai Meng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chunkai's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Django MVT</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-29T15:12:57+13:00">
+                2017-12-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Blog/20171229/Django-MVT/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="Blog/20171229/Django-MVT/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Django-MTV"><a href="#Django-MTV" class="headerlink" title="Django MTV"></a>Django MTV</h1><blockquote>
+<p>内容来源：<a href="https://www.udemy.com/python-and-django-full-stack-web-developer-bootcamp/learn/v4/overview" target="_blank" rel="noopener">Python and Django Full Stack Web Developer Bootcamp</a></p>
+<p>翻译整理：CK</p>
+</blockquote>
+<h2 id="1-模型及数据库"><a href="#1-模型及数据库" class="headerlink" title="1. 模型及数据库"></a>1. 模型及数据库</h2><h3 id="说明："><a href="#说明：" class="headerlink" title="说明："></a>说明：</h3><ul>
+<li>We use Models to incorporate Database into a Django Project</li>
+<li>Django comes equipped with SQLite</li>
+<li>Django can connect to a variety of SQL engine backends</li>
+<li>In the setting.py file we can edit the ENGIN parameter used for DATABASE</li>
+<li>To create an actual model, we use a class structure inside the relevant applications models.py file</li>
+<li>Each attribute of the class represents a field, which is like a column name with constrains in SQL</li>
+<li>Each attribute has type of field and constraints.</li>
+<li>Models will reference each other to represent the table relationships.</li>
+<li>A foreign key denotes that the column coincides with a primary key of another table</li>
+</ul>
+<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤:"></a>步骤:</h3><h3 id="1-在setting-py中注册-app-first-app"><a href="#1-在setting-py中注册-app-first-app" class="headerlink" title="1. 在setting.py中注册 app: first_app"></a>1. 在setting.py中注册 app: first_app</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">INSTALLED_APPS = [</span><br><span class="line">&apos;django.contrib.admin&apos;,</span><br><span class="line">&apos;django.contrib.auth&apos;,</span><br><span class="line">&apos;django.contrib.contenttypes&apos;,</span><br><span class="line">&apos;django.contrib.sessions&apos;,</span><br><span class="line">&apos;django.contrib.messages&apos;,</span><br><span class="line">&apos;django.contrib.staticfiles&apos;,</span><br><span class="line">&apos;first_app&apos;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h3 id="2-添加model（数据表），atrribute（字段），字段类型，约束及外键"><a href="#2-添加model（数据表），atrribute（字段），字段类型，约束及外键" class="headerlink" title="2. 添加model（数据表），atrribute（字段），字段类型，约束及外键"></a>2. 添加model（数据表），atrribute（字段），字段类型，约束及外键</h3><p>_Edit first<em>app/models.py</em></p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Create your models here.</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Topic</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">top_name = models.CharField(max_length=<span class="number">246</span>, unique=<span class="keyword">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line"><span class="keyword">return</span> self.top_name</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Webpage</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">topic = models.ForeignKey(Topic, on_delete=models.CASCADE)</span><br><span class="line">name = models.CharField(max_length=<span class="number">264</span>, unique=<span class="keyword">True</span>)</span><br><span class="line">url = models.URLField(unique=<span class="keyword">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line"><span class="keyword">return</span> self.name</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AccessRecord</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">name = models.ForeignKey(Webpage,on_delete=models.CASCADE)</span><br><span class="line">date = models.DateField(unique=<span class="keyword">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line"><span class="keyword">return</span> str(self.date)</span><br></pre></td></tr></table></figure>
+<h3 id="3-移植"><a href="#3-移植" class="headerlink" title="3. 移植"></a>3. 移植</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">root@38c80f8e29c3:/code# python manage.py migrate</span><br><span class="line">Operations to perform:</span><br><span class="line">Apply all migrations: admin, auth, contenttypes, sessions</span><br><span class="line">Running migrations:</span><br><span class="line">Applying contenttypes.0001_initial... OK</span><br><span class="line">Applying auth.0001_initial... OK</span><br><span class="line">Applying admin.0001_initial... OK</span><br><span class="line">Applying admin.0002_logentry_remove_auto_add... OK</span><br><span class="line">Applying contenttypes.0002_remove_content_type_name... OK</span><br><span class="line">Applying auth.0002_alter_permission_name_max_length... OK</span><br><span class="line">Applying auth.0003_alter_user_email_max_length... OK</span><br><span class="line">Applying auth.0004_alter_user_username_opts... OK</span><br><span class="line">Applying auth.0005_alter_user_last_login_null... OK</span><br><span class="line">Applying auth.0006_require_contenttypes_0002... OK</span><br><span class="line">Applying auth.0007_alter_validators_add_error_messages... OK</span><br><span class="line">Applying auth.0008_alter_user_username_max_length... OK</span><br><span class="line">Applying sessions.0001_initial... OK</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">root@38c80f8e29c3:/code# python manage.py makemigrations first_app</span><br><span class="line">Migrations for &apos;first_app&apos;:</span><br><span class="line">first_app/migrations/0001_initial.py</span><br><span class="line">- Create model AccessRecord</span><br><span class="line">- Create model Topic</span><br><span class="line">- Create model Webpage</span><br><span class="line">- Add field name to accessrecord</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">root@38c80f8e29c3:/code# python manage.py migrate</span><br><span class="line">Operations to perform:</span><br><span class="line">Apply all migrations: admin, auth, contenttypes, first_app, sessions</span><br><span class="line">Running migrations:</span><br><span class="line">Applying first_app.0001_initial... OK</span><br></pre></td></tr></table></figure>
+<h3 id="4-在对应app的admin-py中注册admin将要管理的模块："><a href="#4-在对应app的admin-py中注册admin将要管理的模块：" class="headerlink" title="4. 在对应app的admin.py中注册admin将要管理的模块："></a>4. 在对应app的admin.py中注册admin将要管理的模块：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">from django.contrib import admin</span><br><span class="line">from first_app.models import AccessRecord, Topic, Webpage</span><br><span class="line"># Register your models here.</span><br><span class="line">admin.site.register(AccessRecord)</span><br><span class="line">admin.site.register(Topic)</span><br><span class="line">admin.site.register(Webpage)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>创建超级用户：（“root@38c80f8e29c3:/code” 说明当前主机是容器）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">root@38c80f8e29c3:/code# python manage.py createsuperuser</span><br><span class="line">Username (leave blank to use &apos;root&apos;): ck</span><br><span class="line">Email address: willxxx@gmail.com</span><br><span class="line">Password:</span><br><span class="line">Password (again):</span><br><span class="line">Superuser created successfully.</span><br></pre></td></tr></table></figure>
+<h3 id="5-填充伪数据"><a href="#5-填充伪数据" class="headerlink" title="5. 填充伪数据"></a>5. 填充伪数据</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="comment"># Configure settings for project</span></span><br><span class="line"><span class="comment"># Need to run this before calling models from application!</span></span><br><span class="line">os.environ.setdefault(<span class="string">'DJANGO_SETTINGS_MODULE'</span>,<span class="string">'first_project.settings'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> django</span><br><span class="line"><span class="comment"># Import settings</span></span><br><span class="line">django.setup()</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">from</span> first_app.models <span class="keyword">import</span> Topic,Webpage,AccessRecord</span><br><span class="line"><span class="keyword">from</span> faker <span class="keyword">import</span> Faker</span><br><span class="line"></span><br><span class="line">fakegen = Faker()</span><br><span class="line">topics = [<span class="string">'Search'</span>,<span class="string">'Social'</span>,<span class="string">'Marketplace'</span>,<span class="string">'News'</span>,<span class="string">'Games'</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add_topic</span><span class="params">()</span>:</span></span><br><span class="line">t = Topic.objects.get_or_create(top_name=random.choice(topics))[<span class="number">0</span>]</span><br><span class="line">t.save()</span><br><span class="line"><span class="keyword">return</span> t</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">populate</span><span class="params">(N=<span class="number">5</span>)</span>:</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Create N Entries of Dates Accessed</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> entry <span class="keyword">in</span> range(N):</span><br><span class="line"></span><br><span class="line"><span class="comment"># Get Topic for Entry</span></span><br><span class="line">top = add_topic()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create Fake Data for entry</span></span><br><span class="line">fake_url = fakegen.url()</span><br><span class="line">fake_date = fakegen.date()</span><br><span class="line">fake_name = fakegen.company()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create new Webpage Entry</span></span><br><span class="line">webpg = Webpage.objects.get_or_create(topic=top,url=fake_url,name=fake_name)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create Fake Access Record for that page</span></span><br><span class="line"><span class="comment"># Could add more of these if you wanted...</span></span><br><span class="line">accRec = AccessRecord.objects.get_or_create(name=webpg,date=fake_date)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">print(<span class="string">"Populating the databases...Please Wait"</span>)</span><br><span class="line">populate(<span class="number">20</span>)</span><br><span class="line">print(<span class="string">'Populating Complete'</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>执行populate_first_app.py</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root@c271100f853b:/code# python populate_first_app.py</span><br><span class="line">Populating the databases...Please Wait</span><br><span class="line">Populating Complete</span><br></pre></td></tr></table></figure>
+<h3 id="6-编辑Views"><a href="#6-编辑Views" class="headerlink" title="6. 编辑Views"></a>6. 编辑Views</h3><ul>
+<li>在 views 中 import 所有用到的 models</li>
+<li>用 view 查询 model 获取所需数据</li>
+<li>传送 model 结果到 template</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render</span><br><span class="line"><span class="comment"># from django.http import HttpResponse</span></span><br><span class="line"><span class="keyword">from</span> first_app.models <span class="keyword">import</span> Topic, Webpage, AccessRecord</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create your views here.</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">(request)</span>:</span></span><br><span class="line">my_dict = &#123;<span class="string">'insert_me'</span>: <span class="string">"Hello I am from first_app/index.html!"</span>&#125;</span><br><span class="line"><span class="keyword">return</span> render(request, <span class="string">'first_app/index.html'</span>, context=my_dict)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">help</span><span class="params">(request)</span>:</span></span><br><span class="line">my_dict = &#123;<span class="string">'insert_me'</span>: <span class="string">"Hello I am from first_app/help.html!"</span>&#125;</span><br><span class="line"><span class="keyword">return</span> render(request, <span class="string">'first_app/help.html'</span>, context=my_dict)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">access</span><span class="params">(request)</span>:</span></span><br><span class="line">webpages_list = AccessRecord.objects.order_by(<span class="string">'date'</span>)</span><br><span class="line">date_dict = &#123;<span class="string">'access_records'</span>: webpages_list&#125;</span><br><span class="line"><span class="keyword">return</span> render(request, <span class="string">'first_app/access.html'</span>, context=date_dict)</span><br></pre></td></tr></table></figure>
+<h3 id="7-编辑-template-来接收来自-model-的数据并按设计的式样展示。"><a href="#7-编辑-template-来接收来自-model-的数据并按设计的式样展示。" class="headerlink" title="7. 编辑 template 来接收来自 model 的数据并按设计的式样展示。"></a>7. 编辑 template 来接收来自 model 的数据并按设计的式样展示。</h3><p>用模版标记语言 template tagging 链接模型和Html page</p>
+<p>_Edit templates/first<em>app/access.html</em></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line">&#123;% load staticfiles %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Django Table<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"&#123;% static "</span><span class="attr">css</span>/<span class="attr">mystyle.css</span>" %&#125;"&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"shortcut icon"</span> <span class="attr">href</span>=<span class="string">"&#123;% static 'favicon/favicon.png' %&#125;"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hi welcome to Django MTV !<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>test<span class="tag">&lt;<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"djangotwo"</span>&gt;</span></span><br><span class="line">&#123;% if access_records %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">th</span>&gt;</span>Site Name<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">th</span>&gt;</span>Date Accessed<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line">&#123;% for acc in access_records %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123; acc.name &#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123; acc.date &#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">&#123;% endfor %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">&#123;% else %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>NO ACCESS RECORDS FOUND!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="8-将相应的-URL-映射到新建的-View"><a href="#8-将相应的-URL-映射到新建的-View" class="headerlink" title="8. 将相应的 URL 映射到新建的 View"></a>8. 将相应的 URL 映射到新建的 View</h3><p>_Edit first<em>app/urls.py</em></p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.conf.urls <span class="keyword">import</span> url</span><br><span class="line"><span class="keyword">from</span> first_app <span class="keyword">import</span> views</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">url(<span class="string">r'^$'</span>, views.index, name=<span class="string">'index'</span>),</span><br><span class="line">url(<span class="string">r'^help/'</span>, views.help, name=<span class="string">'help'</span>),</span><br><span class="line">url(<span class="string">r'^access/'</span>, views.access, name=<span class="string">'access'</span>),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h3 id="9-模板的重用"><a href="#9-模板的重用" class="headerlink" title="9. 模板的重用"></a>9. 模板的重用</h3><ul>
+<li>找出项目中重复出现的页面</li>
+<li>创建 base.html 添加 base tag</li>
+<li>在需要的地方扩展 base tag</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Blog/20171227/Django-Class-Based-View/" rel="next" title="Django Class Based View">
+                <i class="fa fa-chevron-left"></i> Django Class Based View
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Blog/20171229/random_forest_regression/" rel="prev" title="Random Forest">
+                Random Forest <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Chunkai Meng</p>
+              <p class="site-description motion-element" itemprop="description">Record and Share</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/chunkai-meng" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.linkedin.com/in/chunkai-meng-68336a16/" target="_blank" title="Linkedin">
+                    
+                      <i class="fa fa-fw fa-linkedin"></i></a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Django-MTV"><span class="nav-text">Django MTV</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-模型及数据库"><span class="nav-text">1. 模型及数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#说明："><span class="nav-text">说明：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤"><span class="nav-text">步骤:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-在setting-py中注册-app-first-app"><span class="nav-text">1. 在setting.py中注册 app: first_app</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-添加model（数据表），atrribute（字段），字段类型，约束及外键"><span class="nav-text">2. 添加model（数据表），atrribute（字段），字段类型，约束及外键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-移植"><span class="nav-text">3. 移植</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-在对应app的admin-py中注册admin将要管理的模块："><span class="nav-text">4. 在对应app的admin.py中注册admin将要管理的模块：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-填充伪数据"><span class="nav-text">5. 填充伪数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-编辑Views"><span class="nav-text">6. 编辑Views</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-编辑-template-来接收来自-model-的数据并按设计的式样展示。"><span class="nav-text">7. 编辑 template 来接收来自 model 的数据并按设计的式样展示。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-将相应的-URL-映射到新建的-View"><span class="nav-text">8. 将相应的 URL 映射到新建的 View</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-模板的重用"><span class="nav-text">9. 模板的重用</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chunkai Meng</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://chunkai.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://chunkai-meng.github.io.git/Blog/20171229/Django-MVT/';
+          this.page.identifier = 'Blog/20171229/Django-MVT/';
+          this.page.title = 'Django MVT';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://chunkai.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
