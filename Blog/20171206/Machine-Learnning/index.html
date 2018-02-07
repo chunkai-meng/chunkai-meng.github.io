@@ -14,6 +14,13 @@
 
 
 
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-loading-bar.min.css?v=1.0.2" rel="stylesheet">
+
 
 
 
@@ -79,22 +86,22 @@
 
 
 
-<meta name="description" content="机器学习笔记Data PreprocessingPart 1: Data Preprocessing Importing Library Importing the dataset Splitting the dataset into the Training set and Test set Feature Scaling  Part 2: 回归模型回归模型（包括线性/非线性）用于预测真实值。例">
+<meta name="description" content="机器学习笔记数据处理及分析的步骤过程和原理【整理中】">
 <meta name="keywords" content="Machine Learnning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Machine Learnning">
 <meta property="og:url" content="https://chunkai-meng.github.io.git/Blog/20171206/Machine-Learnning/index.html">
 <meta property="og:site_name" content="Chunkai&#39;s Blog">
-<meta property="og:description" content="机器学习笔记Data PreprocessingPart 1: Data Preprocessing Importing Library Importing the dataset Splitting the dataset into the Training set and Test set Feature Scaling  Part 2: 回归模型回归模型（包括线性/非线性）用于预测真实值。例">
+<meta property="og:description" content="机器学习笔记数据处理及分析的步骤过程和原理【整理中】">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://chunkai-meng.github.io.git/Blog/20171206/Machine-Learnning/1.png">
 <meta property="og:image" content="https://chunkai-meng.github.io.git/Blog/20171206/Machine-Learnning/2.png">
 <meta property="og:image" content="https://chunkai-meng.github.io.git/Blog/20171206/Machine-Learnning/3.png">
 <meta property="og:image" content="https://chunkai-meng.github.io.git/Blog/20171206/Machine-Learnning/4.png">
-<meta property="og:updated_time" content="2018-02-06T22:39:59.536Z">
+<meta property="og:updated_time" content="2018-02-07T01:27:56.694Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Machine Learnning">
-<meta name="twitter:description" content="机器学习笔记Data PreprocessingPart 1: Data Preprocessing Importing Library Importing the dataset Splitting the dataset into the Training set and Test set Feature Scaling  Part 2: 回归模型回归模型（包括线性/非线性）用于预测真实值。例">
+<meta name="twitter:description" content="机器学习笔记数据处理及分析的步骤过程和原理【整理中】">
 <meta name="twitter:image" content="https://chunkai-meng.github.io.git/Blog/20171206/Machine-Learnning/1.png">
 
 
@@ -105,7 +112,7 @@
     root: '/',
     scheme: 'Gemini',
     version: '5.1.3',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -262,8 +269,10 @@
   
   
   
+    
+  
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal post-sticky" itemscope itemtype="http://schema.org/Article">
   
   
   
@@ -363,6 +372,37 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  476
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  2
+                </span>
+              
+            </div>
+          
 
           
 
@@ -379,7 +419,10 @@
       
 
       
-        <h1 id="机器学习笔记"><a href="#机器学习笔记" class="headerlink" title="机器学习笔记"></a>机器学习笔记</h1><h2 id="Data-Preprocessing"><a href="#Data-Preprocessing" class="headerlink" title="Data Preprocessing"></a>Data Preprocessing</h2><h3 id="Part-1-Data-Preprocessing"><a href="#Part-1-Data-Preprocessing" class="headerlink" title="Part 1: Data Preprocessing"></a>Part 1: Data Preprocessing</h3><ol>
+        <blockquote>
+<p>机器学习笔记<br>数据处理及分析的步骤过程和原理<br>【整理中】<br><a id="more"></a></p>
+</blockquote>
+<h2 id="1-Data-Preprocessing"><a href="#1-Data-Preprocessing" class="headerlink" title="1. Data Preprocessing"></a>1. Data Preprocessing</h2><h3 id="Part-1-Data-Preprocessing"><a href="#Part-1-Data-Preprocessing" class="headerlink" title="Part 1: Data Preprocessing"></a>Part 1: Data Preprocessing</h3><ol>
 <li>Importing Library</li>
 <li>Importing the dataset</li>
 <li>Splitting the dataset into the Training set and Test set</li>
@@ -393,9 +436,10 @@
 <li>预测：根据学习到的经验来预测测试数据，</li>
 </ul>
 <p>Ensemble Learning （集成学习）</p>
-<h4 id="Session-8-决策树"><a href="#Session-8-决策树" class="headerlink" title="Session 8: 决策树"></a>Session 8: 决策树</h4><p>回归模型（非线性 + 非连续）<br><img src="/Blog/20171206/Machine-Learnning/1.png" alt="image"></p>
-<p><img src="/Blog/20171206/Machine-Learnning/2.png" alt="image"></p>
-<p><img src="/Blog/20171206/Machine-Learnning/3.png" alt="image"></p>
+<h4 id="Session-8-决策树"><a href="#Session-8-决策树" class="headerlink" title="Session 8: 决策树"></a>Session 8: 决策树</h4><p>回归模型（非线性 + 非连续）</p>
+<p><img src="/Blog/20171206/Machine-Learnning/1.png" width="80%" height="80%"></p>
+<p><img src="/Blog/20171206/Machine-Learnning/2.png" width="80%" height="80%"></p>
+<p><img src="/Blog/20171206/Machine-Learnning/3.png" width="80%" height="80%"></p>
 <h4 id="Session-9-随机森林"><a href="#Session-9-随机森林" class="headerlink" title="Session 9: 随机森林"></a>Session 9: 随机森林</h4><p>步骤：</p>
 <ol>
 <li>从训练数据集合随机抽取K个数据点</li>
@@ -410,7 +454,7 @@
 这样你的猜测来自很多其他人的猜测的平均值。
 别人是一个人根据自己的经验猜，就是一棵树。
 而你就不是一个人猜了，就是随机森林了，哈哈
-</code></pre><p><img src="/Blog/20171206/Machine-Learnning/4.png" alt="image"></p>
+</code></pre><p><img src="/Blog/20171206/Machine-Learnning/4.png" width="80%" height="80%"></p>
 <p>如果说随机森林是一组相同的模型同时工作提供预测准确度<br>那么接下来在看看如何整合一组不同的模型一起来做预测</p>
 
       
@@ -429,7 +473,8 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Machine-Learnning/" rel="tag"># Machine Learnning</a>
+            <!-- <a href="/tags/Machine-Learnning/" rel="tag"># Machine Learnning</a> -->
+            <a href="/tags/Machine-Learnning/" rel="tag"><i class="fa fa-tag"></i> Machine Learnning</a>
           
         </div>
       
@@ -609,7 +654,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#机器学习笔记"><span class="nav-text">机器学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-Preprocessing"><span class="nav-text">Data Preprocessing</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Part-1-Data-Preprocessing"><span class="nav-text">Part 1: Data Preprocessing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Part-2-回归模型"><span class="nav-text">Part 2: 回归模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Session-8-决策树"><span class="nav-text">Session 8: 决策树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Session-9-随机森林"><span class="nav-text">Session 9: 随机森林</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Data-Preprocessing"><span class="nav-text">1. Data Preprocessing</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Part-1-Data-Preprocessing"><span class="nav-text">Part 1: Data Preprocessing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Part-2-回归模型"><span class="nav-text">Part 2: 回归模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Session-8-决策树"><span class="nav-text">Session 8: 决策树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Session-9-随机森林"><span class="nav-text">Session 9: 随机森林</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -651,6 +696,11 @@
 
 
 
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">Words Count: 31.6k</span>
+</div>
 
         
 
