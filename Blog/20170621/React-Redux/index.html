@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-loading-bar.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="React,Redux," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Frontend: React + ReduxBackend: Django + Django REST API">
+<meta name="keywords" content="React,Redux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React-Redux">
+<meta property="og:url" content="https://chunkai-meng.github.io.git/Blog/20170621/React-Redux/index.html">
+<meta property="og:site_name" content="Chunkai&#39;s Blog">
+<meta property="og:description" content="Frontend: React + ReduxBackend: Django + Django REST API">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-06-21T10:00:19.416Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React-Redux">
+<meta name="twitter:description" content="Frontend: React + ReduxBackend: Django + Django REST API">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://chunkai-meng.github.io.git/Blog/20170621/React-Redux/"/>
+
+
+
+
+
+  <title>React-Redux | Chunkai's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Chunkai's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-projects">
+          <a href="/categories/Projects/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            Projects
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+    
+  
+
+  <article class="post post-type-normal post-sticky" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/Blog/20170621/React-Redux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chunkai Meng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chunkai's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">React-Redux</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-21T21:25:38+12:00">
+                2017-06-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Frontend/" itemprop="url" rel="index">
+                    <span itemprop="name">Frontend</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Blog/20170621/React-Redux/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="Blog/20170621/React-Redux/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  370
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Frontend: React + Redux<br>Backend: Django + Django REST API<br><a id="more"></a></p>
+<!-- TOC -->
+<ul>
+<li><a href="#infoplus">InfoPlus</a><ul>
+<li><a href="#frontend---react--redux">Frontend - [React / Redux]</a></li>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#设计路由">设计路由</a></li>
+<li><a href="#step2-组织route结构层次">Step2: 组织Route结构层次</a><ul>
+<li><a href="#actioncreator">ActionCreator</a></li>
+<li><a href="#button-onclick">Button onClick</a></li>
+<li><a href="#input-value">Input value</a></li>
+<li><a href="#dispatch">Dispatch</a></li>
+<li><a href="#设计状态">设计状态</a></li>
+</ul>
+</li>
+<li><a href="#wiki">WiKi</a></li>
+<li><a href="#updating-to-new-releases">Updating to New Releases</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h1 id="InfoPlus"><a href="#InfoPlus" class="headerlink" title="InfoPlus"></a>InfoPlus</h1><h2 id="Frontend-React-Redux"><a href="#Frontend-React-Redux" class="headerlink" title="Frontend - [React / Redux]"></a>Frontend - [React / Redux]</h2><h2 id="Table-of-Contents"><a href="#Table-of-Contents" class="headerlink" title="Table of Contents"></a>Table of Contents</h2><h2 id="设计路由"><a href="#设计路由" class="headerlink" title="设计路由"></a>设计路由</h2><ol>
+<li>路由设计路由设计的过程可以分为两步：</li>
+<li>为每一个页面定义有语义的路由名称（path）。</li>
+<li>组织Route结构层次。</li>
+</ol>
+<ul>
+<li>定义路由名称我们有三个页面，按照页面功能不难定义出如下的路由名称：<ul>
+<li>登录页：/login</li>
+<li>帖子列表页：/posts</li>
+<li>帖子详情页：/posts/:id（id代表帖子的ID）。</li>
+</ul>
+</li>
+</ul>
+<p>但是这些还不够，还需要考虑打开应用时的默认页面，也就是根路径”/“对应的页面。结合业务场景，帖子列表页作为应用的默认页面最为合适，因此，帖子列表页对应两个路由名称：”/posts”和”/“。</p>
+<h2 id="Step2-组织Route结构层次"><a href="#Step2-组织Route结构层次" class="headerlink" title="Step2: 组织Route结构层次"></a>Step2: 组织Route结构层次</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="ActionCreator"><a href="#ActionCreator" class="headerlink" title="ActionCreator"></a>ActionCreator</h3><p>在Dispatch的时候被执行，其执行结果（action对象）作为dispatch的参数，派发给reducer。</p>
+<h3 id="Button-onClick"><a href="#Button-onClick" class="headerlink" title="Button onClick"></a>Button onClick</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Button onClick=&#123;()=&gt;<span class="keyword">this</span>.props.dispatch(<span class="keyword">this</span>.props.someActionCreator())&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Input-value"><a href="#Input-value" class="headerlink" title="Input value"></a>Input value</h3><h3 id="Dispatch"><a href="#Dispatch" class="headerlink" title="Dispatch"></a>Dispatch</h3><p>有几种方式：</p>
+<ol>
+<li>将action creator映射到props</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mapDispatchToProps = <span class="function"><span class="params">dispatch</span> =&gt;</span> &#123; </span><br><span class="line">    <span class="keyword">return</span> &#123; </span><br><span class="line">        someActionCreator: someActionCreator, </span><br><span class="line">    &#125;; </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>使用的时候</p>
+<ol>
+<li>将actionCreators 一次绑定到props<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mapDispatchToProps = <span class="function"><span class="params">dispatch</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    ...bindActionCreators(postActions, dispatch),</span><br><span class="line">    ...bindActionCreators(uiActions, dispatch)</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="设计状态"><a href="#设计状态" class="headerlink" title="设计状态"></a>设计状态</h3><p>像设计数据库以一样设计state</p>
+<h2 id="WiKi"><a href="#WiKi" class="headerlink" title="WiKi"></a>WiKi</h2><p>一个render()函数里面可以选择返回什么组件或者元素</p>
+<h2 id="Updating-to-New-Releases"><a href="#Updating-to-New-Releases" class="headerlink" title="Updating to New Releases"></a>Updating to New Releases</h2>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <!-- <a href="/tags/React/" rel="tag"># React</a> -->
+            <a href="/tags/React/" rel="tag"><i class="fa fa-tag"></i> React</a>
+          
+            <!-- <a href="/tags/Redux/" rel="tag"># Redux</a> -->
+            <a href="/tags/Redux/" rel="tag"><i class="fa fa-tag"></i> Redux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Blog/20170101/OO-Design-Pattern/" rel="next" title="OO Design Pattern">
+                <i class="fa fa-chevron-left"></i> OO Design Pattern
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Blog/20170822/ASP-Net-Core-Online-Store-Project/" rel="prev" title="ASP.Net Core - Online Store Project">
+                ASP.Net Core - Online Store Project <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Chunkai Meng</p>
+              <p class="site-description motion-element" itemprop="description">Record and Share</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/chunkai-meng" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.linkedin.com/in/chunkai-meng-68336a16/" target="_blank" title="Linkedin">
+                    
+                      <i class="fa fa-fw fa-linkedin"></i></a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#InfoPlus"><span class="nav-text">InfoPlus</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Frontend-React-Redux"><span class="nav-text">Frontend - [React / Redux]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Table-of-Contents"><span class="nav-text">Table of Contents</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设计路由"><span class="nav-text">设计路由</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step2-组织Route结构层次"><span class="nav-text">Step2: 组织Route结构层次</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ActionCreator"><span class="nav-text">ActionCreator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Button-onClick"><span class="nav-text">Button onClick</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Input-value"><span class="nav-text">Input value</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dispatch"><span class="nav-text">Dispatch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设计状态"><span class="nav-text">设计状态</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WiKi"><span class="nav-text">WiKi</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Updating-to-New-Releases"><span class="nav-text">Updating to New Releases</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chunkai Meng</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.3</div>
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">Words Count: 34.9k</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://chunkai.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://chunkai-meng.github.io.git/Blog/20170621/React-Redux/';
+          this.page.identifier = 'Blog/20170621/React-Redux/';
+          this.page.title = 'React-Redux';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://chunkai.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>
