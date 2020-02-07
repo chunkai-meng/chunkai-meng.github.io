@@ -27,11 +27,11 @@
 <meta property="og:site_name" content="Chunkai&#39;s Blog">
 <meta property="og:description" content="Repository  Development Specification Xcode v9.1 Swift 3 Support: iphone 8&#x2F;7&#x2F;6&#x2F;SE or plus, iPad and iPad Pro Latest commit on Oct 19  Screenshot 1 List of technologies1.1 Property Observers1234567891">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://chunkai-meng.github.io.git/Blog/20170915/Swift-iOS-Project/home.png">
-<meta property="og:image" content="https://chunkai-meng.github.io.git/Blog/20170915/Swift-iOS-Project/login.png">
-<meta property="og:image" content="https://chunkai-meng.github.io.git/Blog/20170915/Swift-iOS-Project/setting.png">
-<meta property="og:image" content="https://chunkai-meng.github.io.git/Blog/20170915/Swift-iOS-Project/SettingViewScreenShot.png">
-<meta property="og:image" content="https://chunkai-meng.github.io.git/Blog/20170915/Swift-iOS-Project/CanvasViewScreenShot.png">
+<meta property="og:image" content="https://chunkai-meng.github.io.git/.git//home.png">
+<meta property="og:image" content="https://chunkai-meng.github.io.git/.git//login.png">
+<meta property="og:image" content="https://chunkai-meng.github.io.git/.git//setting.png">
+<meta property="og:image" content="https://chunkai-meng.github.io.git/.git//SettingViewScreenShot.png">
+<meta property="og:image" content="https://chunkai-meng.github.io.git/.git//CanvasViewScreenShot.png">
 <meta property="article:published_time" content="2017-09-14T23:20:15.000Z">
 <meta property="article:modified_time" content="2018-03-04T00:59:08.178Z">
 <meta property="article:author" content="Chunkai Meng">
@@ -39,7 +39,7 @@
 <meta property="article:tag" content="Swift">
 <meta property="article:tag" content="iOS">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://chunkai-meng.github.io.git/Blog/20170915/Swift-iOS-Project/home.png">
+<meta name="twitter:image" content="https://chunkai-meng.github.io.git/.git//home.png">
 
 <link rel="canonical" href="https://chunkai-meng.github.io.git/Blog/20170915/Swift-iOS-Project/">
 
@@ -126,19 +126,14 @@
     <a href="/categories/Backend/Django/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>Django</a>
 
   </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
-
-  </li>
-        <li class="menu-item menu-item-projects">
-
-    <a href="/categories/Projects/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>Projects</a>
-
-  </li>
         <li class="menu-item menu-item-tags">
 
     <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
 
   </li>
         <li class="menu-item menu-item-archives">
@@ -261,14 +256,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span></span>
+              <span>5.6k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>NaN:aN</span>
+              <span>5 mins.</span>
             </span>
 
         </div>
@@ -281,7 +276,7 @@
 
       
         <blockquote>
-<p><a href="https://github.com/mengchunkai/SmartPen" target="_blank" rel="noopener">Repository</a></p>
+<p><a href="https://github.com/mengchunkai/SmartPen">Repository</a></p>
 </blockquote>
 <h1 id="Development-Specification"><a href="#Development-Specification" class="headerlink" title="Development Specification"></a>Development Specification</h1><ul>
 <li>Xcode v9.1</li>
@@ -289,7 +284,7 @@
 <li>Support: iphone 8/7/6/SE or plus, iPad and iPad Pro</li>
 <li>Latest commit on Oct 19</li>
 </ul>
-<h2 id="Screenshot"><a href="#Screenshot" class="headerlink" title="Screenshot"></a>Screenshot</h2><p><img src="/Blog/20170915/Swift-iOS-Project/home.png" alt="image"><br><img src="/Blog/20170915/Swift-iOS-Project/login.png" alt="image"><br><img src="/Blog/20170915/Swift-iOS-Project/setting.png" alt="image"></p>
+<h2 id="Screenshot"><a href="#Screenshot" class="headerlink" title="Screenshot"></a>Screenshot</h2><p><img src="/.git//home.png" alt="image"><br><img src="/.git//login.png" alt="image"><br><img src="/.git//setting.png" alt="image"></p>
 <h2 id="1-List-of-technologies"><a href="#1-List-of-technologies" class="headerlink" title="1 List of technologies"></a><strong>1 List of technologies</strong></h2><h3 id="1-1-Property-Observers"><a href="#1-1-Property-Observers" class="headerlink" title="1.1 Property Observers"></a><strong>1.1 Property Observers</strong></h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> selectedShapeTag: <span class="type">Int</span> = <span class="number">0</span> &#123;</span><br><span class="line">    <span class="keyword">willSet</span>(newTag) &#123;</span><br><span class="line">        shapeButtonArray[newTag].isSelected = <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">didSet</span>(oldTag) &#123;</span><br><span class="line">        <span class="keyword">if</span> selectedShapeTag != oldTag &#123;</span><br><span class="line">            shapeButtonArray[oldTag].isSelected = <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>Property observers observe and respond to changes in a property’s value.<br>Here the variable “selectdShapeTag” is the property being observed.</p>
@@ -311,9 +306,12 @@
 </li>
 </ol>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">SettingsViewControllerDelegate</span>: <span class="title">class</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">settingsViewControllerFinished</span><span class="params">(<span class="number">_</span> settingsViewController: SettingsViewController)</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SettingsViewController</span>: <span class="title">UIViewController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> delegate: <span class="type">SettingsViewControllerDelegate?</span></span><br><span class="line">    ....</span><br><span class="line">    ....</span><br><span class="line">    <span class="meta">@IBAction</span> <span class="function"><span class="keyword">func</span> <span class="title">dismissView</span><span class="params">(<span class="number">_</span> sender: <span class="keyword">Any</span>)</span></span> &#123;</span><br><span class="line">      <span class="keyword">self</span>.dismiss(animated: <span class="literal">true</span>, completion: <span class="literal">nil</span>)</span><br><span class="line">      <span class="keyword">self</span>.delegate?.settingsViewControllerFinished(<span class="keyword">self</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="/Blog/20170915/Swift-iOS-Project/SettingViewScreenShot.png" alt="image"></p>
-<p>Then the CanvasViewController will adopt and confirm the protocol, and he got the object sent by the settingViewController as <code>self</code>, so he got the setting values of every thing: the brush size, color, transparency etc. then all the current setting can be updated.<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">CanvasViewController</span>: <span class="title">SettingsViewControllerDelegate</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">settingsViewControllerFinished</span><span class="params">(<span class="number">_</span> settingsViewController: SettingsViewController)</span></span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">self</span>.currentBrush.red == settingsViewController.redColorValue &amp;&amp;</span><br><span class="line">            <span class="keyword">self</span>.currentBrush.green == settingsViewController.greenColorValue &amp;&amp;</span><br><span class="line">            <span class="keyword">self</span>.currentBrush.blue == settingsViewController.blueColorValue &#123;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// Get new opacty &amp; size</span></span><br><span class="line">            <span class="keyword">self</span>.currentBrush.opacty = settingsViewController.opacity</span><br><span class="line">            <span class="keyword">self</span>.currentBrush.size = settingsViewController.lineWidth</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// Get the new color from Setting View</span></span><br><span class="line">            <span class="keyword">self</span>.currentBrush.red = settingsViewController.redColorValue</span><br><span class="line">            <span class="keyword">self</span>.currentBrush.green = settingsViewController.greenColorValue</span><br><span class="line">            <span class="keyword">self</span>.currentBrush.blue = settingsViewController.blueColorValue</span><br><span class="line"></span><br><span class="line">            <span class="comment">// remove highlight from color button</span></span><br><span class="line">            colorButtonArray[selectedColorTag].backgroundColor = <span class="type">UIColor</span>.white</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><img src="/Blog/20170915/Swift-iOS-Project/CanvasViewScreenShot.png" alt="image"></p>
+
+<p><img src="/.git//SettingViewScreenShot.png" alt="image"></p>
+<p>Then the CanvasViewController will adopt and confirm the protocol, and he got the object sent by the settingViewController as <code>self</code>, so he got the setting values of every thing: the brush size, color, transparency etc. then all the current setting can be updated.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">CanvasViewController</span>: <span class="title">SettingsViewControllerDelegate</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">settingsViewControllerFinished</span><span class="params">(<span class="number">_</span> settingsViewController: SettingsViewController)</span></span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">self</span>.currentBrush.red == settingsViewController.redColorValue &amp;&amp;</span><br><span class="line">            <span class="keyword">self</span>.currentBrush.green == settingsViewController.greenColorValue &amp;&amp;</span><br><span class="line">            <span class="keyword">self</span>.currentBrush.blue == settingsViewController.blueColorValue &#123;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// Get new opacty &amp; size</span></span><br><span class="line">            <span class="keyword">self</span>.currentBrush.opacty = settingsViewController.opacity</span><br><span class="line">            <span class="keyword">self</span>.currentBrush.size = settingsViewController.lineWidth</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// Get the new color from Setting View</span></span><br><span class="line">            <span class="keyword">self</span>.currentBrush.red = settingsViewController.redColorValue</span><br><span class="line">            <span class="keyword">self</span>.currentBrush.green = settingsViewController.greenColorValue</span><br><span class="line">            <span class="keyword">self</span>.currentBrush.blue = settingsViewController.blueColorValue</span><br><span class="line"></span><br><span class="line">            <span class="comment">// remove highlight from color button</span></span><br><span class="line">            colorButtonArray[selectedColorTag].backgroundColor = <span class="type">UIColor</span>.white</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/.git//CanvasViewScreenShot.png" alt="image"></p>
 <h2 id="2-Parts-could-be-improved"><a href="#2-Parts-could-be-improved" class="headerlink" title="2 Parts could be improved"></a><strong>2 Parts could be improved</strong></h2><h3 id="2-1-Method-Size"><a href="#2-1-Method-Size" class="headerlink" title="2.1 Method Size"></a><strong>2.1 Method Size</strong></h3><ul>
 <li><p>The codes are too big sometimes, it’s not easy to read and maintain.</p>
 </li>
@@ -344,25 +342,37 @@
 <p><strong>BASICS</strong></p>
 <p><strong>Const is let and var is still var</strong></p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># <span class="type">Swift</span></span><br><span class="line"><span class="keyword">var</span> myVariable = <span class="number">42</span></span><br><span class="line">myVariable = <span class="number">50</span></span><br><span class="line"><span class="keyword">let</span> myConstant = <span class="number">42</span></span><br></pre></td></tr></table></figure>
+
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># C#</span></span><br><span class="line"><span class="keyword">var</span> myVariable = <span class="number">42</span>;</span><br><span class="line">myVariable = <span class="number">50</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> myConstant = <span class="number">42</span>;</span><br></pre></td></tr></table></figure>
-<p><strong>COLLECTIONS</strong><br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># <span class="type">Swift</span></span><br><span class="line"><span class="keyword">var</span> shoppingList = [<span class="string">"catfish"</span>, <span class="string">"water"</span>,</span><br><span class="line">    <span class="string">"tulips"</span>, <span class="string">"blue paint"</span>]</span><br><span class="line">shoppingList[<span class="number">1</span>] = <span class="string">"bottle of water"</span></span><br></pre></td></tr></table></figure></p>
+
+<p><strong>COLLECTIONS</strong></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># <span class="type">Swift</span></span><br><span class="line"><span class="keyword">var</span> shoppingList = [<span class="string">"catfish"</span>, <span class="string">"water"</span>,</span><br><span class="line">    <span class="string">"tulips"</span>, <span class="string">"blue paint"</span>]</span><br><span class="line">shoppingList[<span class="number">1</span>] = <span class="string">"bottle of water"</span></span><br></pre></td></tr></table></figure>
+
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># C#</span></span><br><span class="line"><span class="keyword">var</span> shoppingList = <span class="keyword">new</span>[]&#123;<span class="string">"catfish"</span>, <span class="string">"water"</span>, <span class="string">"tulips"</span>, <span class="string">"blue paint"</span>&#125;;</span><br><span class="line">shoppingList[<span class="number">1</span>] = <span class="string">"bottle of water"</span>;</span><br></pre></td></tr></table></figure>
-<p><strong>Protocol</strong><br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">Nameable</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">name</span><span class="params">()</span></span> -&gt; <span class="type">String</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">f</span>&lt;T: Nameable&gt;<span class="params">(x: T)</span></span> &#123;</span><br><span class="line">    <span class="built_in">println</span>(<span class="string">"Name is "</span> + x.name())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+<p><strong>Protocol</strong></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">Nameable</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">name</span><span class="params">()</span></span> -&gt; <span class="type">String</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">f</span>&lt;T: Nameable&gt;<span class="params">(x: T)</span></span> &#123;</span><br><span class="line">    <span class="built_in">println</span>(<span class="string">"Name is "</span> + x.name())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># C#</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title">Nameable</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">string</span> <span class="title">name</span>(<span class="params"></span>)</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> f&lt;T&gt;(T x) <span class="keyword">where</span> T : Nameable &#123;</span><br><span class="line">    Console.WriteLine(<span class="string">"Name is "</span> + x.name());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>Lambdas and Closures</strong><br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># <span class="type">Closure</span> <span class="type">Expression</span> <span class="type">Syntax</span></span><br><span class="line">&#123; (parameters) -&gt; <span class="keyword">return</span> type <span class="keyword">in</span></span><br><span class="line">    statements</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># <span class="type">Example</span></span><br><span class="line">reversedNames = names.sorted(by: &#123; (s1: <span class="type">String</span>, s2: <span class="type">String</span>) -&gt; <span class="type">Bool</span> <span class="keyword">in</span></span><br><span class="line">    <span class="keyword">return</span> s1 &gt; s2</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+
+<p><strong>Lambdas and Closures</strong></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># <span class="type">Closure</span> <span class="type">Expression</span> <span class="type">Syntax</span></span><br><span class="line">&#123; (parameters) -&gt; <span class="keyword">return</span> type <span class="keyword">in</span></span><br><span class="line">    statements</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># <span class="type">Example</span></span><br><span class="line">reversedNames = names.sorted(by: &#123; (s1: <span class="type">String</span>, s2: <span class="type">String</span>) -&gt; <span class="type">Bool</span> <span class="keyword">in</span></span><br><span class="line">    <span class="keyword">return</span> s1 &gt; s2</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># C#</span></span><br><span class="line"><span class="meta"># Expression Lambdas</span></span><br><span class="line">(input-parameters) =&gt; expression</span><br><span class="line">(x, y) =&gt; x == y</span><br><span class="line"></span><br><span class="line"><span class="meta"># Statement Lambdas</span></span><br><span class="line">(input-parameters) =&gt; &#123; statement; &#125;</span><br><span class="line"><span class="function"><span class="keyword">delegate</span> <span class="keyword">void</span> <span class="title">TestDelegate</span>(<span class="params"><span class="keyword">string</span> s</span>)</span>;</span><br><span class="line">TestDelegate del = n =&gt; &#123; <span class="keyword">string</span> s = n + <span class="string">" World"</span>;</span><br><span class="line">                        Console.WriteLine(s); &#125;;</span><br></pre></td></tr></table></figure>
+
+
 <h3 id="What-I-learned"><a href="#What-I-learned" class="headerlink" title="What I learned"></a>What I learned</h3><ul>
 <li>How to use SQLiteBrowser to view your CoreData</li>
 </ul>
 <ol>
-<li><p>Download and install from <a href="http://sqlitebrowser.org" target="_blank" rel="noopener">http://sqlitebrowser.org</a></p>
+<li><p>Download and install from <a href="http://sqlitebrowser.org">http://sqlitebrowser.org</a></p>
 </li>
 <li><p>Insert follow code to show db file e.g. “AppName”.sqlite</p>
 </li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let storeUrl &#x3D; appDelegate.persistentContainer.persistentStoreCoordinator.persistentStores.first?.url</span><br><span class="line">print(storeUrl!)</span><br></pre></td></tr></table></figure>
 <p>file:///Users/xxx/Library/Developer/CoreSimulator/Devices/95E79F65-8DC5-4200-83C7-CE443685D25E/data/Containers/Data/Application/35C1939D-DD2F-4B4E-AF70-6489047977A2/Library/Application%20Support/SmartPen.sqlite</p>
-<ol>
+<ol start="3">
 <li><p>Open Termial and locate to that file<br><code>cd /Users/xxx/Library/Developer/CoreSimulator/Devices/95E79F65-8DC5-4200-83C7-CE443685D25E/data/Containers/Data/Application/35C1939D-DD2F-4B4E-AF70-6489047977A2/Library/Application%20Support</code></p>
 </li>
 <li><p>run <code>open .</code> open that folder</p>
@@ -495,14 +505,6 @@
       </div>
   </nav>
 </div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/chunkai-meng" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;chunkai-meng" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.linkedin.com/in/chunkai-meng-68336a16/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;chunkai-meng-68336a16&#x2F;" rel="noopener" target="_blank"><i class="fa fa-fw fa-linkedin"></i>Linkedin</a>
-      </span>
-  </div>
 
 
 
@@ -532,12 +534,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">NaNm</span>
+    <span title="Symbols count total">100k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">NaN:aN</span>
+    <span title="Reading time total">1:31</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
   </div>

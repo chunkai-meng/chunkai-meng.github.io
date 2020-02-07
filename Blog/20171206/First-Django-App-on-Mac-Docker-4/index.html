@@ -117,19 +117,14 @@
     <a href="/categories/Backend/Django/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>Django</a>
 
   </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
-
-  </li>
-        <li class="menu-item menu-item-projects">
-
-    <a href="/categories/Projects/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>Projects</a>
-
-  </li>
         <li class="menu-item menu-item-tags">
 
     <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
 
   </li>
         <li class="menu-item menu-item-archives">
@@ -258,14 +253,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span></span>
+              <span>1.1k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>NaN:aN</span>
+              <span>1 mins.</span>
             </span>
 
         </div>
@@ -278,10 +273,12 @@
 
       
         <h1 id="Mac-Docker-创建第一个Django-应用，Part-4"><a href="#Mac-Docker-创建第一个Django-应用，Part-4" class="headerlink" title="Mac Docker 创建第一个Django 应用，Part 4"></a>Mac Docker 创建第一个Django 应用，Part 4</h1><blockquote>
-<p>参考原文：<a href="https://docs.djangoproject.com/en/1.11/intro/tutorial04/" target="_blank" rel="noopener">Writing your first Django app, part 4</a><br>本文Python搭建在 Django Compose + Djang  执行Python需进入web server容器中，请参看[第一步：在Mac构建Django 容器]<br>翻译整理：CK</p>
+<p>参考原文：<a href="https://docs.djangoproject.com/en/1.11/intro/tutorial04/">Writing your first Django app, part 4</a><br>本文Python搭建在 Django Compose + Djang  执行Python需进入web server容器中，请参看[第一步：在Mac构建Django 容器]<br>翻译整理：CK</p>
 </blockquote>
 <p>简单的表单处理以及精简代码</p>
-<h2 id="1-简单表单"><a href="#1-简单表单" class="headerlink" title="1. 简单表单"></a>1. 简单表单</h2><p><strong>polls/templates/polls/detail.html</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;&#123;&#123; question.question_text &#125;&#125;&lt;&#x2F;h1&gt;</span><br><span class="line"></span><br><span class="line">&#123;% if error_message %&#125;&lt;p&gt;&lt;strong&gt;&#123;&#123; error_message &#125;&#125;&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">&lt;form action&#x3D;&quot;&#123;% url &#39;polls:vote&#39; question.id %&#125;&quot; method&#x3D;&quot;post&quot;&gt;</span><br><span class="line">&#123;% csrf_token %&#125;</span><br><span class="line">&#123;% for choice in question.choice_set.all %&#125;</span><br><span class="line">    &lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;choice&quot; id&#x3D;&quot;choice&#123;&#123; forloop.counter &#125;&#125;&quot; value&#x3D;&quot;&#123;&#123; choice.id &#125;&#125;&quot; &#x2F;&gt;</span><br><span class="line">    &lt;label for&#x3D;&quot;choice&#123;&#123; forloop.counter &#125;&#125;&quot;&gt;&#123;&#123; choice.choice_text &#125;&#125;&lt;&#x2F;label&gt;&lt;br &#x2F;&gt;</span><br><span class="line">&#123;% endfor %&#125;</span><br><span class="line">&lt;input type&#x3D;&quot;submit&quot; value&#x3D;&quot;Vote&quot; &#x2F;&gt;</span><br><span class="line">&lt;&#x2F;form&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="1-简单表单"><a href="#1-简单表单" class="headerlink" title="1. 简单表单"></a>1. 简单表单</h2><p><strong>polls/templates/polls/detail.html</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;&#123;&#123; question.question_text &#125;&#125;&lt;&#x2F;h1&gt;</span><br><span class="line"></span><br><span class="line">&#123;% if error_message %&#125;&lt;p&gt;&lt;strong&gt;&#123;&#123; error_message &#125;&#125;&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">&lt;form action&#x3D;&quot;&#123;% url &#39;polls:vote&#39; question.id %&#125;&quot; method&#x3D;&quot;post&quot;&gt;</span><br><span class="line">&#123;% csrf_token %&#125;</span><br><span class="line">&#123;% for choice in question.choice_set.all %&#125;</span><br><span class="line">    &lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;choice&quot; id&#x3D;&quot;choice&#123;&#123; forloop.counter &#125;&#125;&quot; value&#x3D;&quot;&#123;&#123; choice.id &#125;&#125;&quot; &#x2F;&gt;</span><br><span class="line">    &lt;label for&#x3D;&quot;choice&#123;&#123; forloop.counter &#125;&#125;&quot;&gt;&#123;&#123; choice.choice_text &#125;&#125;&lt;&#x2F;label&gt;&lt;br &#x2F;&gt;</span><br><span class="line">&#123;% endfor %&#125;</span><br><span class="line">&lt;input type&#x3D;&quot;submit&quot; value&#x3D;&quot;Vote&quot; &#x2F;&gt;</span><br><span class="line">&lt;&#x2F;form&gt;</span><br></pre></td></tr></table></figure>
+
 
     </div>
 
@@ -402,14 +399,6 @@
       </div>
   </nav>
 </div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/chunkai-meng" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;chunkai-meng" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.linkedin.com/in/chunkai-meng-68336a16/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;chunkai-meng-68336a16&#x2F;" rel="noopener" target="_blank"><i class="fa fa-fw fa-linkedin"></i>Linkedin</a>
-      </span>
-  </div>
 
 
 
@@ -439,12 +428,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">NaNm</span>
+    <span title="Symbols count total">100k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">NaN:aN</span>
+    <span title="Reading time total">1:31</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
   </div>

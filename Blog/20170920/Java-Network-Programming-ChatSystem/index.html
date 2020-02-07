@@ -27,8 +27,8 @@
 <meta property="og:site_name" content="Chunkai&#39;s Blog">
 <meta property="og:description" content="Java-ChatSystem IDE Eclipse Version: Oxygen.1a Release (4.7.1a)java version “1.8.0_144”Java(TM) SE Runtime Environment (build 1.8.0_144-b01)Developer: ChunkaiRepositorieCompleted at Oct 2017  USAGE Cl">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://chunkai-meng.github.io.git/Blog/20170920/Java-Network-Programming-ChatSystem/Broadcast.png">
-<meta property="og:image" content="https://chunkai-meng.github.io.git/Blog/20170920/Java-Network-Programming-ChatSystem/C-blocked-by-B.png">
+<meta property="og:image" content="https://chunkai-meng.github.io.git/.git//Broadcast.png">
+<meta property="og:image" content="https://chunkai-meng.github.io.git/.git//C-blocked-by-B.png">
 <meta property="article:published_time" content="2017-09-20T05:43:58.000Z">
 <meta property="article:modified_time" content="2018-03-04T00:57:48.846Z">
 <meta property="article:author" content="Chunkai Meng">
@@ -37,7 +37,7 @@
 <meta property="article:tag" content="Project">
 <meta property="article:tag" content="Multiple Threads">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://chunkai-meng.github.io.git/Blog/20170920/Java-Network-Programming-ChatSystem/Broadcast.png">
+<meta name="twitter:image" content="https://chunkai-meng.github.io.git/.git//Broadcast.png">
 
 <link rel="canonical" href="https://chunkai-meng.github.io.git/Blog/20170920/Java-Network-Programming-ChatSystem/">
 
@@ -124,19 +124,14 @@
     <a href="/categories/Backend/Django/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>Django</a>
 
   </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
-
-  </li>
-        <li class="menu-item menu-item-projects">
-
-    <a href="/categories/Projects/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>Projects</a>
-
-  </li>
         <li class="menu-item menu-item-tags">
 
     <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
 
   </li>
         <li class="menu-item menu-item-archives">
@@ -259,14 +254,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span></span>
+              <span>2.7k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>NaN:aN</span>
+              <span>2 mins.</span>
             </span>
 
         </div>
@@ -279,7 +274,7 @@
 
       
         <h1 id="Java-ChatSystem"><a href="#Java-ChatSystem" class="headerlink" title="Java-ChatSystem"></a>Java-ChatSystem</h1><blockquote>
-<p>IDE Eclipse Version: Oxygen.1a Release (4.7.1a)<br>java version “1.8.0_144”<br>Java(TM) SE Runtime Environment (build 1.8.0_144-b01)<br>Developer: Chunkai<br><a href="https://github.com/chunkai-meng/Java-ChatSystem" target="_blank" rel="noopener">Repositorie</a><br>Completed at Oct 2017</p>
+<p>IDE Eclipse Version: Oxygen.1a Release (4.7.1a)<br>java version “1.8.0_144”<br>Java(TM) SE Runtime Environment (build 1.8.0_144-b01)<br>Developer: Chunkai<br><a href="https://github.com/chunkai-meng/Java-ChatSystem">Repositorie</a><br>Completed at Oct 2017</p>
 </blockquote>
 <h2 id="USAGE"><a href="#USAGE" class="headerlink" title="USAGE"></a>USAGE</h2><ul>
 <li>Clone the repository to you local disk</li>
@@ -288,7 +283,7 @@
 <li>Input the correct Server IP into Client, by default the server and client running on the same machine, the IP address already set up for you.</li>
 <li>Test Account(Usename/Password):<br>A/A<br>B/B<br>C/C<br>Bajie/B1234  </li>
 </ul>
-<h2 id="Functions"><a href="#Functions" class="headerlink" title="Functions"></a>Functions</h2><h3 id="Client"><a href="#Client" class="headerlink" title="Client:"></a>Client:</h3><p><img src="/Blog/20170920/Java-Network-Programming-ChatSystem/Broadcast.png" alt="image"></p>
+<h2 id="Functions"><a href="#Functions" class="headerlink" title="Functions"></a>Functions</h2><h3 id="Client"><a href="#Client" class="headerlink" title="Client:"></a>Client:</h3><p><img src="/.git//Broadcast.png" alt="image"></p>
 <ul>
 <li>Send a basic text message to the server</li>
 <li>Receive text from the server</li>
@@ -299,7 +294,7 @@
 <li>Implementation:<br>When sending a private message, the first msg being sent to server is of type: CHAT_MESSAGE. The second msg is the receiver name, the third msg is message itself.<br>The corresponding ClientHandler Thread maintain a total Client List will forward it to the right person.</li>
 </ul>
 </li>
-<li>Block/ignore user<br><img src="/Blog/20170920/Java-Network-Programming-ChatSystem/C-blocked-by-B.png" alt="image"><ul>
+<li>Block/ignore user<br><img src="/.git//C-blocked-by-B.png" alt="image"><ul>
 <li>Design:<br>When chose a user and click “Block/Unblock” button, this user will be block in this client.Right after the click, the background color of Blocked-User cell is set to Color Gray.If user A is block by user B, A will not received any notice about this blocking, this is for protecting B’s privacy.</li>
 <li>Implementation:<br>Each Client maintain two BlockUser ArrayList variables, one is the index of block-user in JList which is used to highlight cell, another ArrayList restore the block-user name for checking the incoming msg.</li>
 </ul>
@@ -451,14 +446,6 @@
       </div>
   </nav>
 </div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/chunkai-meng" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;chunkai-meng" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.linkedin.com/in/chunkai-meng-68336a16/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;chunkai-meng-68336a16&#x2F;" rel="noopener" target="_blank"><i class="fa fa-fw fa-linkedin"></i>Linkedin</a>
-      </span>
-  </div>
 
 
 
@@ -488,12 +475,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">NaNm</span>
+    <span title="Symbols count total">100k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">NaN:aN</span>
+    <span title="Reading time total">1:31</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
   </div>

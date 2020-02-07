@@ -119,19 +119,14 @@
     <a href="/categories/Backend/Django/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>Django</a>
 
   </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
-
-  </li>
-        <li class="menu-item menu-item-projects">
-
-    <a href="/categories/Projects/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>Projects</a>
-
-  </li>
         <li class="menu-item menu-item-tags">
 
     <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
 
   </li>
         <li class="menu-item menu-item-archives">
@@ -260,14 +255,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span></span>
+              <span>6.1k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>NaN:aN</span>
+              <span>6 mins.</span>
             </span>
 
         </div>
@@ -296,6 +291,7 @@
 <li>可选变量或者常量或者为=该类型的某个值，或者没有值=nil</li>
 <li>nil不能用于非可选的变量或者常量</li>
 <li>确认一个可选有值以后可以用！强制展开／取值<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if convertedNumber !&#x3D; nil &#123;</span><br><span class="line">    print(&quot;convertedNumber has an integer value of \(convertedNumber!).&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h3 id="隐式展开可选项"><a href="#隐式展开可选项" class="headerlink" title="隐式展开可选项"></a>隐式展开可选项</h3><ul>
@@ -306,17 +302,22 @@
 </blockquote>
 </li>
 </ul>
-<h3 id="函数和闭包"><a href="#函数和闭包" class="headerlink" title="函数和闭包"></a>函数和闭包</h3><h4 id="语法表达式"><a href="#语法表达式" class="headerlink" title="语法表达式"></a>语法表达式</h4><p>一般形式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">            (parameters) -&gt; returnType in</span><br><span class="line">             statements</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="函数和闭包"><a href="#函数和闭包" class="headerlink" title="函数和闭包"></a>函数和闭包</h3><h4 id="语法表达式"><a href="#语法表达式" class="headerlink" title="语法表达式"></a>语法表达式</h4><p>一般形式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">            (parameters) -&gt; returnType in</span><br><span class="line">             statements</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>这里的参数(parameters)，可以是in-out(输入输出参数)，但不能设定默认值。如果是可变参数，必须放在最后一位，不然编译器报错。元组也可以作为参数或者返回值。</li>
-<li>“in”关键字表示闭包的参数和返回值类型定义已经完成，闭包函数体即将开始。即由in引入函数<br>例子”<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;一般形式</span><br><span class="line">let calAdd:(Int,Int)-&gt;(Int) &#x3D; &#123;</span><br><span class="line">    (a:Int,b:Int) -&gt; Int in</span><br><span class="line">    return a + b</span><br><span class="line">&#125;</span><br><span class="line">print(calAdd(100,150))</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;Swift可以根据闭包上下文推断参数和返回值的类型，所以上面的例子可以简化如下</span><br><span class="line">let calAdd2:(Int,Int)-&gt;(Int) &#x3D; &#123;</span><br><span class="line">    a,b in  &#x2F;&#x2F;也可以写成(a,b) in</span><br><span class="line">    return a + b</span><br><span class="line">&#125;</span><br><span class="line">print(calAdd2(150,100))</span><br><span class="line">&#x2F;&#x2F;上面省略了返回箭头和参数及返回值类型，以及参数周围的括号。当然你也可以加括号，为了好看点，看的清楚点。(a,b)</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;单行表达式闭包可以隐式返回，如下，省略return</span><br><span class="line">let calAdd3:(Int,Int)-&gt;(Int) &#x3D; &#123;(a,b) in a + b&#125;</span><br><span class="line">print(calAdd3(50,200))</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;如果闭包没有参数，可以直接省略“in”</span><br><span class="line">let calAdd4:()-&gt;Int &#x3D; &#123;return 100 + 150&#125;</span><br><span class="line">print(&quot;....\(calAdd4())&quot;)</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;这个写法，我随便写的。打印出“我是250”</span><br><span class="line">&#x2F;&#x2F;这个是既没有参数也没返回值，所以把return和in都省略了</span><br><span class="line">let calAdd5:()-&gt;Void &#x3D; &#123;print(&quot;我是250&quot;)&#125;</span><br><span class="line">calAdd5()</span><br></pre></td></tr></table></figure></li>
+<li><p>这里的参数(parameters)，可以是in-out(输入输出参数)，但不能设定默认值。如果是可变参数，必须放在最后一位，不然编译器报错。元组也可以作为参数或者返回值。</p>
+</li>
+<li><p>“in”关键字表示闭包的参数和返回值类型定义已经完成，闭包函数体即将开始。即由in引入函数<br>例子”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;一般形式</span><br><span class="line">let calAdd:(Int,Int)-&gt;(Int) &#x3D; &#123;</span><br><span class="line">    (a:Int,b:Int) -&gt; Int in</span><br><span class="line">    return a + b</span><br><span class="line">&#125;</span><br><span class="line">print(calAdd(100,150))</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;Swift可以根据闭包上下文推断参数和返回值的类型，所以上面的例子可以简化如下</span><br><span class="line">let calAdd2:(Int,Int)-&gt;(Int) &#x3D; &#123;</span><br><span class="line">    a,b in  &#x2F;&#x2F;也可以写成(a,b) in</span><br><span class="line">    return a + b</span><br><span class="line">&#125;</span><br><span class="line">print(calAdd2(150,100))</span><br><span class="line">&#x2F;&#x2F;上面省略了返回箭头和参数及返回值类型，以及参数周围的括号。当然你也可以加括号，为了好看点，看的清楚点。(a,b)</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;单行表达式闭包可以隐式返回，如下，省略return</span><br><span class="line">let calAdd3:(Int,Int)-&gt;(Int) &#x3D; &#123;(a,b) in a + b&#125;</span><br><span class="line">print(calAdd3(50,200))</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;如果闭包没有参数，可以直接省略“in”</span><br><span class="line">let calAdd4:()-&gt;Int &#x3D; &#123;return 100 + 150&#125;</span><br><span class="line">print(&quot;....\(calAdd4())&quot;)</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;这个写法，我随便写的。打印出“我是250”</span><br><span class="line">&#x2F;&#x2F;这个是既没有参数也没返回值，所以把return和in都省略了</span><br><span class="line">let calAdd5:()-&gt;Void &#x3D; &#123;print(&quot;我是250&quot;)&#125;</span><br><span class="line">calAdd5()</span><br></pre></td></tr></table></figure></li>
 <li><p>归纳<br>闭包类型是由参数类型和返回值类型决定，和函数是一样的。比如上面前三种写法的闭包的闭包类型就是(Int,Int)-&gt;(Int),后面的类型分别是()-&gt;Int和()-&gt;Void。分析下上面的代码：let calAdd：(add类型)。这里的add类型就是闭包类型 (Int,Int)-&gt;(Int)。意思就是声明一个calAdd常量，其类型是个闭包类型。<br>“=”右边是一个代码块，即闭包的具体实现，相当于给左边的add常量赋值。兄弟们，是不是感觉很熟悉了，有点像OC中的block代码块。</p>
 <h4 id="起别名"><a href="#起别名" class="headerlink" title="起别名"></a>起别名</h4></li>
 <li><p>也可以关键字“typealias”先声明一个闭包数据类型。类似于OC中的typedef起别名</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">typealias AddBlock &#x3D; (Int, Int) -&gt; (Int)</span><br><span class="line"></span><br><span class="line">let Add:AddBlock &#x3D; &#123;</span><br><span class="line">    (c,d) in</span><br><span class="line">    return c + d</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let Result &#x3D; Add(100,150)</span><br><span class="line">print(&quot;Result &#x3D; \(Result)&quot;)</span><br></pre></td></tr></table></figure>
 <h4 id="尾随闭包"><a href="#尾随闭包" class="headerlink" title="尾随闭包"></a>尾随闭包</h4></li>
 </ul>
-<p>若将闭包作为函数最后一个参数，可以省略参数标签,然后将闭包表达式写在函数调用括号后面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">func testFunction(testBlock: ()-&gt;Void)&#123;</span><br><span class="line">    &#x2F;&#x2F;这里需要传进来的闭包类型是无参数和无返回值的</span><br><span class="line">    testBlock()</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;正常写法</span><br><span class="line">testFunction(testBlock: &#123;</span><br><span class="line">    print(&quot;正常写法&quot;)</span><br><span class="line">&#125;)</span><br><span class="line">&#x2F;&#x2F;尾随闭包写法</span><br><span class="line">testFunction()&#123;</span><br><span class="line">    print(&quot;尾随闭包写法&quot;)</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;也可以把括号去掉，也是尾随闭包写法。推荐写法</span><br><span class="line">testFunction &#123;</span><br><span class="line">    print(&quot;去掉括号的尾随闭包写法&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>若将闭包作为函数最后一个参数，可以省略参数标签,然后将闭包表达式写在函数调用括号后面</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">func testFunction(testBlock: ()-&gt;Void)&#123;</span><br><span class="line">    &#x2F;&#x2F;这里需要传进来的闭包类型是无参数和无返回值的</span><br><span class="line">    testBlock()</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;正常写法</span><br><span class="line">testFunction(testBlock: &#123;</span><br><span class="line">    print(&quot;正常写法&quot;)</span><br><span class="line">&#125;)</span><br><span class="line">&#x2F;&#x2F;尾随闭包写法</span><br><span class="line">testFunction()&#123;</span><br><span class="line">    print(&quot;尾随闭包写法&quot;)</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;也可以把括号去掉，也是尾随闭包写法。推荐写法</span><br><span class="line">testFunction &#123;</span><br><span class="line">    print(&quot;去掉括号的尾随闭包写法&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h4 id="值捕获"><a href="#值捕获" class="headerlink" title="值捕获"></a>值捕获</h4><ul>
 <li>闭包可以在其被定义的上下文中捕获常量或变量。Swift中，可以捕获值的闭包的最简单形式是嵌套函数，也就是定义在其他函数的函数体内的函数。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">func captureValue(sums amount:Int) -&gt; ()-&gt;Int&#123;</span><br><span class="line">    var total &#x3D; 0</span><br><span class="line">    func incrementer()-&gt;Int&#123;</span><br><span class="line">        total +&#x3D; amount</span><br><span class="line">        return total</span><br><span class="line">    &#125;</span><br><span class="line">    return incrementer</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">print(captureValue(sums: 10)())</span><br><span class="line">print(captureValue(sums: 10)())</span><br><span class="line">print(captureValue(sums: 10)())</span><br><span class="line">&#x2F;&#x2F;打印&quot;10 10 10&quot;</span><br></pre></td></tr></table></figure>
 这里没有值捕获的原因是，没有去用一个常量或变量去引用函数，所以每次使用的函数都是新的。有点类似于OC中的匿名对象。</li>
@@ -328,6 +329,7 @@
 <h4 id="逃逸闭包"><a href="#逃逸闭包" class="headerlink" title="逃逸闭包"></a>逃逸闭包</h4><ul>
 <li>当一个闭包作为参数传到一个函数中，需要这个闭包在函数返回之后才被执行，我们就称该闭包从函数种逃逸。一般如果闭包在函数体内涉及到异步操作，但函数却是很快就会执行完毕并返回的，闭包必须要逃逸掉，以便异步操作的回调。</li>
 <li>逃逸闭包一般用于异步函数的回调，比如网络请求成功的回调和失败的回调。语法：在函数的闭包形参前加关键字“@escaping”。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;例1</span><br><span class="line">func doSomething(some: @escaping () -&gt; Void)&#123;</span><br><span class="line">    &#x2F;&#x2F;延时操作，注意这里的单位是秒</span><br><span class="line">    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) &#123;</span><br><span class="line">        &#x2F;&#x2F;1秒后操作</span><br><span class="line">        some()</span><br><span class="line">    &#125;</span><br><span class="line">    print(&quot;函数体&quot;)</span><br><span class="line">&#125;</span><br><span class="line">doSomething &#123;</span><br><span class="line">    print(&quot;逃逸闭包&quot;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;例2</span><br><span class="line">var comletionHandle: ()-&gt;String &#x3D; &#123;&quot;约吗?&quot;&#125;</span><br><span class="line"></span><br><span class="line">func doSomething2(some: @escaping ()-&gt;String)&#123;</span><br><span class="line">    comletionHandle &#x3D; some</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 若将闭包作为函数最后一个参数，可以省略参数标签,然后将闭包表达式写在函数调用括号后面，甚至还可以去掉括号，这是推荐写法：</span><br><span class="line">doSomething2 &#123;</span><br><span class="line">    return &quot;叔叔，我们不约&quot;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F; 正常写法： doSomething2(some: &#123; return &quot;xxxx&quot; &#125;)</span><br><span class="line">&#x2F;&#x2F; 省略写法： doSomething2() &#123; return &quot;xxxx&quot; &#125;</span><br><span class="line">&#x2F;&#x2F; 下回看到上面的代码别懵圈了，这不是函数定义，是函数调用，大括号时作为参数的闭包</span><br><span class="line">print(comletionHandle())</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;将一个闭包标记为@escaping意味着你必须在闭包中显式的引用self。</span><br><span class="line">&#x2F;&#x2F;其实@escaping和self都是在提醒你，这是一个逃逸闭包，</span><br><span class="line">&#x2F;&#x2F;别误操作导致了循环引用！而非逃逸包可以隐式引用self。</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;例子如下</span><br><span class="line">var completionHandlers: [() -&gt; Void] &#x3D; []</span><br><span class="line">&#x2F;&#x2F;逃逸</span><br><span class="line">func someFunctionWithEscapingClosure(completionHandler: @escaping () -&gt; Void) &#123;</span><br><span class="line">    completionHandlers.append(completionHandler)</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;非逃逸</span><br><span class="line">func someFunctionWithNonescapingClosure(closure: () -&gt; Void) &#123;</span><br><span class="line">    closure()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class SomeClass &#123;</span><br><span class="line">    var x &#x3D; 10</span><br><span class="line">    func doSomething() &#123;</span><br><span class="line">        someFunctionWithEscapingClosure &#123; self.x &#x3D; 100 &#125;</span><br><span class="line">        someFunctionWithNonescapingClosure &#123; x &#x3D; 200 &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h4 id="自动闭包"><a href="#自动闭包" class="headerlink" title="自动闭包"></a>自动闭包</h4><ul>
@@ -456,14 +458,6 @@
       </div>
   </nav>
 </div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/chunkai-meng" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;chunkai-meng" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.linkedin.com/in/chunkai-meng-68336a16/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;chunkai-meng-68336a16&#x2F;" rel="noopener" target="_blank"><i class="fa fa-fw fa-linkedin"></i>Linkedin</a>
-      </span>
-  </div>
 
 
 
@@ -493,12 +487,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">NaNm</span>
+    <span title="Symbols count total">100k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">NaN:aN</span>
+    <span title="Reading time total">1:31</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
   </div>

@@ -120,19 +120,14 @@
     <a href="/categories/Backend/Django/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>Django</a>
 
   </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
-
-  </li>
-        <li class="menu-item menu-item-projects">
-
-    <a href="/categories/Projects/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>Projects</a>
-
-  </li>
         <li class="menu-item menu-item-tags">
 
     <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
 
   </li>
         <li class="menu-item menu-item-archives">
@@ -261,14 +256,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span></span>
+              <span>3.2k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>NaN:aN</span>
+              <span>3 mins.</span>
             </span>
 
         </div>
@@ -301,8 +296,7 @@
 <th>Description</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>compile(pattern[, flags])</td>
 <td>从一个规则表达式字符串创建模式对象</td>
 </tr>
@@ -330,17 +324,23 @@
 <td>escape(string)</td>
 <td>将字符串中的所有特殊规则表达式字符转义</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import re</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; string = <span class="string">"hello world"</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; pat = r<span class="string">' '</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; <span class="keyword">if</span> re.search(pat, string): <span class="built_in">print</span>(<span class="string">'Found it!'</span>)</span></span><br><span class="line">...</span><br><span class="line">Found it!</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; some_text = <span class="string">'alpha, beta,,,,gamma    delta'</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; re.split(<span class="string">'[, ]+'</span>, some_text)</span></span><br><span class="line">['alpha', 'beta', 'gamma', 'delta']</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; pat = <span class="string">'[a-zA-z]+'</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; text = <span class="string">'"Hm... Err --- are you sure?" he said, sounding insecure.'</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; re.findall(pat, text)</span></span><br><span class="line">['Hm', 'Err', 'are', 'you', 'sure', 'he', 'said', 'sounding', 'insecure']</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; pat = <span class="string">'&#123;name&#125;'</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; text = <span class="string">'Dear &#123;name&#125;'</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; re.sub(pat, <span class="string">'Chunkai'</span>, text)</span></span><br><span class="line">'Dear Chunkai'</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; re.escape(<span class="string">'www.python.org'</span>)</span></span><br><span class="line">'www\\.python\\.org'</span><br></pre></td></tr></table></figure>
+
 <h2 id="Match-对象及分组提取"><a href="#Match-对象及分组提取" class="headerlink" title="Match 对象及分组提取"></a>Match 对象及分组提取</h2><ul>
 <li>分组提取<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; m &#x3D; re.match(r&#39;www\.(.*)\..&#123;3&#125;&#39;, &#39;www.python.org&#39;)</span><br><span class="line">&gt;&gt;&gt; m.group(1)</span><br><span class="line">&#39;python&#39;</span><br></pre></td></tr></table></figure></li>
 <li>替换<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; emphasis_pattern &#x3D; re.compile(r&#39;&#39;&#39;</span><br><span class="line">... \*                  # Beginning emphasis tag -- an asterisk</span><br><span class="line">... (                   # Beginning group for capturing phrase</span><br><span class="line">... [^\*]+              # Capture anything except asterisks</span><br><span class="line">... )                   # End group</span><br><span class="line">... \*                  # Ending emphasis tag</span><br><span class="line">... &#39;&#39;&#39;, re.VERBOSE)</span><br><span class="line">&gt;&gt;&gt; re.sub(emphasis_pattern, r&#39;&lt;em&gt;\1&lt;em&gt;&#39;, &#39;hello, *world*!&#39;)</span><br><span class="line">&#39;hello, &lt;em&gt;world&lt;em&gt;!&#39;</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; emphasis_pattern &#x3D; r&#39;\*(.+)\*&#39;          #[1]</span><br><span class="line">&gt;&gt;&gt; re.sub(emphasis_pattern, r&#39;&lt;em&gt;\1&lt;em&gt;&#39;, &#39;hello, *world*! *my son*&#39;)</span><br><span class="line">&#39;hello, &lt;em&gt;world*! *my son&lt;em&gt;&#39;</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; emphasis_pattern &#x3D; r&#39;\*(.+?)\*&#39;         #[2]</span><br><span class="line">&gt;&gt;&gt; re.sub(emphasis_pattern, r&#39;&lt;em&gt;\1&lt;em&gt;&#39;, &#39;hello, *world*! *my son*&#39;)</span><br><span class="line">&#39;hello, &lt;em&gt;world&lt;em&gt;! &lt;em&gt;my son&lt;em</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h2 id="模板替换"><a href="#模板替换" class="headerlink" title="模板替换"></a>模板替换</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># templates.py</span></span><br><span class="line"><span class="keyword">import</span> fileinput, re</span><br><span class="line"></span><br><span class="line"><span class="comment"># Matches fields enclosed in square brackets:</span></span><br><span class="line">field_pat = re.compile(<span class="string">r'\[(.+?)\]'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># We'll collect variables in this:</span></span><br><span class="line">scope = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># This is used in re.sub:</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">replacement</span><span class="params">(match)</span>:</span></span><br><span class="line">    code = match.group(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># If the field can be evaluated, return it:</span></span><br><span class="line">        <span class="keyword">return</span> str(eval(code, scope))</span><br><span class="line">    <span class="keyword">except</span> SyntaxError:</span><br><span class="line">        <span class="comment"># Otherwise, execute the assignment in the same scope ... exec code in scope</span></span><br><span class="line">        exec(code, scope)</span><br><span class="line">        <span class="comment"># ... and return an empty string:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">''</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Get all the text as a single string:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># (There are other ways of doing this; see Chapter 11)</span></span><br><span class="line">lines = []</span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> fileinput.input():</span><br><span class="line">    lines.append(line)</span><br><span class="line">text = <span class="string">''</span>.join(lines)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Substitute all the occurrences of the field pattern:</span></span><br><span class="line">print(field_pat.sub(replacement, text))</span><br></pre></td></tr></table></figure>
-<p>template.txt<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[import time]</span><br><span class="line">Dear [name],</span><br><span class="line"></span><br><span class="line">I would like to learn how to program.</span><br><span class="line">I hear you use the [language] language a lot -- is it something I should consider?</span><br><span class="line"></span><br><span class="line">And, by the way, is [email] your correct email address?</span><br><span class="line"></span><br><span class="line">Fooville,</span><br><span class="line">[time.asctime()]</span><br><span class="line">Oscar Frozzbozz</span><br></pre></td></tr></table></figure></p>
-<p>magnus.txt<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[name &#x3D; &#39;Magnus Lie Hetland&#39; ]</span><br><span class="line">[email &#x3D; &#39;magnus@foo.bar&#39; ]</span><br><span class="line">[language &#x3D; &#39;python&#39; ]</span><br></pre></td></tr></table></figure></p>
+
+<p>template.txt</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[import time]</span><br><span class="line">Dear [name],</span><br><span class="line"></span><br><span class="line">I would like to learn how to program.</span><br><span class="line">I hear you use the [language] language a lot -- is it something I should consider?</span><br><span class="line"></span><br><span class="line">And, by the way, is [email] your correct email address?</span><br><span class="line"></span><br><span class="line">Fooville,</span><br><span class="line">[time.asctime()]</span><br><span class="line">Oscar Frozzbozz</span><br></pre></td></tr></table></figure>
+
+<p>magnus.txt</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[name &#x3D; &#39;Magnus Lie Hetland&#39; ]</span><br><span class="line">[email &#x3D; &#39;magnus@foo.bar&#39; ]</span><br><span class="line">[language &#x3D; &#39;python&#39; ]</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python templates.py magnus.txt template.txt</span><br></pre></td></tr></table></figure>
 
     </div>
@@ -467,14 +467,6 @@
       </div>
   </nav>
 </div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/chunkai-meng" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;chunkai-meng" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.linkedin.com/in/chunkai-meng-68336a16/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;chunkai-meng-68336a16&#x2F;" rel="noopener" target="_blank"><i class="fa fa-fw fa-linkedin"></i>Linkedin</a>
-      </span>
-  </div>
 
 
 
@@ -504,12 +496,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">NaNm</span>
+    <span title="Symbols count total">100k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">NaN:aN</span>
+    <span title="Reading time total">1:31</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
   </div>

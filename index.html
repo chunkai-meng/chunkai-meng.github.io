@@ -115,19 +115,14 @@
     <a href="/categories/Backend/Django/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>Django</a>
 
   </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
-
-  </li>
-        <li class="menu-item menu-item-projects">
-
-    <a href="/categories/Projects/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>Projects</a>
-
-  </li>
         <li class="menu-item menu-item-tags">
 
     <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
 
   </li>
         <li class="menu-item menu-item-archives">
@@ -251,14 +246,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span></span>
+              <span>5.8k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>NaN:aN</span>
+              <span>5 mins.</span>
             </span>
 
         </div>
@@ -372,14 +367,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span></span>
+              <span>518</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>NaN:aN</span>
+              <span>1 mins.</span>
             </span>
 
         </div>
@@ -392,7 +387,9 @@
 
       
           <h1 id="Cross-Origin-Resource-Sharing-跨域问题"><a href="#Cross-Origin-Resource-Sharing-跨域问题" class="headerlink" title="Cross-Origin Resource Sharing - 跨域问题"></a>Cross-Origin Resource Sharing - 跨域问题</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 1</span></span><br><span class="line">pip install Django-cors-headers</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 推荐</span></span><br><span class="line">pip install djangorestframework markdown django-filter pillow django-guardian coreapi</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 2</span></span><br><span class="line"><span class="comment"># Application definition</span></span><br><span class="line">INSTALLED_APPS = [</span><br><span class="line">    <span class="string">'django.contrib.admin'</span>,</span><br><span class="line">    <span class="string">'django.contrib.auth'</span>,</span><br><span class="line">    <span class="string">'django.contrib.contenttypes'</span>,</span><br><span class="line">    <span class="string">'django.contrib.sessions'</span>,</span><br><span class="line">    <span class="string">'django.contrib.messages'</span>,</span><br><span class="line">    <span class="string">'django.contrib.staticfiles'</span>,</span><br><span class="line">    <span class="string">'app01.apps.App01Config'</span>,</span><br><span class="line">    <span class="string">'rest_framework'</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3</span></span><br><span class="line">MIDDLEWARE = [</span><br><span class="line">    <span class="string">'corsheaers.middleware.CorsMiddleware'</span>  <span class="comment"># be the first</span></span><br><span class="line">    ....</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4</span></span><br><span class="line">CORS_ORIGIN_ALLOW_ALL = <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -477,14 +474,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span></span>
+              <span>1.4k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>NaN:aN</span>
+              <span>1 mins.</span>
             </span>
 
         </div>
@@ -585,14 +582,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span></span>
+              <span>2.1k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>NaN:aN</span>
+              <span>2 mins.</span>
             </span>
 
         </div>
@@ -604,7 +601,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>A very useful Strava PHP library and it’s very easy to use:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/basvandorst/StravaPHP.git</span><br><span class="line">composer install</span><br></pre></td></tr></table></figure></p>
+          <p>A very useful Strava PHP library and it’s very easy to use:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/basvandorst/StravaPHP.git</span><br><span class="line">composer install</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><p>A sample PHP page:</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">include</span> <span class="string">'../vendor/autoload.php'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">Strava</span>\<span class="title">API</span>\<span class="title">OAuth</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">Strava</span>\<span class="title">API</span>\<span class="title">Exception</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">Strava</span>\<span class="title">API</span>\<span class="title">Client</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">Strava</span>\<span class="title">API</span>\<span class="title">Service</span>\<span class="title">REST</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">// **Change** blow parameters with your own APP value</span></span><br><span class="line">    $options = [</span><br><span class="line">        <span class="string">'clientId'</span>     =&gt; <span class="number">888888</span>,</span><br><span class="line">        <span class="string">'clientSecret'</span> =&gt; <span class="string">'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'</span>,</span><br><span class="line">        <span class="comment">// **Change** here to redirect to the same page to post and receive the token.</span></span><br><span class="line">        <span class="string">'redirectUri'</span>  =&gt; <span class="string">'http://mengc06.cpanel.unitec.ac.nz/sportanalysis/public/'</span></span><br><span class="line">    ];</span><br><span class="line">    $oauth = <span class="keyword">new</span> OAuth($options);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">isset</span>($_GET[<span class="string">'code'</span>])) &#123;</span><br><span class="line">        <span class="keyword">print</span> <span class="string">'&lt;a href="'</span>.$oauth-&gt;getAuthorizationUrl([</span><br><span class="line">            <span class="comment">// Uncomment required scopes.</span></span><br><span class="line">            <span class="string">'scope'</span> =&gt; [</span><br><span class="line">                <span class="string">'public'</span>,</span><br><span class="line">                <span class="comment">// 'write',</span></span><br><span class="line">                <span class="comment">// 'view_private',</span></span><br><span class="line">            ]</span><br><span class="line">        ]).<span class="string">'"&gt;&lt;img alt="Connect with Strava" src="/sportanalysis/public/img/ConnectToStrava.png"&gt;&lt;/a&gt;'</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        $token = $oauth-&gt;getAccessToken(<span class="string">'authorization_code'</span>, [</span><br><span class="line">            <span class="string">'code'</span> =&gt; $_GET[<span class="string">'code'</span>]</span><br><span class="line">        ]);</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">'&lt;h4&gt;'</span>;</span><br><span class="line">        <span class="keyword">print</span> $token-&gt;getToken();</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">'&lt;/h4&gt;'</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            $adapter = <span class="keyword">new</span> Pest(<span class="string">'https://www.strava.com/api/v3'</span>);</span><br><span class="line">            $service = <span class="keyword">new</span> REST($token, $adapter);  <span class="comment">// Define your user token here.</span></span><br><span class="line">            $client = <span class="keyword">new</span> Client($service);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// print out whatever you want.</span></span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"&lt;br /&gt;"</span>;</span><br><span class="line">            $athlete = $client-&gt;getAthlete();</span><br><span class="line">            print_r($athlete);</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"&lt;br /&gt;"</span>;</span><br><span class="line">            $activities = $client-&gt;getAthleteActivities();</span><br><span class="line">            print_r($activities);</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"&lt;br /&gt;"</span>;</span><br><span class="line">            $club = $client-&gt;getClub(<span class="number">9729</span>);</span><br><span class="line">            print_r($club);</span><br><span class="line">        &#125; <span class="keyword">catch</span>(<span class="keyword">Exception</span> $e) &#123;</span><br><span class="line">            <span class="keyword">print</span> $e-&gt;getMessage();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">catch</span>(<span class="keyword">Exception</span> $e) &#123;</span><br><span class="line">    <span class="keyword">print</span> $e-&gt;getMessage();</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
@@ -614,7 +613,7 @@
 <li>Get method redirect customer to strava with client_id, redirect_uri, etc, but not client_secret</li>
 <li>customer is asked to logon Strava</li>
 <li>customer is asked to grant data access to our APP</li>
-<li>on success，strava redirect back to redirect_uri and exchange the temporary authorization code for an access token, using our client ID and client_secret [POST to <a href="https://www.strava.com/oauth/token" target="_blank" rel="noopener">https://www.strava.com/oauth/token</a>]</li>
+<li>on success，strava redirect back to redirect_uri and exchange the temporary authorization code for an access token, using our client ID and client_secret [POST to <a href="https://www.strava.com/oauth/token]">https://www.strava.com/oauth/token]</a></li>
 <li>if success our server will receive a customer token</li>
 <li>then we can use this token in Strava API to collect customer data.</li>
 </ul>
@@ -698,14 +697,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span></span>
+              <span>1.6k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>NaN:aN</span>
+              <span>1 mins.</span>
             </span>
 
         </div>
@@ -718,13 +717,13 @@
 
       
           <h1 id="Internet-of-Things"><a href="#Internet-of-Things" class="headerlink" title="Internet of Things"></a>Internet of Things</h1><h3 id="Setting-up-Raspberry-Pi"><a href="#Setting-up-Raspberry-Pi" class="headerlink" title="Setting up Raspberry Pi"></a>Setting up Raspberry Pi</h3><ul>
-<li><p>[MQTT Official Site]<a href="http://www.mqttfx.org" target="_blank" rel="noopener">http://www.mqttfx.org</a></p>
+<li><p>[MQTT Official Site]<a href="http://www.mqttfx.org">http://www.mqttfx.org</a></p>
 </li>
-<li><p>Install VNC Server<br><a href="https://learn.adafruit.com/adafruit-raspberry-pi-lesson-7-remote-control-with-vnc/running-vncserver-at-startup" target="_blank" rel="noopener">Running VNCServer at Startup</a></p>
+<li><p>Install VNC Server<br><a href="https://learn.adafruit.com/adafruit-raspberry-pi-lesson-7-remote-control-with-vnc/running-vncserver-at-startup">Running VNCServer at Startup</a></p>
 </li>
 <li><p>Command+K<br>vnc://172.25.0.121:5901</p>
 </li>
-<li><p>Free  MQTT Dasboard<br><a href="http://www.mqtt-dashboard.com" target="_blank" rel="noopener">http://www.mqtt-dashboard.com</a></p>
+<li><p>Free  MQTT Dasboard<br><a href="http://www.mqtt-dashboard.com">http://www.mqtt-dashboard.com</a></p>
 </li>
 <li><p>MQTT Client: MQTTFx<br>broker.hivemq.com<br>brew install mqttfx</p>
 </li>
@@ -815,14 +814,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span></span>
+              <span>5.3k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>NaN:aN</span>
+              <span>5 mins.</span>
             </span>
 
         </div>
@@ -835,7 +834,8 @@
 
       
           <blockquote>
-<p>记录我自己的 Hexo 配置变动<br>非常有用的 Hexo 功能扩展<br></p></blockquote>
+<p>记录我自己的 Hexo 配置变动<br>非常有用的 Hexo 功能扩展</p>
+</blockquote>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/Blog/20180207/Hexo-Notes/#more" rel="contents">
@@ -933,14 +933,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span></span>
+              <span>3.2k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>NaN:aN</span>
+              <span>3 mins.</span>
             </span>
 
         </div>
@@ -1056,14 +1056,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span></span>
+              <span>10k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>NaN:aN</span>
+              <span>9 mins.</span>
             </span>
 
         </div>
@@ -1160,14 +1160,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span></span>
+              <span>277</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>NaN:aN</span>
+              <span>1 mins.</span>
             </span>
 
         </div>
@@ -1274,14 +1274,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span></span>
+              <span>3.6k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>NaN:aN</span>
+              <span>3 mins.</span>
             </span>
 
         </div>
@@ -1307,9 +1307,10 @@
 <li>异常处理可以让程序即使发生致命错误也不必退出：<ul>
 <li>在交互式的程序里，如果发生错误可以重试<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">      x = int(input(<span class="string">'Enter the first number: '</span>))</span><br><span class="line">      y = int(input(<span class="string">'Enter the second number: '</span>))</span><br><span class="line">      print(x / y)</span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">      print(<span class="string">"The second number can't be zero!"</span>)</span><br></pre></td></tr></table></figure>
 Here，尽管出错了但异常被处理了，没有继续向上抛出异常，程序也没有退出。</li>
-<li>尽管如此，如果异常发生在程序内部，还是抛出异常退出比较好，出错马上附带信息地退出，比留着隐患不知道什么时候异常退出要好。<br>3.</li>
+<li>尽管如此，如果异常发生在程序内部，还是抛出异常退出比较好，出错马上附带信息地退出，比留着隐患不知道什么时候异常退出要好。</li>
 </ul>
 </li>
+<li></li>
 </ol>
 <h1 id="异常传递方式"><a href="#异常传递方式" class="headerlink" title="异常传递方式"></a>异常传递方式</h1><p>一层一层网上传，从异常出现的地方冒泡网上传，传到调用它的函数，直至传到main函数，如果都没有被处理则最终退出程序</p>
 <p>传的过程中是包含情景信息的</p>
@@ -1324,12 +1325,14 @@ Here，尽管出错了但异常被处理了，没有继续向上抛出异常，�
 </ul>
 <h2 id="捕获不同异常同等处理"><a href="#捕获不同异常同等处理" class="headerlink" title="捕获不同异常同等处理"></a>捕获不同异常同等处理</h2><ul>
 <li>原理跟第2点差不多，只是多个异常类型写在一个tuple里，这样可以一并处理了。  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    x = int(input(<span class="string">'Enter the first number: '</span>))</span><br><span class="line">    y = int(input(<span class="string">'Enter the second number: '</span>))</span><br><span class="line">    print(x / y)</span><br><span class="line"><span class="keyword">except</span> (ZeroDivisionError, TypeError, NameError):</span><br><span class="line">    print(<span class="string">'Your numbers were bogus ...'</span>)</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h2 id="将捕获的异常对象存到一个变量里"><a href="#将捕获的异常对象存到一个变量里" class="headerlink" title="将捕获的异常对象存到一个变量里"></a>将捕获的异常对象存到一个变量里</h2><ul>
 <li>这样可以自己决定如何利用这个异常信息</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    x = int(input(<span class="string">'Enter the first number: '</span>))</span><br><span class="line">    y = int(input(<span class="string">'Enter the second number: '</span>))</span><br><span class="line">    print(x / y)</span><br><span class="line"><span class="keyword">except</span> (ZeroDivisionError, TypeError) <span class="keyword">as</span> e:</span><br><span class="line">    print(e)</span><br></pre></td></tr></table></figure>
+
 <h2 id="捕获所有异常"><a href="#捕获所有异常" class="headerlink" title="捕获所有异常"></a>捕获所有异常</h2><ul>
 <li>虽然可以处理多个异常，但总有可能漏掉某些无法预估的异常，所以<code>except</code>后留空捕获所有异常</li>
 </ul>
@@ -1337,13 +1340,16 @@ Here，尽管出错了但异常被处理了，没有继续向上抛出异常，�
 <ul>
 <li>⚠️这样也有危险，因为这样会将一些本来没有预计到的异常情况，全部当作一直的异常一视同仁的处理了，例如 Ctrl-C 终止运行会被捕获并当作：’Something wrong happened …’ 处理。而用户退出并不算输入错误或者什么异常。</li>
 </ul>
-<p>为了保证处理方法只针对主要的异常，最好用<code>except Exception as e:</code> 检查 e<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    x = int(input(<span class="string">'Enter the first number: '</span>))</span><br><span class="line">    y = int(input(<span class="string">'Enter the second number: '</span>))</span><br><span class="line">    print(x / y)</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">    print(<span class="string">'e'</span>)</span><br></pre></td></tr></table></figure><br>这样就不会去处理类似<code>SystemExit</code> 和 <code>KeyboardInterrupt</code> 的异常，因为他们是 <code>BaseException</code> 的子类，<code>Exception</code> 也是其子类。</p>
+<p>为了保证处理方法只针对主要的异常，最好用<code>except Exception as e:</code> 检查 e</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    x = int(input(<span class="string">'Enter the first number: '</span>))</span><br><span class="line">    y = int(input(<span class="string">'Enter the second number: '</span>))</span><br><span class="line">    print(x / y)</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">    print(<span class="string">'e'</span>)</span><br></pre></td></tr></table></figure>
+<p>这样就不会去处理类似<code>SystemExit</code> 和 <code>KeyboardInterrupt</code> 的异常，因为他们是 <code>BaseException</code> 的子类，<code>Exception</code> 也是其子类。</p>
 <h2 id="设定没有异常执行什么"><a href="#设定没有异常执行什么" class="headerlink" title="设定没有异常执行什么"></a>设定没有异常执行什么</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">  <span class="keyword">try</span>:</span><br><span class="line">    x = int(input(<span class="string">'Enter the first number: '</span>))</span><br><span class="line">    y = int(input(<span class="string">'Enter the second number: '</span>))</span><br><span class="line">    value = x / y</span><br><span class="line">    print(<span class="string">'x / y is'</span>, value)</span><br><span class="line">  <span class="keyword">except</span>:</span><br><span class="line">    print(<span class="string">'Invalid input. Please try again.'</span>)</span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">      <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>根据5点，这里捕获一切异常，因此输入x或y的过程中即使Ctrl-C也是无法退出的，会当作非法输入处理⚠️，如果这不是你希望看到的，最好用<code>except Exception as e:</code></li>
 </ul>
 <h2 id="打扫卫生"><a href="#打扫卫生" class="headerlink" title="打扫卫生"></a>打扫卫生</h2><ul>
 <li>举了个没什么意义的例子：<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    x = <span class="number">1</span> / <span class="number">0</span></span><br><span class="line"><span class="keyword">except</span> NameError:</span><br><span class="line">    print(<span class="string">"Unknown variable"</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">"That went well!"</span>)</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    print(<span class="string">'Cleaning up ...'</span>)</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h1 id="异常处理的哲学思想"><a href="#异常处理的哲学思想" class="headerlink" title="异常处理的哲学思想"></a>异常处理的哲学思想</h1><ul>
@@ -1351,7 +1357,8 @@ Here，尽管出错了但异常被处理了，没有继续向上抛出异常，�
 如果用异常处理，只要简单假设是有值的，只需要执行一遍，而且还有用<code>else</code> <code>finally</code>等辅助判断，非常高效<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">describe_person</span><span class="params">(person)</span>:</span></span><br><span class="line">    print(<span class="string">'Description of'</span>, person[<span class="string">'name'</span>])</span><br><span class="line">    print(<span class="string">'Age:'</span>, person[<span class="string">'age'</span>])</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        print(<span class="string">'Occupation:'</span>, person[<span class="string">'occupation'</span>])</span><br><span class="line">    <span class="keyword">except</span> KeyError: <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
 因此Python中使用try/except 比 if/else 更自然。</li>
 </ul>
-<h1 id="警告warnings"><a href="#警告warnings" class="headerlink" title="警告warnings"></a>警告<code>warnings</code></h1><p>警告不会退出程序<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; from warnings import warn</span><br><span class="line">&gt;&gt;&gt; warn(&quot;I&#39;ve got a bad feeling about this.&quot;)</span><br><span class="line">__main__:1: UserWarning: I&#39;ve got a bad feeling about this.</span><br></pre></td></tr></table></figure></p>
+<h1 id="警告warnings"><a href="#警告warnings" class="headerlink" title="警告warnings"></a>警告<code>warnings</code></h1><p>警告不会退出程序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; from warnings import warn</span><br><span class="line">&gt;&gt;&gt; warn(&quot;I&#39;ve got a bad feeling about this.&quot;)</span><br><span class="line">__main__:1: UserWarning: I&#39;ve got a bad feeling about this.</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -1455,14 +1462,6 @@ Here，尽管出错了但异常被处理了，没有继续向上抛出异常，�
       </div>
   </nav>
 </div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/chunkai-meng" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;chunkai-meng" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.linkedin.com/in/chunkai-meng-68336a16/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;chunkai-meng-68336a16&#x2F;" rel="noopener" target="_blank"><i class="fa fa-fw fa-linkedin"></i>Linkedin</a>
-      </span>
-  </div>
 
 
 
@@ -1492,12 +1491,12 @@ Here，尽管出错了但异常被处理了，没有继续向上抛出异常，�
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">NaNm</span>
+    <span title="Symbols count total">100k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">NaN:aN</span>
+    <span title="Reading time total">1:31</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
   </div>
