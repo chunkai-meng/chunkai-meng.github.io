@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Django,API,Django Rest Framework,">
+  <meta name="keywords" content="corsheaders,">
 
 
 
@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="Source  A simple explain to TDDWhy should I do it: Tests have a short feedback loop, enabling you and your team to learn faster and adjust Less time is spent debugging, allowing you to spend more tim">
-<meta name="keywords" content="Django,API,Django Rest Framework">
+<meta name="description" content="Cross-Origin Resource Sharing - 跨域问题12345# 1pip install Django-cors-headers# 推荐pip install djangorestframework markdown django-filter pillow django-guardian coreapi 12345678910111213141516171819202122">
+<meta name="keywords" content="corsheaders">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Test-Driven Development (TDD)">
-<meta property="og:url" content="https://chunkai-meng.github.io.git/Blog/20171223/Test-Driven-Development-TDD/index.html">
+<meta property="og:title" content="Cross-Origin Resource Sharing">
+<meta property="og:url" content="https://chunkai-meng.github.io.git/Blog/20200207/Cross-Origin-Resource-Sharing/index.html">
 <meta property="og:site_name" content="Chunkai&#39;s Blog">
-<meta property="og:description" content="Source  A simple explain to TDDWhy should I do it: Tests have a short feedback loop, enabling you and your team to learn faster and adjust Less time is spent debugging, allowing you to spend more tim">
+<meta property="og:description" content="Cross-Origin Resource Sharing - 跨域问题12345# 1pip install Django-cors-headers# 推荐pip install djangorestframework markdown django-filter pillow django-guardian coreapi 12345678910111213141516171819202122">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-12-22T22:18:26.899Z">
+<meta property="og:updated_time" content="2020-02-07T02:21:15.387Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Test-Driven Development (TDD)">
-<meta name="twitter:description" content="Source  A simple explain to TDDWhy should I do it: Tests have a short feedback loop, enabling you and your team to learn faster and adjust Less time is spent debugging, allowing you to spend more tim">
+<meta name="twitter:title" content="Cross-Origin Resource Sharing">
+<meta name="twitter:description" content="Cross-Origin Resource Sharing - 跨域问题12345# 1pip install Django-cors-headers# 推荐pip install djangorestframework markdown django-filter pillow django-guardian coreapi 12345678910111213141516171819202122">
 
 
 
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="https://chunkai-meng.github.io.git/Blog/20171223/Test-Driven-Development-TDD/">
+  <link rel="canonical" href="https://chunkai-meng.github.io.git/Blog/20200207/Cross-Origin-Resource-Sharing/">
 
 
 
 
 
-  <title>Test-Driven Development (TDD) | Chunkai's Blog</title>
+  <title>Cross-Origin Resource Sharing | Chunkai's Blog</title>
   
 
 
@@ -270,7 +270,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/Blog/20171223/Test-Driven-Development-TDD/">
+    <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/Blog/20200207/Cross-Origin-Resource-Sharing/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chunkai Meng">
@@ -287,7 +287,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Test-Driven Development (TDD)</h1>
+          <h1 class="post-title" itemprop="name headline">Cross-Origin Resource Sharing</h1>
         
 
         <div class="post-meta">
@@ -299,8 +299,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-23T11:07:52+13:00">
-                2017-12-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-07T15:19:39+13:00">
+                2020-02-07
               </time>
             
 
@@ -329,6 +329,17 @@
 
                 
                 
+                  , 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Backend/Django/" itemprop="url" rel="index">
+                    <span itemprop="name">Django</span>
+                  </a>
+                </span>
+
+                
+                
               
             </span>
           
@@ -340,8 +351,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/Blog/20171223/Test-Driven-Development-TDD/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Blog/20171223/Test-Driven-Development-TDD/" itemprop="commentCount"></span>
+                <a href="/Blog/20200207/Cross-Origin-Resource-Sharing/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Blog/20200207/Cross-Origin-Resource-Sharing/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -363,7 +374,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  168
+                  90
                 </span>
               
 
@@ -400,25 +411,8 @@
       
 
       
-        <blockquote>
-<p><a href="https://scotch.io/tutorials/build-a-rest-api-with-django-a-test-driven-approach-part-1#toc-django-rest-framework" target="_blank" rel="noopener">Source</a></p>
-</blockquote>
-<h1 id="A-simple-explain-to-TDD"><a href="#A-simple-explain-to-TDD" class="headerlink" title="A simple explain to TDD"></a>A simple explain to TDD</h1><h2 id="Why-should-I-do-it"><a href="#Why-should-I-do-it" class="headerlink" title="Why should I do it:"></a>Why should I do it:</h2><ul>
-<li>Tests have a short feedback loop, enabling you and your team to learn faster and adjust</li>
-<li>Less time is spent debugging, allowing you to spend more time writing code</li>
-<li>Tests act as documentation for your code!</li>
-<li>They improve code quality while reducing bugs</li>
-<li>After refactoring code, your tests will tell you whether the change has broken previously working code, and…</li>
-<li>Tests can prevent your hair line from receding!</li>
-</ul>
-<h2 id="This-is-how-it-works"><a href="#This-is-how-it-works" class="headerlink" title="This is how it works:"></a>This is how it works:</h2><ul>
-<li>Write a test. – The test will flesh out some functionality in your app</li>
-<li>Then, run the test – The test should fail, since there’s no code to make it pass.</li>
-<li>Write the code – To make the test pass</li>
-<li>Run the test – If it passes, you are confident that the code you’ve written meets the test requirements</li>
-<li>Refactor code – Remove duplication, prune large objects and make the code more readable. Re-run the tests every time you refactor the code</li>
-<li>Repeat – That’s it!</li>
-</ul>
+        <h1 id="Cross-Origin-Resource-Sharing-跨域问题"><a href="#Cross-Origin-Resource-Sharing-跨域问题" class="headerlink" title="Cross-Origin Resource Sharing - 跨域问题"></a>Cross-Origin Resource Sharing - 跨域问题</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 1</span><br><span class="line">pip install Django-cors-headers</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 推荐</span><br><span class="line">pip install djangorestframework markdown django-filter pillow django-guardian coreapi</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 2</span></span><br><span class="line"><span class="comment"># Application definition</span></span><br><span class="line">INSTALLED_APPS = [</span><br><span class="line">    <span class="string">'django.contrib.admin'</span>,</span><br><span class="line">    <span class="string">'django.contrib.auth'</span>,</span><br><span class="line">    <span class="string">'django.contrib.contenttypes'</span>,</span><br><span class="line">    <span class="string">'django.contrib.sessions'</span>,</span><br><span class="line">    <span class="string">'django.contrib.messages'</span>,</span><br><span class="line">    <span class="string">'django.contrib.staticfiles'</span>,</span><br><span class="line">    <span class="string">'app01.apps.App01Config'</span>,</span><br><span class="line">    <span class="string">'rest_framework'</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3</span></span><br><span class="line">MIDDLEWARE = [</span><br><span class="line">    <span class="string">'corsheaers.middleware.CorsMiddleware'</span>  <span class="comment"># be the first</span></span><br><span class="line">    ....</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4</span></span><br><span class="line">CORS_ORIGIN_ALLOW_ALL = <span class="keyword">True</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -436,14 +430,8 @@
       
         <div class="post-tags">
           
-            <!-- <a href="/tags/Django/" rel="tag"># Django</a> -->
-            <a href="/tags/Django/" rel="tag"><i class="fa fa-tag"></i> Django</a>
-          
-            <!-- <a href="/tags/API/" rel="tag"># API</a> -->
-            <a href="/tags/API/" rel="tag"><i class="fa fa-tag"></i> API</a>
-          
-            <!-- <a href="/tags/Django-Rest-Framework/" rel="tag"># Django Rest Framework</a> -->
-            <a href="/tags/Django-Rest-Framework/" rel="tag"><i class="fa fa-tag"></i> Django Rest Framework</a>
+            <!-- <a href="/tags/corsheaders/" rel="tag"># corsheaders</a> -->
+            <a href="/tags/corsheaders/" rel="tag"><i class="fa fa-tag"></i> corsheaders</a>
           
         </div>
       
@@ -456,8 +444,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Blog/20171206/Machine-Learnning/" rel="next" title="Machine Learnning">
-                <i class="fa fa-chevron-left"></i> Machine Learnning
+              <a href="/Blog/20200207/Extend-Django-Fields/" rel="next" title="Extend-Django-Fields">
+                <i class="fa fa-chevron-left"></i> Extend-Django-Fields
               </a>
             
           </div>
@@ -465,10 +453,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/Blog/20171224/Django-Debug/" rel="prev" title="Django Debug">
-                Django Debug <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -623,7 +607,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#A-simple-explain-to-TDD"><span class="nav-text">A simple explain to TDD</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Why-should-I-do-it"><span class="nav-text">Why should I do it:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#This-is-how-it-works"><span class="nav-text">This is how it works:</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Cross-Origin-Resource-Sharing-跨域问题"><span class="nav-text">Cross-Origin Resource Sharing - 跨域问题</span></a></li></ol></div>
             
 
           </div>
@@ -784,9 +768,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://chunkai-meng.github.io.git/Blog/20171223/Test-Driven-Development-TDD/';
-          this.page.identifier = 'Blog/20171223/Test-Driven-Development-TDD/';
-          this.page.title = 'Test-Driven Development (TDD)';
+          this.page.url = 'https://chunkai-meng.github.io.git/Blog/20200207/Cross-Origin-Resource-Sharing/';
+          this.page.identifier = 'Blog/20200207/Cross-Origin-Resource-Sharing/';
+          this.page.title = 'Cross-Origin Resource Sharing';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://chunkai.disqus.com/embed.js';
