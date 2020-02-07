@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="Chunkai&#39;s Blog">
 <meta property="og:description" content="Frontend: React + ReduxBackend: Django + Django REST API">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-06-21T10:00:19.416Z">
+<meta property="og:updated_time" content="2018-06-22T00:26:35.892Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React-Redux">
 <meta name="twitter:description" content="Frontend: React + ReduxBackend: Django + Django REST API">
@@ -366,7 +366,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  370
+                  694
                 </span>
               
 
@@ -382,7 +382,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  2
+                  3
                 </span>
               
             </div>
@@ -409,13 +409,18 @@
 <li><a href="#infoplus">InfoPlus</a><ul>
 <li><a href="#frontend---react--redux">Frontend - [React / Redux]</a></li>
 <li><a href="#table-of-contents">Table of Contents</a></li>
-<li><a href="#设计路由">设计路由</a></li>
-<li><a href="#step2-组织route结构层次">Step2: 组织Route结构层次</a><ul>
+<li><a href="#设计路由">设计路由</a><ul>
+<li><a href="#组织route结构层次">组织Route结构层次</a></li>
+</ul>
+</li>
+<li><a href="#组件设计">组件设计</a></li>
+<li><a href="#redux-设计">Redux 设计</a><ul>
 <li><a href="#actioncreator">ActionCreator</a></li>
 <li><a href="#button-onclick">Button onClick</a></li>
 <li><a href="#input-value">Input value</a></li>
 <li><a href="#dispatch">Dispatch</a></li>
 <li><a href="#设计状态">设计状态</a></li>
+<li><a href="#设计模块">设计模块</a></li>
 </ul>
 </li>
 <li><a href="#wiki">WiKi</a></li>
@@ -438,21 +443,47 @@
 </li>
 </ul>
 <p>但是这些还不够，还需要考虑打开应用时的默认页面，也就是根路径”/“对应的页面。结合业务场景，帖子列表页作为应用的默认页面最为合适，因此，帖子列表页对应两个路由名称：”/posts”和”/“。</p>
-<h2 id="Step2-组织Route结构层次"><a href="#Step2-组织Route结构层次" class="headerlink" title="Step2: 组织Route结构层次"></a>Step2: 组织Route结构层次</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="ActionCreator"><a href="#ActionCreator" class="headerlink" title="ActionCreator"></a>ActionCreator</h3><p>在Dispatch的时候被执行，其执行结果（action对象）作为dispatch的参数，派发给reducer。</p>
+<h3 id="组织Route结构层次"><a href="#组织Route结构层次" class="headerlink" title="组织Route结构层次"></a>组织Route结构层次</h3><h2 id="组件设计"><a href="#组件设计" class="headerlink" title="组件设计"></a>组件设计</h2><ul>
+<li>容器组件设计</li>
+<li>显示组件设计</li>
+</ul>
+<h2 id="Redux-设计"><a href="#Redux-设计" class="headerlink" title="Redux 设计"></a>Redux 设计</h2><h3 id="ActionCreator"><a href="#ActionCreator" class="headerlink" title="ActionCreator"></a>ActionCreator</h3><p>在Dispatch的时候被执行，其执行结果（action对象）作为dispatch的参数，派发给reducer。</p>
 <h3 id="Button-onClick"><a href="#Button-onClick" class="headerlink" title="Button onClick"></a>Button onClick</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Button onClick=&#123;()=&gt;<span class="keyword">this</span>.props.dispatch(<span class="keyword">this</span>.props.someActionCreator())&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="Input-value"><a href="#Input-value" class="headerlink" title="Input value"></a>Input value</h3><h3 id="Dispatch"><a href="#Dispatch" class="headerlink" title="Dispatch"></a>Dispatch</h3><p>有几种方式：</p>
 <ol>
-<li>将action creator映射到props</li>
+<li>将action creator映射到props，这样在 handle 处理组件的行为是，要派发这个 actionCreator 执行的结果</li>
 </ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mapDispatchToProps = <span class="function"><span class="params">dispatch</span> =&gt;</span> &#123; </span><br><span class="line">    <span class="keyword">return</span> &#123; </span><br><span class="line">        someActionCreator: someActionCreator, </span><br><span class="line">    &#125;; </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Option1:</span><br><span class="line"><span class="keyword">const</span> mapDispatchToProps = <span class="function"><span class="params">dispatch</span> =&gt;</span> &#123; </span><br><span class="line">    <span class="keyword">return</span> &#123; </span><br><span class="line">        someActionCreator: someActionCreator, </span><br><span class="line">    &#125;; </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>将 action dispatch 函数 绑定到 props，</li>
+</ol>
+<ul>
+<li>再做一个 handler 调用这个函数 props。</li>
+<li>可以再将这个 handler 传递到显示组件，这样显示组件就可以修改状态达到重新渲染的目的。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># Option2:</span><br><span class="line"># import someActionCreator</span><br><span class="line">const mapDispatchToProps = dispatch =&gt; &#123; </span><br><span class="line">    return &#123; </span><br><span class="line">        someActionCreator: ()=&gt;&#123;</span><br><span class="line">            dispatch(someActionCreator)</span><br><span class="line">        &#125; </span><br><span class="line">    &#125;; </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <p>使用的时候</p>
 <ol>
-<li>将actionCreators 一次绑定到props<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mapDispatchToProps = <span class="function"><span class="params">dispatch</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    ...bindActionCreators(postActions, dispatch),</span><br><span class="line">    ...bindActionCreators(uiActions, dispatch)</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
+<li>将actionCreators 一次绑定到props</li>
 </ol>
-<h3 id="设计状态"><a href="#设计状态" class="headerlink" title="设计状态"></a>设计状态</h3><p>像设计数据库以一样设计state</p>
-<h2 id="WiKi"><a href="#WiKi" class="headerlink" title="WiKi"></a>WiKi</h2><p>一个render()函数里面可以选择返回什么组件或者元素</p>
+<ul>
+<li>这种方法类似方法2，只是可以一次映射多个 <code>()=&gt;{dispatch(someActionCreator())}</code></li>
+<li>以 actionCreator 的名字作为 props 的名字进行映射<br>- 映射完以后可以直接以 actionCreator 的名字执行派发 action<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mapDispatchToProps = <span class="function"><span class="params">dispatch</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    ...bindActionCreators(postActions, dispatch),</span><br><span class="line">    ...bindActionCreators(uiActions, dispatch)</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="设计状态"><a href="#设计状态" class="headerlink" title="设计状态"></a>设计状态</h3><p>设计原则:</p>
+<ul>
+<li>像设计数据库以一样设计state</li>
+<li>state 看作数据库</li>
+<li>state 中每一部分看做一张表</li>
+<li>状态中每一个字段对应表中的一个字段</li>
+</ul>
+<ol>
+<li>整个状态按操作需要分成若干子状态，子状态之间不能保存重复数据</li>
+<li>state 以键值对的结构保存数据，以记录的 Key 或 ID 作为记录索引，记录中的其他字段依赖于索引</li>
+<li>state 中不保存可以通过已有字段计算而来的数据，即字段不互相依赖</li>
+</ol>
+<h3 id="设计模块"><a href="#设计模块" class="headerlink" title="设计模块"></a>设计模块</h3><h2 id="WiKi"><a href="#WiKi" class="headerlink" title="WiKi"></a>WiKi</h2><p>一个render()函数里面可以选择返回什么组件或者元素</p>
 <h2 id="Updating-to-New-Releases"><a href="#Updating-to-New-Releases" class="headerlink" title="Updating to New Releases"></a>Updating to New Releases</h2>
       
     </div>
@@ -605,7 +636,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-count">41</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -654,7 +685,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#InfoPlus"><span class="nav-text">InfoPlus</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Frontend-React-Redux"><span class="nav-text">Frontend - [React / Redux]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Table-of-Contents"><span class="nav-text">Table of Contents</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设计路由"><span class="nav-text">设计路由</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step2-组织Route结构层次"><span class="nav-text">Step2: 组织Route结构层次</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ActionCreator"><span class="nav-text">ActionCreator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Button-onClick"><span class="nav-text">Button onClick</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Input-value"><span class="nav-text">Input value</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dispatch"><span class="nav-text">Dispatch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设计状态"><span class="nav-text">设计状态</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WiKi"><span class="nav-text">WiKi</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Updating-to-New-Releases"><span class="nav-text">Updating to New Releases</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#InfoPlus"><span class="nav-text">InfoPlus</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Frontend-React-Redux"><span class="nav-text">Frontend - [React / Redux]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Table-of-Contents"><span class="nav-text">Table of Contents</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设计路由"><span class="nav-text">设计路由</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#组织Route结构层次"><span class="nav-text">组织Route结构层次</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组件设计"><span class="nav-text">组件设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redux-设计"><span class="nav-text">Redux 设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ActionCreator"><span class="nav-text">ActionCreator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Button-onClick"><span class="nav-text">Button onClick</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Input-value"><span class="nav-text">Input value</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dispatch"><span class="nav-text">Dispatch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设计状态"><span class="nav-text">设计状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设计模块"><span class="nav-text">设计模块</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WiKi"><span class="nav-text">WiKi</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Updating-to-New-Releases"><span class="nav-text">Updating to New Releases</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -674,7 +705,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -699,7 +730,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">Words Count: 34.9k</span>
+  <span class="post-count">Words Count: 35.2k</span>
 </div>
 
         
