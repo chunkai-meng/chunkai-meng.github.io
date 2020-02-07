@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="generator" content="Hexo 4.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -21,17 +21,19 @@
   </script>
 
   <meta name="description" content="Django Deployment Demo on pythonanywhere  Option 1: Deploy to www.pythonanywhere.com Collect the requirement of you development environmentIn development environment 12➜  git:(master) ✗ source activat">
-<meta name="keywords" content="Django,Python,Deployment">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Django Deployment">
 <meta property="og:url" content="https://chunkai-meng.github.io.git/Blog/20171224/Django-Deployment/index.html">
 <meta property="og:site_name" content="Chunkai&#39;s Blog">
 <meta property="og:description" content="Django Deployment Demo on pythonanywhere  Option 1: Deploy to www.pythonanywhere.com Collect the requirement of you development environmentIn development environment 12➜  git:(master) ✗ source activat">
-<meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-12-26T21:59:04.443Z">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2017-12-24T04:41:06.000Z">
+<meta property="article:modified_time" content="2017-12-26T21:59:04.443Z">
+<meta property="article:author" content="Chunkai Meng">
+<meta property="article:tag" content="Django">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="Deployment">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Django Deployment">
-<meta name="twitter:description" content="Django Deployment Demo on pythonanywhere  Option 1: Deploy to www.pythonanywhere.com Collect the requirement of you development environmentIn development environment 12➜  git:(master) ✗ source activat">
 
 <link rel="canonical" href="https://chunkai-meng.github.io.git/Blog/20171224/Django-Deployment/">
 
@@ -111,6 +113,11 @@
         <li class="menu-item menu-item-home">
 
     <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-projects">
+
+    <a href="/categories/Projects/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>Projects</a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -251,13 +258,13 @@
 <li><p>Create a Web App</p>
 </li>
 <li><p>Create Virtual Env:<br>Open a Console</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkvirtualenv --python=python3.6 dj</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkvirtualenv --python&#x3D;python3.6 dj</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Download code and install required packages</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/chunkai-meng/QualityHats-Django.git</span><br><span class="line">cd QualityHats-Django</span><br><span class="line">pip install -r requirements.txt </span><br><span class="line">python manage.py migrate</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;chunkai-meng&#x2F;QualityHats-Django.git</span><br><span class="line">cd QualityHats-Django</span><br><span class="line">pip install -r requirements.txt </span><br><span class="line">python manage.py migrate</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Create a supper user</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># if havn&apos;t created super user</span><br><span class="line">python manage.py createsuperuser &lt;username&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># if havn&#39;t created super user</span><br><span class="line">python manage.py createsuperuser &lt;username&gt;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Back to Deshboard Page - Web - Add a new web app</p>
 <ul>
@@ -431,10 +438,10 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Chunkai Meng</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.1
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.1
   </div>
 
         
@@ -454,9 +461,17 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
@@ -465,7 +480,9 @@
 
 
 
-  <script src="/js/local-search.js"></script>
+  
+<script src="/js/local-search.js"></script>
+
 
 
 

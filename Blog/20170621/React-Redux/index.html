@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="generator" content="Hexo 4.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -21,17 +21,18 @@
   </script>
 
   <meta name="description" content="Frontend: React + ReduxBackend: Django + Django REST API">
-<meta name="keywords" content="React,Redux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React-Redux">
 <meta property="og:url" content="https://chunkai-meng.github.io.git/Blog/20170621/React-Redux/index.html">
 <meta property="og:site_name" content="Chunkai&#39;s Blog">
 <meta property="og:description" content="Frontend: React + ReduxBackend: Django + Django REST API">
-<meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-06-22T00:26:35.892Z">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2017-06-21T09:25:38.000Z">
+<meta property="article:modified_time" content="2018-06-22T00:26:35.892Z">
+<meta property="article:author" content="Chunkai Meng">
+<meta property="article:tag" content="React">
+<meta property="article:tag" content="Redux">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React-Redux">
-<meta name="twitter:description" content="Frontend: React + ReduxBackend: Django + Django REST API">
 
 <link rel="canonical" href="https://chunkai-meng.github.io.git/Blog/20170621/React-Redux/">
 
@@ -111,6 +112,11 @@
         <li class="menu-item menu-item-home">
 
     <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-projects">
+
+    <a href="/categories/Projects/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>Projects</a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -304,10 +310,9 @@
 </ol>
 <ul>
 <li>再做一个 handler 调用这个函数 props。</li>
-<li>可以再将这个 handler 传递到显示组件，这样显示组件就可以修改状态达到重新渲染的目的。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># Option2:</span><br><span class="line"># import someActionCreator</span><br><span class="line">const mapDispatchToProps = dispatch =&gt; &#123; </span><br><span class="line">    return &#123; </span><br><span class="line">        someActionCreator: ()=&gt;&#123;</span><br><span class="line">            dispatch(someActionCreator)</span><br><span class="line">        &#125; </span><br><span class="line">    &#125;; </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
+<li>可以再将这个 handler 传递到显示组件，这样显示组件就可以修改状态达到重新渲染的目的。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># Option2:</span><br><span class="line"># import someActionCreator</span><br><span class="line">const mapDispatchToProps &#x3D; dispatch &#x3D;&gt; &#123; </span><br><span class="line">    return &#123; </span><br><span class="line">        someActionCreator: ()&#x3D;&gt;&#123;</span><br><span class="line">            dispatch(someActionCreator)</span><br><span class="line">        &#125; </span><br><span class="line">    &#125;; </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+使用的时候</li>
 </ul>
-<p>使用的时候</p>
 <ol>
 <li>将actionCreators 一次绑定到props</li>
 </ol>
@@ -421,7 +426,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#InfoPlus"><span class="nav-number">1.</span> <span class="nav-text">InfoPlus</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Frontend-React-Redux"><span class="nav-number">1.1.</span> <span class="nav-text">Frontend - [React / Redux]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Table-of-Contents"><span class="nav-number">1.2.</span> <span class="nav-text">Table of Contents</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设计路由"><span class="nav-number">1.3.</span> <span class="nav-text">设计路由</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#组织Route结构层次"><span class="nav-number">1.3.1.</span> <span class="nav-text">组织Route结构层次</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组件设计"><span class="nav-number">1.4.</span> <span class="nav-text">组件设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redux-设计"><span class="nav-number">1.5.</span> <span class="nav-text">Redux 设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ActionCreator"><span class="nav-number">1.5.1.</span> <span class="nav-text">ActionCreator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Button-onClick"><span class="nav-number">1.5.2.</span> <span class="nav-text">Button onClick</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Input-value"><span class="nav-number">1.5.3.</span> <span class="nav-text">Input value</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dispatch"><span class="nav-number">1.5.4.</span> <span class="nav-text">Dispatch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设计状态"><span class="nav-number">1.5.5.</span> <span class="nav-text">设计状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设计模块"><span class="nav-number">1.5.6.</span> <span class="nav-text">设计模块</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WiKi"><span class="nav-number">1.6.</span> <span class="nav-text">WiKi</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Updating-to-New-Releases"><span class="nav-number">1.7.</span> <span class="nav-text">Updating to New Releases</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#InfoPlus"><span class="nav-number">1.</span> <span class="nav-text">InfoPlus</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Frontend-React-Redux"><span class="nav-number">1.1.</span> <span class="nav-text">Frontend - [React &#x2F; Redux]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Table-of-Contents"><span class="nav-number">1.2.</span> <span class="nav-text">Table of Contents</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设计路由"><span class="nav-number">1.3.</span> <span class="nav-text">设计路由</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#组织Route结构层次"><span class="nav-number">1.3.1.</span> <span class="nav-text">组织Route结构层次</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组件设计"><span class="nav-number">1.4.</span> <span class="nav-text">组件设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redux-设计"><span class="nav-number">1.5.</span> <span class="nav-text">Redux 设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ActionCreator"><span class="nav-number">1.5.1.</span> <span class="nav-text">ActionCreator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Button-onClick"><span class="nav-number">1.5.2.</span> <span class="nav-text">Button onClick</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Input-value"><span class="nav-number">1.5.3.</span> <span class="nav-text">Input value</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dispatch"><span class="nav-number">1.5.4.</span> <span class="nav-text">Dispatch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设计状态"><span class="nav-number">1.5.5.</span> <span class="nav-text">设计状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设计模块"><span class="nav-number">1.5.6.</span> <span class="nav-text">设计模块</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WiKi"><span class="nav-number">1.6.</span> <span class="nav-text">WiKi</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Updating-to-New-Releases"><span class="nav-number">1.7.</span> <span class="nav-text">Updating to New Releases</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -479,10 +484,10 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Chunkai Meng</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.1
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.1
   </div>
 
         
@@ -502,9 +507,17 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
@@ -513,7 +526,9 @@
 
 
 
-  <script src="/js/local-search.js"></script>
+  
+<script src="/js/local-search.js"></script>
+
 
 
 

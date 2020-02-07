@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="generator" content="Hexo 4.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -21,17 +21,19 @@
   </script>
 
   <meta name="description" content="Regular Expression模式匹配 万能字符： “.” 重复操作符：“+”，”?”, “*” 也可指定重复次数： {} 重复操作符默认是贪婪的，它会一直寻找它的边界直到最后一个边界出现为止[1] 给重复操作符添加一个“？” 可以让万能字符匹配尽可能少的次数[2] 字符集： [] 方括号扩起来的字符集， ‘[a-zA-Z0-9]’ 短斜杠标志起点终点 ‘[^abc]’ 反选   Subpa">
-<meta name="keywords" content="Python,RE,Regular Expression">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python - Regular Expression">
 <meta property="og:url" content="https://chunkai-meng.github.io.git/Blog/20180205/Python-Regular-Expression/index.html">
 <meta property="og:site_name" content="Chunkai&#39;s Blog">
 <meta property="og:description" content="Regular Expression模式匹配 万能字符： “.” 重复操作符：“+”，”?”, “*” 也可指定重复次数： {} 重复操作符默认是贪婪的，它会一直寻找它的边界直到最后一个边界出现为止[1] 给重复操作符添加一个“？” 可以让万能字符匹配尽可能少的次数[2] 字符集： [] 方括号扩起来的字符集， ‘[a-zA-Z0-9]’ 短斜杠标志起点终点 ‘[^abc]’ 反选   Subpa">
-<meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-02-07T00:49:59.694Z">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2018-02-05T05:10:34.000Z">
+<meta property="article:modified_time" content="2018-02-07T00:49:59.694Z">
+<meta property="article:author" content="Chunkai Meng">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="RE">
+<meta property="article:tag" content="Regular Expression">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python - Regular Expression">
-<meta name="twitter:description" content="Regular Expression模式匹配 万能字符： “.” 重复操作符：“+”，”?”, “*” 也可指定重复次数： {} 重复操作符默认是贪婪的，它会一直寻找它的边界直到最后一个边界出现为止[1] 给重复操作符添加一个“？” 可以让万能字符匹配尽可能少的次数[2] 字符集： [] 方括号扩起来的字符集， ‘[a-zA-Z0-9]’ 短斜杠标志起点终点 ‘[^abc]’ 反选   Subpa">
 
 <link rel="canonical" href="https://chunkai-meng.github.io.git/Blog/20180205/Python-Regular-Expression/">
 
@@ -111,6 +113,11 @@
         <li class="menu-item menu-item-home">
 
     <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-projects">
+
+    <a href="/categories/Projects/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>Projects</a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -306,18 +313,15 @@
 </tr>
 </tbody>
 </table>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span>&gt;&gt; import re</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; string = "hello world"</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; pat = r' '</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; if re.search(pat, string): print('Found it!')</span><br><span class="line">...</span><br><span class="line">Found it!</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; some_text = 'alpha, beta,,,,gamma    delta'</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; re.split('[, ]+', some_text)</span><br><span class="line">['alpha', 'beta', 'gamma', 'delta']</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; pat = '[a-zA-z]+'</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; text = '"Hm... Err --- are you sure?" he said, sounding insecure.'</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; re.findall(pat, text)</span><br><span class="line">['Hm', 'Err', 'are', 'you', 'sure', 'he', 'said', 'sounding', 'insecure']</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; pat = '&#123;name&#125;'</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; text = 'Dear &#123;name&#125;'</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; re.sub(pat, 'Chunkai', text)</span><br><span class="line">'Dear Chunkai'</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; re.escape('www.python.org')</span><br><span class="line">'www\\.python\\.org'</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import re</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; string = <span class="string">"hello world"</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; pat = r<span class="string">' '</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; <span class="keyword">if</span> re.search(pat, string): <span class="built_in">print</span>(<span class="string">'Found it!'</span>)</span></span><br><span class="line">...</span><br><span class="line">Found it!</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; some_text = <span class="string">'alpha, beta,,,,gamma    delta'</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; re.split(<span class="string">'[, ]+'</span>, some_text)</span></span><br><span class="line">['alpha', 'beta', 'gamma', 'delta']</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; pat = <span class="string">'[a-zA-z]+'</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; text = <span class="string">'"Hm... Err --- are you sure?" he said, sounding insecure.'</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; re.findall(pat, text)</span></span><br><span class="line">['Hm', 'Err', 'are', 'you', 'sure', 'he', 'said', 'sounding', 'insecure']</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; pat = <span class="string">'&#123;name&#125;'</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; text = <span class="string">'Dear &#123;name&#125;'</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; re.sub(pat, <span class="string">'Chunkai'</span>, text)</span></span><br><span class="line">'Dear Chunkai'</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; re.escape(<span class="string">'www.python.org'</span>)</span></span><br><span class="line">'www\\.python\\.org'</span><br></pre></td></tr></table></figure>
 <h2 id="Match-对象及分组提取"><a href="#Match-对象及分组提取" class="headerlink" title="Match 对象及分组提取"></a>Match 对象及分组提取</h2><ul>
-<li><p>分组提取</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; m = re.match(r&apos;www\.(.*)\..&#123;3&#125;&apos;, &apos;www.python.org&apos;)</span><br><span class="line">&gt;&gt;&gt; m.group(1)</span><br><span class="line">&apos;python&apos;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>替换</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; emphasis_pattern = re.compile(r&apos;&apos;&apos;</span><br><span class="line">... \*                  # Beginning emphasis tag -- an asterisk</span><br><span class="line">... (                   # Beginning group for capturing phrase</span><br><span class="line">... [^\*]+              # Capture anything except asterisks</span><br><span class="line">... )                   # End group</span><br><span class="line">... \*                  # Ending emphasis tag</span><br><span class="line">... &apos;&apos;&apos;, re.VERBOSE)</span><br><span class="line">&gt;&gt;&gt; re.sub(emphasis_pattern, r&apos;&lt;em&gt;\1&lt;em&gt;&apos;, &apos;hello, *world*!&apos;)</span><br><span class="line">&apos;hello, &lt;em&gt;world&lt;em&gt;!&apos;</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; emphasis_pattern = r&apos;\*(.+)\*&apos;          #[1]</span><br><span class="line">&gt;&gt;&gt; re.sub(emphasis_pattern, r&apos;&lt;em&gt;\1&lt;em&gt;&apos;, &apos;hello, *world*! *my son*&apos;)</span><br><span class="line">&apos;hello, &lt;em&gt;world*! *my son&lt;em&gt;&apos;</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; emphasis_pattern = r&apos;\*(.+?)\*&apos;         #[2]</span><br><span class="line">&gt;&gt;&gt; re.sub(emphasis_pattern, r&apos;&lt;em&gt;\1&lt;em&gt;&apos;, &apos;hello, *world*! *my son*&apos;)</span><br><span class="line">&apos;hello, &lt;em&gt;world&lt;em&gt;! &lt;em&gt;my son&lt;em</span><br></pre></td></tr></table></figure>
+<li>分组提取<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; m &#x3D; re.match(r&#39;www\.(.*)\..&#123;3&#125;&#39;, &#39;www.python.org&#39;)</span><br><span class="line">&gt;&gt;&gt; m.group(1)</span><br><span class="line">&#39;python&#39;</span><br></pre></td></tr></table></figure></li>
+<li>替换<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; emphasis_pattern &#x3D; re.compile(r&#39;&#39;&#39;</span><br><span class="line">... \*                  # Beginning emphasis tag -- an asterisk</span><br><span class="line">... (                   # Beginning group for capturing phrase</span><br><span class="line">... [^\*]+              # Capture anything except asterisks</span><br><span class="line">... )                   # End group</span><br><span class="line">... \*                  # Ending emphasis tag</span><br><span class="line">... &#39;&#39;&#39;, re.VERBOSE)</span><br><span class="line">&gt;&gt;&gt; re.sub(emphasis_pattern, r&#39;&lt;em&gt;\1&lt;em&gt;&#39;, &#39;hello, *world*!&#39;)</span><br><span class="line">&#39;hello, &lt;em&gt;world&lt;em&gt;!&#39;</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; emphasis_pattern &#x3D; r&#39;\*(.+)\*&#39;          #[1]</span><br><span class="line">&gt;&gt;&gt; re.sub(emphasis_pattern, r&#39;&lt;em&gt;\1&lt;em&gt;&#39;, &#39;hello, *world*! *my son*&#39;)</span><br><span class="line">&#39;hello, &lt;em&gt;world*! *my son&lt;em&gt;&#39;</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; emphasis_pattern &#x3D; r&#39;\*(.+?)\*&#39;         #[2]</span><br><span class="line">&gt;&gt;&gt; re.sub(emphasis_pattern, r&#39;&lt;em&gt;\1&lt;em&gt;&#39;, &#39;hello, *world*! *my son*&#39;)</span><br><span class="line">&#39;hello, &lt;em&gt;world&lt;em&gt;! &lt;em&gt;my son&lt;em</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="模板替换"><a href="#模板替换" class="headerlink" title="模板替换"></a>模板替换</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># templates.py</span></span><br><span class="line"><span class="keyword">import</span> fileinput, re</span><br><span class="line"></span><br><span class="line"><span class="comment"># Matches fields enclosed in square brackets:</span></span><br><span class="line">field_pat = re.compile(<span class="string">r'\[(.+?)\]'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># We'll collect variables in this:</span></span><br><span class="line">scope = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># This is used in re.sub:</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">replacement</span><span class="params">(match)</span>:</span></span><br><span class="line">    code = match.group(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># If the field can be evaluated, return it:</span></span><br><span class="line">        <span class="keyword">return</span> str(eval(code, scope))</span><br><span class="line">    <span class="keyword">except</span> SyntaxError:</span><br><span class="line">        <span class="comment"># Otherwise, execute the assignment in the same scope ... exec code in scope</span></span><br><span class="line">        exec(code, scope)</span><br><span class="line">        <span class="comment"># ... and return an empty string:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">''</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Get all the text as a single string:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># (There are other ways of doing this; see Chapter 11)</span></span><br><span class="line">lines = []</span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> fileinput.input():</span><br><span class="line">    lines.append(line)</span><br><span class="line">text = <span class="string">''</span>.join(lines)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Substitute all the occurrences of the field pattern:</span></span><br><span class="line">print(field_pat.sub(replacement, text))</span><br></pre></td></tr></table></figure>
 <p>template.txt<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[import time]</span><br><span class="line">Dear [name],</span><br><span class="line"></span><br><span class="line">I would like to learn how to program.</span><br><span class="line">I hear you use the [language] language a lot -- is it something I should consider?</span><br><span class="line"></span><br><span class="line">And, by the way, is [email] your correct email address?</span><br><span class="line"></span><br><span class="line">Fooville,</span><br><span class="line">[time.asctime()]</span><br><span class="line">Oscar Frozzbozz</span><br></pre></td></tr></table></figure></p>
-<p>magnus.txt<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[name = &apos;Magnus Lie Hetland&apos; ]</span><br><span class="line">[email = &apos;magnus@foo.bar&apos; ]</span><br><span class="line">[language = &apos;python&apos; ]</span><br></pre></td></tr></table></figure></p>
+<p>magnus.txt<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[name &#x3D; &#39;Magnus Lie Hetland&#39; ]</span><br><span class="line">[email &#x3D; &#39;magnus@foo.bar&#39; ]</span><br><span class="line">[language &#x3D; &#39;python&#39; ]</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python templates.py magnus.txt template.txt</span><br></pre></td></tr></table></figure>
 
     </div>
@@ -470,10 +474,10 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Chunkai Meng</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.1
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.1
   </div>
 
         
@@ -493,9 +497,17 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
@@ -504,7 +516,9 @@
 
 
 
-  <script src="/js/local-search.js"></script>
+  
+<script src="/js/local-search.js"></script>
+
 
 
 

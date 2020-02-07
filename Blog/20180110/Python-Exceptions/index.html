@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="generator" content="Hexo 4.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -20,18 +20,18 @@
     var CONFIG = {"hostname":"chunkai-meng.github.io.git","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"path":"search.xml","motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="参考引用：《Beginning Python - From Novice to Professional Third Edition 2017》整理笔记：CK  简单抛出一个异常12345678910# 指明异常类&amp;gt;&amp;gt;&amp;gt; raise ExceptionTraceback (most recent call last):  File &quot;&amp;lt;stdin&amp;gt;&quot;, line 1">
-<meta name="keywords" content="Python">
+  <meta name="description" content="参考引用：《Beginning Python - From Novice to Professional Third Edition 2017》整理笔记：CK  简单抛出一个异常12345678910# 指明异常类&gt;&gt;&gt; raise ExceptionTraceback (most recent call last):  File &quot;&lt;stdin&gt;&quot;, line 1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python - Exceptions">
 <meta property="og:url" content="https://chunkai-meng.github.io.git/Blog/20180110/Python-Exceptions/index.html">
 <meta property="og:site_name" content="Chunkai&#39;s Blog">
-<meta property="og:description" content="参考引用：《Beginning Python - From Novice to Professional Third Edition 2017》整理笔记：CK  简单抛出一个异常12345678910# 指明异常类&amp;gt;&amp;gt;&amp;gt; raise ExceptionTraceback (most recent call last):  File &quot;&amp;lt;stdin&amp;gt;&quot;, line 1">
-<meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-01-10T13:55:48.895Z">
+<meta property="og:description" content="参考引用：《Beginning Python - From Novice to Professional Third Edition 2017》整理笔记：CK  简单抛出一个异常12345678910# 指明异常类&gt;&gt;&gt; raise ExceptionTraceback (most recent call last):  File &quot;&lt;stdin&gt;&quot;, line 1">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2018-01-10T05:41:33.000Z">
+<meta property="article:modified_time" content="2018-01-10T13:55:48.895Z">
+<meta property="article:author" content="Chunkai Meng">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python - Exceptions">
-<meta name="twitter:description" content="参考引用：《Beginning Python - From Novice to Professional Third Edition 2017》整理笔记：CK  简单抛出一个异常12345678910# 指明异常类&amp;gt;&amp;gt;&amp;gt; raise ExceptionTraceback (most recent call last):  File &quot;&amp;lt;stdin&amp;gt;&quot;, line 1">
 
 <link rel="canonical" href="https://chunkai-meng.github.io.git/Blog/20180110/Python-Exceptions/">
 
@@ -111,6 +111,11 @@
         <li class="menu-item menu-item-home">
 
     <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-projects">
+
+    <a href="/categories/Projects/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>Projects</a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -259,13 +264,9 @@
 <li>用<code>try</code>包住代码段可以一次捕获多个异常，用<code>if</code>语句要一个一个写分别处理。</li>
 </ul>
 </li>
-<li><p>异常处理可以让程序即使发生致命错误也不必退出：</p>
-<ul>
+<li>异常处理可以让程序即使发生致命错误也不必退出：<ul>
 <li>在交互式的程序里，如果发生错误可以重试<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">      x = int(input(<span class="string">'Enter the first number: '</span>))</span><br><span class="line">      y = int(input(<span class="string">'Enter the second number: '</span>))</span><br><span class="line">      print(x / y)</span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">      print(<span class="string">"The second number can't be zero!"</span>)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>Here，尽管出错了但异常被处理了，没有继续向上抛出异常，程序也没有退出。</p>
-<ul>
+Here，尽管出错了但异常被处理了，没有继续向上抛出异常，程序也没有退出。</li>
 <li>尽管如此，如果异常发生在程序内部，还是抛出异常退出比较好，出错马上附带信息地退出，比留着隐患不知道什么时候异常退出要好。<br>3.</li>
 </ul>
 </li>
@@ -276,9 +277,8 @@
 <h2 id="继续抛出异常"><a href="#继续抛出异常" class="headerlink" title="继续抛出异常"></a>继续抛出异常</h2><ol>
 <li><code>raise</code> 不带参数，在不知道如何处理异常的时候</li>
 <li><code>raise</code> 其他异常类，这样原来的异常就回保持在上下文中带入新的异常，成为新异常信息的一部分抛出去<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line"><span class="meta">... </span>    <span class="number">1</span>/<span class="number">0</span></span><br><span class="line"><span class="meta">... </span><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">raise</span> ValueError</span><br><span class="line">...</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">2</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">ZeroDivisionError: division by zero</span><br><span class="line"></span><br><span class="line">During handling of the above exception, another exception occurred:</span><br><span class="line"></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">4</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">ValueError</span><br></pre></td></tr></table></figure>
-</li>
+<h2 id="捕获不同异常分别处理"><a href="#捕获不同异常分别处理" class="headerlink" title="捕获不同异常分别处理"></a>捕获不同异常分别处理</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">try</span>:</span><br><span class="line"><span class="meta">... </span>    x = int(input(<span class="string">'Enter the first number: '</span>))</span><br><span class="line"><span class="meta">... </span>    y = int(input(<span class="string">'Enter the second number: '</span>))</span><br><span class="line"><span class="meta">... </span>    print(x / y)</span><br><span class="line"><span class="meta">... </span><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line"><span class="meta">... </span>    print(<span class="string">"The second number can't be zero!"</span>)</span><br><span class="line"><span class="meta">... </span><span class="keyword">except</span> TypeError:</span><br><span class="line"><span class="meta">... </span>    print(<span class="string">"That wasn't a number, was it?"</span>)</span><br><span class="line">...</span><br><span class="line">Enter the first number: <span class="number">1</span></span><br><span class="line">Enter the second number: <span class="number">0</span></span><br><span class="line">The second number can<span class="string">'t be zero!</span></span><br></pre></td></tr></table></figure></li>
 </ol>
-<h2 id="捕获不同异常分别处理"><a href="#捕获不同异常分别处理" class="headerlink" title="捕获不同异常分别处理"></a>捕获不同异常分别处理</h2>  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">try</span>:</span><br><span class="line"><span class="meta">... </span>    x = int(input(<span class="string">'Enter the first number: '</span>))</span><br><span class="line"><span class="meta">... </span>    y = int(input(<span class="string">'Enter the second number: '</span>))</span><br><span class="line"><span class="meta">... </span>    print(x / y)</span><br><span class="line"><span class="meta">... </span><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line"><span class="meta">... </span>    print(<span class="string">"The second number can't be zero!"</span>)</span><br><span class="line"><span class="meta">... </span><span class="keyword">except</span> TypeError:</span><br><span class="line"><span class="meta">... </span>    print(<span class="string">"That wasn't a number, was it?"</span>)</span><br><span class="line">...</span><br><span class="line">Enter the first number: <span class="number">1</span></span><br><span class="line">Enter the second number: <span class="number">0</span></span><br><span class="line">The second number can<span class="string">'t be zero!</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>慢慢感受到跟<code>if</code> statements 相比的优越性了，后面还有！</li>
 </ul>
@@ -297,9 +297,8 @@
 <ul>
 <li>⚠️这样也有危险，因为这样会将一些本来没有预计到的异常情况，全部当作一直的异常一视同仁的处理了，例如 Ctrl-C 终止运行会被捕获并当作：’Something wrong happened …’ 处理。而用户退出并不算输入错误或者什么异常。</li>
 </ul>
-<p>为了保证处理方法只针对主要的异常，最好用<code>except Exception as e:</code> 检查 e<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    x = int(input(<span class="string">'Enter the first number: '</span>))</span><br><span class="line">    y = int(input(<span class="string">'Enter the second number: '</span>))</span><br><span class="line">    print(x / y)</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">    print(<span class="string">'e'</span>)</span><br></pre></td></tr></table></figure></p>
-<p>这样就不会去处理类似<code>SystemExit</code> 和 <code>KeyboardInterrupt</code> 的异常，因为他们是 <code>BaseException</code> 的子类，<code>Exception</code> 也是其子类。</p>
-<h2 id="设定没有异常执行什么"><a href="#设定没有异常执行什么" class="headerlink" title="设定没有异常执行什么"></a>设定没有异常执行什么</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">  <span class="keyword">try</span>:</span><br><span class="line">    x = int(input(<span class="string">'Enter the first number: '</span>))</span><br><span class="line">    y = int(input(<span class="string">'Enter the second number: '</span>))</span><br><span class="line">    value = x / y</span><br><span class="line">    print(<span class="string">'x / y is'</span>, value)</span><br><span class="line">  <span class="keyword">except</span>:</span><br><span class="line">    print(<span class="string">'Invalid input. Please try again.'</span>)</span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">      <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<p>为了保证处理方法只针对主要的异常，最好用<code>except Exception as e:</code> 检查 e<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    x = int(input(<span class="string">'Enter the first number: '</span>))</span><br><span class="line">    y = int(input(<span class="string">'Enter the second number: '</span>))</span><br><span class="line">    print(x / y)</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">    print(<span class="string">'e'</span>)</span><br></pre></td></tr></table></figure><br>这样就不会去处理类似<code>SystemExit</code> 和 <code>KeyboardInterrupt</code> 的异常，因为他们是 <code>BaseException</code> 的子类，<code>Exception</code> 也是其子类。</p>
+<h2 id="设定没有异常执行什么"><a href="#设定没有异常执行什么" class="headerlink" title="设定没有异常执行什么"></a>设定没有异常执行什么</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">  <span class="keyword">try</span>:</span><br><span class="line">    x = int(input(<span class="string">'Enter the first number: '</span>))</span><br><span class="line">    y = int(input(<span class="string">'Enter the second number: '</span>))</span><br><span class="line">    value = x / y</span><br><span class="line">    print(<span class="string">'x / y is'</span>, value)</span><br><span class="line">  <span class="keyword">except</span>:</span><br><span class="line">    print(<span class="string">'Invalid input. Please try again.'</span>)</span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">      <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>根据5点，这里捕获一切异常，因此输入x或y的过程中即使Ctrl-C也是无法退出的，会当作非法输入处理⚠️，如果这不是你希望看到的，最好用<code>except Exception as e:</code></li>
 </ul>
@@ -309,11 +308,10 @@
 </ul>
 <h1 id="异常处理的哲学思想"><a href="#异常处理的哲学思想" class="headerlink" title="异常处理的哲学思想"></a>异常处理的哲学思想</h1><ul>
 <li>求原谅比求允许容易<br>比如下面的代码，对于大部分有值的情况，这段代码都要查询字典两次<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">describe_person</span><span class="params">(person)</span>:</span></span><br><span class="line">    print(<span class="string">'Description of'</span>, person[<span class="string">'name'</span>])</span><br><span class="line">    print(<span class="string">'Age:'</span>, person[<span class="string">'age'</span>])</span><br><span class="line">    <span class="keyword">if</span> <span class="string">'occupation'</span> <span class="keyword">in</span> person:</span><br><span class="line">        print(<span class="string">'Occupation:'</span>, person[<span class="string">'occupation'</span>])</span><br></pre></td></tr></table></figure>
-</li>
+如果用异常处理，只要简单假设是有值的，只需要执行一遍，而且还有用<code>else</code> <code>finally</code>等辅助判断，非常高效<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">describe_person</span><span class="params">(person)</span>:</span></span><br><span class="line">    print(<span class="string">'Description of'</span>, person[<span class="string">'name'</span>])</span><br><span class="line">    print(<span class="string">'Age:'</span>, person[<span class="string">'age'</span>])</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        print(<span class="string">'Occupation:'</span>, person[<span class="string">'occupation'</span>])</span><br><span class="line">    <span class="keyword">except</span> KeyError: <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+因此Python中使用try/except 比 if/else 更自然。</li>
 </ul>
-<p>如果用异常处理，只要简单假设是有值的，只需要执行一遍，而且还有用<code>else</code> <code>finally</code>等辅助判断，非常高效<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">describe_person</span><span class="params">(person)</span>:</span></span><br><span class="line">    print(<span class="string">'Description of'</span>, person[<span class="string">'name'</span>])</span><br><span class="line">    print(<span class="string">'Age:'</span>, person[<span class="string">'age'</span>])</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        print(<span class="string">'Occupation:'</span>, person[<span class="string">'occupation'</span>])</span><br><span class="line">    <span class="keyword">except</span> KeyError: <span class="keyword">pass</span></span><br></pre></td></tr></table></figure></p>
-<p>因此Python中使用try/except 比 if/else 更自然。</p>
-<h1 id="警告warnings"><a href="#警告warnings" class="headerlink" title="警告warnings"></a>警告<code>warnings</code></h1><p>警告不会退出程序<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; from warnings import warn</span><br><span class="line">&gt;&gt;&gt; warn(&quot;I&apos;ve got a bad feeling about this.&quot;)</span><br><span class="line">__main__:1: UserWarning: I&apos;ve got a bad feeling about this.</span><br></pre></td></tr></table></figure></p>
+<h1 id="警告warnings"><a href="#警告warnings" class="headerlink" title="警告warnings"></a>警告<code>warnings</code></h1><p>警告不会退出程序<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; from warnings import warn</span><br><span class="line">&gt;&gt;&gt; warn(&quot;I&#39;ve got a bad feeling about this.&quot;)</span><br><span class="line">__main__:1: UserWarning: I&#39;ve got a bad feeling about this.</span><br></pre></td></tr></table></figure></p>
 
     </div>
 
@@ -463,10 +461,10 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Chunkai Meng</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.1
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.1
   </div>
 
         
@@ -486,9 +484,17 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
@@ -497,7 +503,9 @@
 
 
 
-  <script src="/js/local-search.js"></script>
+  
+<script src="/js/local-search.js"></script>
+
 
 
 
