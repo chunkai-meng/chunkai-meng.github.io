@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"chunkai-meng.github.io.git","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"path":"search.xml","motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="用户注册 - Django 后端短信验证码，邮件验证链接  源码来自：《Python Django Web 典型模块开发实战》整理：CK  短信认证1. 发送短信的模块  - 应该任何api key都能使用 123456789101112131415161718192021222324# utils&#x2F;yunpian.pyimport requestsclass YunPian(object):">
+  <meta name="description" content="用户注册 - Django 后端短信验证码，邮件验证链接  源码来自：《Python Django Web 典型模块开发实战》整理：CK">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Register SMS and Email Confirmation">
 <meta property="og:url" content="https://chunkai-meng.github.io.git/Blog/20200207/Register-SMS-and-Email-Confirmation/index.html">
 <meta property="og:site_name" content="Chunkai&#39;s Blog">
-<meta property="og:description" content="用户注册 - Django 后端短信验证码，邮件验证链接  源码来自：《Python Django Web 典型模块开发实战》整理：CK  短信认证1. 发送短信的模块  - 应该任何api key都能使用 123456789101112131415161718192021222324# utils&#x2F;yunpian.pyimport requestsclass YunPian(object):">
+<meta property="og:description" content="用户注册 - Django 后端短信验证码，邮件验证链接  源码来自：《Python Django Web 典型模块开发实战》整理：CK">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-02-07T04:24:41.000Z">
-<meta property="article:modified_time" content="2020-02-07T21:36:33.234Z">
+<meta property="article:modified_time" content="2020-02-07T21:37:39.759Z">
 <meta property="article:author" content="Chunkai Meng">
 <meta property="article:tag" content="SMS">
 <meta property="article:tag" content="EMail">
@@ -216,7 +216,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-08 10:36:33" itemprop="dateModified" datetime="2020-02-08T10:36:33+13:00">2020-02-08</time>
+                <time title="Modified: 2020-02-08 10:37:39" itemprop="dateModified" datetime="2020-02-08T10:37:39+13:00">2020-02-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -279,6 +279,8 @@
 <blockquote>
 <p>源码来自：《Python Django Web 典型模块开发实战》<br>整理：CK</p>
 </blockquote>
+<a id="more"></a>
+
 <h2 id="短信认证"><a href="#短信认证" class="headerlink" title="短信认证"></a>短信认证</h2><p><strong>1. 发送短信的模块</strong>  - 应该任何api key都能使用</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># utils/yunpian.py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">YunPian</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    应该任何api key都能使用</span></span><br><span class="line"><span class="string">    云片地址固定</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,api_key)</span>:</span></span><br><span class="line">        self.api_key=api_key</span><br><span class="line">        self.single_send_url=<span class="string">'https://sms.yunpian.com/v2/sms/single_send.json'</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">send_sms</span><span class="params">(self,code,mobile)</span>:</span></span><br><span class="line">        parmas=&#123;</span><br><span class="line">            <span class="string">'apikey'</span>:self.api_key,</span><br><span class="line">            <span class="string">'mobile'</span>:mobile,</span><br><span class="line">            <span class="string">'text'</span>:<span class="string">'您的验证码是&#123;code&#125;。如非本人操作，请忽略本短信。'</span>.format(code=code)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">#text 必须和短信后台模版一致否则无法发送</span></span><br><span class="line">        r=requests.post(self.single_send_url,data=parmas)</span><br><span class="line">        print(r)</span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">'__main__'</span>:</span><br><span class="line">    yun_pian=YunPian(<span class="string">'***************（你的API key）'</span>)</span><br><span class="line">    yun_pian.send_sms(<span class="string">'***（验证码）'</span>,<span class="string">'*******（手机号）'</span>)</span><br></pre></td></tr></table></figure>
 
