@@ -20,22 +20,19 @@
     var CONFIG = {"hostname":"chunkai-meng.github.io.git","root":"/","scheme":"Mist","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"path":"search.xml","motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Source  A simple explain to TDDWhy should I do it: Tests have a short feedback loop, enabling you and your team to learn faster and adjust Less time is spent debugging, allowing you to spend more tim">
+  <meta name="description" content="理解带参数的装饰器加了装饰器这段代码从一个函数定义（不会执行任何东西，在内存单元中保存一段代码）变成了一条赋值语句（修改被装饰函数所在内存单元中的内容）exit  从运维角度看是装饰器补充了函数的功能， 从开发角度看是装饰器将函数作为参数 函数返回的函数无法被直接调用，除非将其返回值赋值个一个变量；列表就相当于这个函数，他的元素必须通过带参数执行这个函数获得。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Test-Driven Development (TDD)">
-<meta property="og:url" content="https://chunkai-meng.github.io.git/Blog/20171223/Test-Driven-Development-TDD/index.html">
+<meta property="og:title" content="理解带参数的装饰器">
+<meta property="og:url" content="https://chunkai-meng.github.io.git/Blog/20200214/%E7%90%86%E8%A7%A3%E5%B8%A6%E5%8F%82%E6%95%B0%E7%9A%84%E8%A3%85%E9%A5%B0%E5%99%A8/index.html">
 <meta property="og:site_name" content="Chunkai&#39;s Blog">
-<meta property="og:description" content="Source  A simple explain to TDDWhy should I do it: Tests have a short feedback loop, enabling you and your team to learn faster and adjust Less time is spent debugging, allowing you to spend more tim">
+<meta property="og:description" content="理解带参数的装饰器加了装饰器这段代码从一个函数定义（不会执行任何东西，在内存单元中保存一段代码）变成了一条赋值语句（修改被装饰函数所在内存单元中的内容）exit  从运维角度看是装饰器补充了函数的功能， 从开发角度看是装饰器将函数作为参数 函数返回的函数无法被直接调用，除非将其返回值赋值个一个变量；列表就相当于这个函数，他的元素必须通过带参数执行这个函数获得。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2017-12-22T22:07:52.000Z">
-<meta property="article:modified_time" content="2017-12-22T22:18:26.899Z">
+<meta property="article:published_time" content="2020-02-13T11:22:23.000Z">
+<meta property="article:modified_time" content="2020-02-13T11:24:27.070Z">
 <meta property="article:author" content="Chunkai Meng">
-<meta property="article:tag" content="Django">
-<meta property="article:tag" content="API">
-<meta property="article:tag" content="Django Rest Framework">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://chunkai-meng.github.io.git/Blog/20171223/Test-Driven-Development-TDD/">
+<link rel="canonical" href="https://chunkai-meng.github.io.git/Blog/20200214/%E7%90%86%E8%A7%A3%E5%B8%A6%E5%8F%82%E6%95%B0%E7%9A%84%E8%A3%85%E9%A5%B0%E5%99%A8/">
 
 
 <script id="page-configurations">
@@ -47,7 +44,7 @@
   };
 </script>
 
-  <title>Test-Driven Development (TDD) | Chunkai's Blog</title>
+  <title>理解带参数的装饰器 | Chunkai's Blog</title>
   
 
 
@@ -189,7 +186,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
-    <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/Blog/20171223/Test-Driven-Development-TDD/">
+    <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/Blog/20200214/%E7%90%86%E8%A7%A3%E5%B8%A6%E5%8F%82%E6%95%B0%E7%9A%84%E8%A3%85%E9%A5%B0%E5%99%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -202,7 +199,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Test-Driven Development (TDD)
+          理解带参数的装饰器
         </h1>
 
         <div class="post-meta">
@@ -213,18 +210,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2017-12-23 11:07:52 / Modified: 11:18:26" itemprop="dateCreated datePublished" datetime="2017-12-23T11:07:52+13:00">2017-12-23</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Backend/" itemprop="url" rel="index">
-                    <span itemprop="name">Backend</span>
-                  </a>
-                </span>
+              <time title="Created: 2020-02-14 00:22:23 / Modified: 00:24:27" itemprop="dateCreated datePublished" datetime="2020-02-14T00:22:23+13:00">2020-02-14</time>
             </span>
 
           
@@ -243,8 +229,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/Blog/20171223/Test-Driven-Development-TDD/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Blog/20171223/Test-Driven-Development-TDD/" itemprop="commentCount"></span>
+    <a title="disqus" href="/Blog/20200214/%E7%90%86%E8%A7%A3%E5%B8%A6%E5%8F%82%E6%95%B0%E7%9A%84%E8%A3%85%E9%A5%B0%E5%99%A8/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Blog/20200214/理解带参数的装饰器/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -254,14 +240,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>766</span>
+              <span>1.7k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
+              <span>2 mins.</span>
             </span>
 
         </div>
@@ -273,25 +259,62 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <blockquote>
-<p><a href="https://scotch.io/tutorials/build-a-rest-api-with-django-a-test-driven-approach-part-1#toc-django-rest-framework">Source</a></p>
-</blockquote>
-<h1 id="A-simple-explain-to-TDD"><a href="#A-simple-explain-to-TDD" class="headerlink" title="A simple explain to TDD"></a>A simple explain to TDD</h1><h2 id="Why-should-I-do-it"><a href="#Why-should-I-do-it" class="headerlink" title="Why should I do it:"></a>Why should I do it:</h2><ul>
-<li>Tests have a short feedback loop, enabling you and your team to learn faster and adjust</li>
-<li>Less time is spent debugging, allowing you to spend more time writing code</li>
-<li>Tests act as documentation for your code!</li>
-<li>They improve code quality while reducing bugs</li>
-<li>After refactoring code, your tests will tell you whether the change has broken previously working code, and…</li>
-<li>Tests can prevent your hair line from receding!</li>
+        <h1 id="理解带参数的装饰器"><a href="#理解带参数的装饰器" class="headerlink" title="理解带参数的装饰器"></a>理解带参数的装饰器</h1><p>加了装饰器这段代码从一个函数定义（不会执行任何东西，在内存单元中保存一段代码）变成了一条赋值语句（修改被装饰函数所在内存单元中的内容）exit</p>
+<ol>
+<li>从运维角度看是装饰器补充了函数的功能， 从开发角度看是装饰器将函数作为参数</li>
+<li>函数返回的函数无法被直接调用，除非将其返回值赋值个一个变量；列表就相当于这个函数，他的元素必须通过带参数执行这个函数获得。</li>
+</ol>
+<a id="more"></a>
+
+<h2 id="第一步：-定义装饰函数"><a href="#第一步：-定义装饰函数" class="headerlink" title="第一步： 定义装饰函数"></a>第一步： 定义装饰函数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">(a)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">decorator</span><span class="params">(func)</span>:</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">wrap</span><span class="params">(*args)</span>:</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> callable(a):</span><br><span class="line">                print(a)</span><br><span class="line">            <span class="keyword">return</span> func(*args)</span><br><span class="line">        <span class="keyword">return</span> wrap</span><br><span class="line">    <span class="keyword">if</span> callable(a):</span><br><span class="line">        <span class="keyword">return</span> decorator(a)</span><br><span class="line">    <span class="keyword">return</span> decorator</span><br><span class="line"></span><br><span class="line"><span class="comment"># 装饰器带参数可以使得被装饰函数的改变有两种可能</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="第二步：使用装饰器装饰函数，调用新函数"><a href="#第二步：使用装饰器装饰函数，调用新函数" class="headerlink" title="第二步：使用装饰器装饰函数，调用新函数"></a>第二步：使用装饰器装饰函数，调用新函数</h2><h3 id="第一种可能用法"><a href="#第一种可能用法" class="headerlink" title="第一种可能用法"></a>第一种可能用法</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@foo('hello')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bar</span><span class="params">(c)</span>:</span></span><br><span class="line">    print(c)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="装饰器的处理过程"><a href="#装饰器的处理过程" class="headerlink" title="装饰器的处理过程"></a>装饰器的处理过程</h3><p><strong>装饰的作用是获得一个新函数</strong></p>
+<ul>
+<li>bar = foo(‘hello’)(bar)</li>
+<li>先执行 foo(‘hello’) 得到 decorator 函数</li>
+<li>然后让decorator 函数带着(bar) 一起飞</li>
+<li>就变成了 bar = decorator(bar)</li>
+<li>decorator(bar) 执行得到一个函数 wrap（名字不重要，为了得到内存中的地址而已）</li>
+<li>这个新函数可以有多个参数(因为原函数带参数，装饰后也要带参数啊)</li>
+<li>额外多说一句，函数里定义的函数是可变的（内存块里存的代码是可变的）</li>
+<li>wrap 怎么写呢？根据外面的decorator函数的参数变着来：</li>
 </ul>
-<h2 id="This-is-how-it-works"><a href="#This-is-how-it-works" class="headerlink" title="This is how it works:"></a>This is how it works:</h2><ul>
-<li>Write a test. – The test will flesh out some functionality in your app</li>
-<li>Then, run the test – The test should fail, since there’s no code to make it pass.</li>
-<li>Write the code – To make the test pass</li>
-<li>Run the test – If it passes, you are confident that the code you’ve written meets the test requirements</li>
-<li>Refactor code – Remove duplication, prune large objects and make the code more readable. Re-run the tests every time you refactor the code</li>
-<li>Repeat – That’s it!</li>
+<p><strong>重点来了，开始改写bar：</strong></p>
+<ul>
+<li>因为a=’hello’ not callable 所以有一行 print(‘hello’) 的代码</li>
+<li>代码很少，接下来就 return了，return 的是被装饰函数的执行结果。</li>
+<li>为理解为wrap函数定义为这个时候去被装饰函数定义的内存块执行，并将被装饰函数的返回值返回出去。不知道这样说是否准确？？？</li>
+<li>相当于bar函数的函数体（内存中的块内容）变成了：</li>
 </ul>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bar</span><span class="params">(c)</span>:</span></span><br><span class="line">    print(a)</span><br><span class="line">    <span class="comment"># 执行被装饰函数体</span></span><br><span class="line">    print(c)</span><br><span class="line">    <span class="comment"># 将被装饰函数的返回值作为新函数的返回值，还是0</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="调用被装饰后的函数显然应该为："><a href="#调用被装饰后的函数显然应该为：" class="headerlink" title="调用被装饰后的函数显然应该为："></a>调用被装饰后的函数显然应该为：</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; bar(<span class="string">'wold'</span>)</span><br><span class="line">hello</span><br><span class="line">world</span><br><span class="line">0</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="第二种用法"><a href="#第二种用法" class="headerlink" title="第二种用法"></a>第二种用法</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@foo</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bar</span><span class="params">(c)</span>:</span></span><br><span class="line">    print(c)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>装饰的作用是获得一个新函数</strong></p>
+<ul>
+<li>foo 函数是带参数的，所以把 bar作为参数执行 foo 函数 得到：</li>
+<li>bar = foo(bar) </li>
+<li>仔细看foo的函数，如果参数是 callable 则返回 decorator 函数并且带上这个 foo 的参数，所以：</li>
+<li>foo(bar) 变成了 decorator(bar) bar = decorator(bar)</li>
+<li>先执行 foo(‘hello’) 得到 decorator</li>
+<li>于是 bar = decorator(bar)</li>
+<li>decorator(bar) 执行得到的是一个 wrap 函数，说白了它的名字不重要，重要的是它里面的内容：</li>
+<li>里面的内容就这样来写 因为 a 是callable的，所以就不执行 <code>print(a)</code> 了，仅仅执行 func(*args)，也就是将新函数的参数，被装饰函数返回它的返回值</li>
+<li>装饰器啥也没干，直接把被装饰器的代码拿去充数了。</li>
+<li>相当于bar函数的函数体（内存中的块内容）变成了：</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bar</span><span class="params">(c)</span>:</span></span><br><span class="line">    <span class="comment"># 执行被装饰函数</span></span><br><span class="line">    print(c)</span><br><span class="line">    <span class="comment"># 将被装饰函数的返回值作为新函数的返回值，还是0</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="调用被装饰后的函数应该为："><a href="#调用被装饰后的函数应该为：" class="headerlink" title="调用被装饰后的函数应该为："></a>调用被装饰后的函数应该为：</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; bar(<span class="string">'wold'</span>)</span><br><span class="line">world</span><br><span class="line">0</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><p>定义一个函数其实是分配一个内存空间来装代码。<br>decorator() 函数执行的过程就是干这个事情：<br>创建一个 wrap 函数，最好把函数对象的引用丢出去。<br>这个函数干什么嗯<br>它先把print(‘hello’) 这段代码记录下来。<br>再看decorator 的参数 func 是哪个，去他的代码块执行它，然后把返回值返回。</p>
 
     </div>
 
@@ -300,12 +323,6 @@
     
 
       <footer class="post-footer">
-          
-          <div class="post-tags">
-              <a href="/tags/Django/" rel="tag"><i class="fa fa-tag"></i> Django</a>
-              <a href="/tags/API/" rel="tag"><i class="fa fa-tag"></i> API</a>
-              <a href="/tags/Django-Rest-Framework/" rel="tag"><i class="fa fa-tag"></i> Django Rest Framework</a>
-          </div>
 
         
 
@@ -313,13 +330,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/Blog/20171206/Machine-Learnning/" rel="prev" title="Machine Learnning">
-      <i class="fa fa-chevron-left"></i> Machine Learnning
+    <a href="/Blog/20200207/Register-SMS-and-Email-Confirmation/" rel="prev" title="Register SMS and Email Confirmation">
+      <i class="fa fa-chevron-left"></i> Register SMS and Email Confirmation
     </a></div>
-      <div class="post-nav-item">
-    <a href="/Blog/20171224/Django-Debug/" rel="next" title="Django Debug">
-      Django Debug <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -386,7 +400,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#A-simple-explain-to-TDD"><span class="nav-number">1.</span> <span class="nav-text">A simple explain to TDD</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Why-should-I-do-it"><span class="nav-number">1.1.</span> <span class="nav-text">Why should I do it:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#This-is-how-it-works"><span class="nav-number">1.2.</span> <span class="nav-text">This is how it works:</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#理解带参数的装饰器"><span class="nav-number">1.</span> <span class="nav-text">理解带参数的装饰器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一步：-定义装饰函数"><span class="nav-number">1.1.</span> <span class="nav-text">第一步： 定义装饰函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二步：使用装饰器装饰函数，调用新函数"><span class="nav-number">1.2.</span> <span class="nav-text">第二步：使用装饰器装饰函数，调用新函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一种可能用法"><span class="nav-number">1.2.1.</span> <span class="nav-text">第一种可能用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#装饰器的处理过程"><span class="nav-number">1.2.2.</span> <span class="nav-text">装饰器的处理过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调用被装饰后的函数显然应该为："><span class="nav-number">1.2.3.</span> <span class="nav-text">调用被装饰后的函数显然应该为：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二种用法"><span class="nav-number">1.2.4.</span> <span class="nav-text">第二种用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调用被装饰后的函数应该为："><span class="nav-number">1.2.5.</span> <span class="nav-text">调用被装饰后的函数应该为：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思考"><span class="nav-number">1.3.</span> <span class="nav-text">思考</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -569,9 +583,9 @@
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "https://chunkai-meng.github.io.git/Blog/20171223/Test-Driven-Development-TDD/";
-    this.page.identifier = "Blog/20171223/Test-Driven-Development-TDD/";
-    this.page.title = "Test-Driven Development (TDD)";
+    this.page.url = "https://chunkai-meng.github.io.git/Blog/20200214/%E7%90%86%E8%A7%A3%E5%B8%A6%E5%8F%82%E6%95%B0%E7%9A%84%E8%A3%85%E9%A5%B0%E5%99%A8/";
+    this.page.identifier = "Blog/20200214/理解带参数的装饰器/";
+    this.page.title = "理解带参数的装饰器";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
