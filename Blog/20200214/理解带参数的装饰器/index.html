@@ -28,7 +28,7 @@
 <meta property="og:description" content="理解带参数的装饰器加了装饰器这段代码从一个函数定义（不会执行任何东西，在内存单元中保存一段代码）变成了一条赋值语句（修改被装饰函数所在内存单元中的内容）exit  从运维角度看是装饰器补充了函数的功能， 从开发角度看是装饰器将函数作为参数 函数返回的函数无法被直接调用，除非将其返回值赋值个一个变量；列表就相当于这个函数，他的元素必须通过带参数执行这个函数获得。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-02-13T11:22:23.000Z">
-<meta property="article:modified_time" content="2020-02-13T11:24:27.070Z">
+<meta property="article:modified_time" content="2020-02-14T05:07:40.032Z">
 <meta property="article:author" content="Chunkai Meng">
 <meta name="twitter:card" content="summary">
 
@@ -210,7 +210,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-02-14 00:22:23 / Modified: 00:24:27" itemprop="dateCreated datePublished" datetime="2020-02-14T00:22:23+13:00">2020-02-14</time>
+              <time title="Created: 2020-02-14 00:22:23 / Modified: 18:07:40" itemprop="dateCreated datePublished" datetime="2020-02-14T00:22:23+13:00">2020-02-14</time>
             </span>
 
           
@@ -262,10 +262,9 @@
         <h1 id="理解带参数的装饰器"><a href="#理解带参数的装饰器" class="headerlink" title="理解带参数的装饰器"></a>理解带参数的装饰器</h1><p>加了装饰器这段代码从一个函数定义（不会执行任何东西，在内存单元中保存一段代码）变成了一条赋值语句（修改被装饰函数所在内存单元中的内容）exit</p>
 <ol>
 <li>从运维角度看是装饰器补充了函数的功能， 从开发角度看是装饰器将函数作为参数</li>
-<li>函数返回的函数无法被直接调用，除非将其返回值赋值个一个变量；列表就相当于这个函数，他的元素必须通过带参数执行这个函数获得。</li>
+<li>函数返回的函数无法被直接调用，除非将其返回值赋值个一个变量；列表就相当于这个函数，他的元素必须通过带参数执行这个函数获得。<a id="more"></a></li>
+<li>该用函数还是装饰器，可以看是谁调用谁，从参数传递的方向也可以判断。</li>
 </ol>
-<a id="more"></a>
-
 <h2 id="第一步：-定义装饰函数"><a href="#第一步：-定义装饰函数" class="headerlink" title="第一步： 定义装饰函数"></a>第一步： 定义装饰函数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">(a)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">decorator</span><span class="params">(func)</span>:</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">wrap</span><span class="params">(*args)</span>:</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> callable(a):</span><br><span class="line">                print(a)</span><br><span class="line">            <span class="keyword">return</span> func(*args)</span><br><span class="line">        <span class="keyword">return</span> wrap</span><br><span class="line">    <span class="keyword">if</span> callable(a):</span><br><span class="line">        <span class="keyword">return</span> decorator(a)</span><br><span class="line">    <span class="keyword">return</span> decorator</span><br><span class="line"></span><br><span class="line"><span class="comment"># 装饰器带参数可以使得被装饰函数的改变有两种可能</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="第二步：使用装饰器装饰函数，调用新函数"><a href="#第二步：使用装饰器装饰函数，调用新函数" class="headerlink" title="第二步：使用装饰器装饰函数，调用新函数"></a>第二步：使用装饰器装饰函数，调用新函数</h2><h3 id="第一种可能用法"><a href="#第一种可能用法" class="headerlink" title="第一种可能用法"></a>第一种可能用法</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@foo('hello')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bar</span><span class="params">(c)</span>:</span></span><br><span class="line">    print(c)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
