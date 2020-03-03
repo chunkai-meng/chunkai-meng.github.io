@@ -184,6 +184,122 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/Blog/20171206/First-Django-App-on-Mac-Docker-4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chunkai Meng">
+      <meta itemprop="description" content="Record and Share">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chunkai's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/20171206/First-Django-App-on-Mac-Docker-4/" class="post-title-link" itemprop="url">First Django App on Mac Docker - 4</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-12-06 14:45:57" itemprop="dateCreated datePublished" datetime="2017-12-06T14:45:57+13:00">2017-12-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2017-12-27 11:11:54" itemprop="dateModified" datetime="2017-12-27T11:11:54+13:00">2017-12-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Backend/" itemprop="url" rel="index">
+                    <span itemprop="name">Backend</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Backend/Django/" itemprop="url" rel="index">
+                    <span itemprop="name">Django</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/Blog/20171206/First-Django-App-on-Mac-Docker-4/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Blog/20171206/First-Django-App-on-Mac-Docker-4/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>1.1k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Mac-Docker-创建第一个Django-应用，Part-4"><a href="#Mac-Docker-创建第一个Django-应用，Part-4" class="headerlink" title="Mac Docker 创建第一个Django 应用，Part 4"></a>Mac Docker 创建第一个Django 应用，Part 4</h1><blockquote>
+<p>参考原文：<a href="https://docs.djangoproject.com/en/1.11/intro/tutorial04/">Writing your first Django app, part 4</a><br>本文Python搭建在 Django Compose + Djang  执行Python需进入web server容器中，请参看[第一步：在Mac构建Django 容器]<br>翻译整理：CK</p>
+</blockquote>
+<p>简单的表单处理以及精简代码</p>
+<h2 id="1-简单表单"><a href="#1-简单表单" class="headerlink" title="1. 简单表单"></a>1. 简单表单</h2><p><strong>polls/templates/polls/detail.html</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;&#123;&#123; question.question_text &#125;&#125;&lt;&#x2F;h1&gt;</span><br><span class="line"></span><br><span class="line">&#123;% if error_message %&#125;&lt;p&gt;&lt;strong&gt;&#123;&#123; error_message &#125;&#125;&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">&lt;form action&#x3D;&quot;&#123;% url &#39;polls:vote&#39; question.id %&#125;&quot; method&#x3D;&quot;post&quot;&gt;</span><br><span class="line">&#123;% csrf_token %&#125;</span><br><span class="line">&#123;% for choice in question.choice_set.all %&#125;</span><br><span class="line">    &lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;choice&quot; id&#x3D;&quot;choice&#123;&#123; forloop.counter &#125;&#125;&quot; value&#x3D;&quot;&#123;&#123; choice.id &#125;&#125;&quot; &#x2F;&gt;</span><br><span class="line">    &lt;label for&#x3D;&quot;choice&#123;&#123; forloop.counter &#125;&#125;&quot;&gt;&#123;&#123; choice.choice_text &#125;&#125;&lt;&#x2F;label&gt;&lt;br &#x2F;&gt;</span><br><span class="line">&#123;% endfor %&#125;</span><br><span class="line">&lt;input type&#x3D;&quot;submit&quot; value&#x3D;&quot;Vote&quot; &#x2F;&gt;</span><br><span class="line">&lt;&#x2F;form&gt;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/Blog/20171206/First-Django-App-on-Mac-Docker-3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1896,145 +2012,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://chunkai-meng.github.io.git/Blog/20170822/ASP-Net-Core-Online-Store-Project/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Chunkai Meng">
-      <meta itemprop="description" content="Record and Share">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chunkai's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/20170822/ASP-Net-Core-Online-Store-Project/" class="post-title-link" itemprop="url">ASP.Net Core - Online Store Project</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2017-08-22 13:32:52" itemprop="dateCreated datePublished" datetime="2017-08-22T13:32:52+12:00">2017-08-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2018-03-04 13:56:50" itemprop="dateModified" datetime="2018-03-04T13:56:50+13:00">2018-03-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Projects/" itemprop="url" rel="index">
-                    <span itemprop="name">Projects</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/Blog/20170822/ASP-Net-Core-Online-Store-Project/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Blog/20170822/ASP-Net-Core-Online-Store-Project/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>743</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
-<p>For study and research used, not a production system.<br>Finished on 14 October 2017<br><a href="https://github.com/chunkai-meng/ASP.Net-Core-Quality-Hats">Repositorie</a></p>
-</blockquote>
-<h1 id="Quality-Hats-Online-Store"><a href="#Quality-Hats-Online-Store" class="headerlink" title="Quality Hats Online Store"></a>Quality Hats Online Store</h1><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><h3 id="Develop-Environment"><a href="#Develop-Environment" class="headerlink" title="Develop Environment"></a>Develop Environment</h3><ul>
-<li><p>ASP.NET Core with Visual Studio 2015</p>
-</li>
-<li><p>C#, ASP.NET CORE, HTML</p>
-</li>
-<li><p>Microsoft SQL server</p>
-</li>
-<li><p>Customers on this web site can look and search the hats they like, put their favorite hats into a shopping cart. The customers can also see the total price and GST without logining to an account. Like the common approach, we provide a private shopping bag to store a particular account’s pending shopping list.</p>
-</li>
-<li><p>Site administrator can manage the Customer Accounts, Product (hats), Categories, Suppliers and Orders.</p>
-</li>
-</ul>
-<h3 id="Login-Information"><a href="#Login-Information" class="headerlink" title="Login Information"></a>Login Information</h3><table>
-<thead>
-<tr>
-<th>Item</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Website URL:</td>
-<td><a href="http://dochyper.unitec.ac.nz/mengc06/asp_assignment">http://dochyper.unitec.ac.nz/mengc06/asp_assignment</a></td>
-</tr>
-<tr>
-<td>Recommend Browser:</td>
-<td>Latest Chrome or IE</td>
-</tr>
-<tr>
-<td>Customer ID / Password:</td>
-<td><a href="mailto:test@me.com">test@me.com</a> / P@ssw0rd</td>
-</tr>
-</tbody></table>
-<h2 id="Business-Specification"><a href="#Business-Specification" class="headerlink" title="Business Specification"></a>Business Specification</h2><h3 id="Screenshot"><a href="#Screenshot" class="headerlink" title="Screenshot"></a>Screenshot</h3><p><img src="/.git//1.png" alt="image"><br><img src="/.git//2.png" alt="image"><br><img src="/.git//3.png" alt="image"><br><img src="/.git//4.png" alt="image"><br><img src="/.git//5.png" alt="image"><br><img src="/.git//6.png" alt="image"><br><img src="/.git//11.png" alt="image"><br><img src="/.git//22.png" alt="image"><br><img src="/.git//33.png" alt="image"><br><img src="/.git//44.png" alt="image"><br><img src="/.git//55.png" alt="image"><br><img src="/.git//66.png" alt="image"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -2105,20 +2082,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-count">35</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-count">47</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -2179,7 +2156,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:32</span>
+    <span title="Reading time total">1:33</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
   </div>
